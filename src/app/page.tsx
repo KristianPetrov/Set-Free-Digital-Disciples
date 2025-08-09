@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
+import Typewriter from "@/components/Typewriter";
 
 export default function Home() {
   return (
@@ -18,13 +19,25 @@ export default function Home() {
         {/* Hero */}
         <section className="pt-20 pb-16 grid md:grid-cols-2 items-center gap-8">
           <div>
-            <div className="relative h-24 w-[320px] md:h-36 md:w-[560px]">
-              <Image src="/digital-disciples-text.png" alt="Set Free Digital Disciples" fill className="object-contain neon-glow" priority />
-              <span className="scanline-overlay" />
-            </div>
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight neon-text matrix-flicker">
+              <Typewriter
+                segments={[
+                  { text: "Kingdom code ", className: "glow-green" },
+                  { text: "in the streets.", className: "glow-cyan" },
+                ]}
+                charDelayMs={22}
+                segmentDelayMs={280}
+              />
+            </h1>
+            <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight glow-yellow">
+              <Typewriter
+                segments={[{ text: "Clean commits in the cloud." }]}
+                charDelayMs={18}
+                segmentDelayMs={280}
+              />
+            </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
-              Kingdom code in the streets, clean commits in the cloud. Set Free Digital Disciples drops Next.js, Tailwind, and SEO like parables for the algorithm—turning clicks into conversions, and data into disciples.
-              Tech sharp enough to cut chains, faith strong enough to break ’em. We code like it’s the Book of Acts—just with Wi‑Fi.
+              We drop Next.js, Tailwind, and SEO like parables for the algorithm—turning clicks into conversions, and data into disciples. Tech sharp enough to cut chains, faith strong enough to break ’em.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild>
@@ -42,7 +55,9 @@ export default function Home() {
             </div>
           </div>
           <div className="relative h-100 md:h-124">
+            <div className="absolute inset-0 rounded-xl bg-[conic-gradient(from_180deg_at_50%_50%,theme(colors.cyan.500/.25),theme(colors.green.500/.15),transparent_70%)] blur-2xl" />
             <Image src="/SetFreeDigitalDisciplesMatrix.png" alt="Set Free Digital Disciples" fill className="object-contain drop-shadow-[0_0_40px_var(--neon-cyan)]" />
+            <span className="scanline-overlay" />
           </div>
         </section>
 

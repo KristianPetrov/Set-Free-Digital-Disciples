@@ -65,16 +65,20 @@ export default function SetFreeAnaheimShowcase() {
             </div>
           </div>
 
-          {/* Right: visual tiles */}
+          {/* Right: video thumbnails */}
           <div className="grid grid-cols-2 gap-3">
             <Card className="overflow-hidden bg-card/70 border-border/60">
               <CardContent className="p-0 relative h-40 md:h-44">
-                <Image src="/setfree-anaheim-ministry.jpg" alt="Ministry video preview" fill className="object-cover" />
+                <a href="https://www.youtube.com/watch?v=K-7A42wgFoU" target="_blank" rel="noreferrer noopener" aria-label="Watch: The Dirty Dozen">
+                  <Image src="https://img.youtube.com/vi/K-7A42wgFoU/hqdefault.jpg" alt="The Dirty Dozen - Set Free Story" fill className="object-cover" />
+                </a>
               </CardContent>
             </Card>
             <Card className="overflow-hidden bg-card/70 border-border/60">
               <CardContent className="p-0 relative h-40 md:h-44">
-                <Image src="/phil-holding-blocks.jpeg" alt="Sunday Service" fill className="object-cover" />
+                <a href="https://youtu.be/KYbuUC6tGUY" target="_blank" rel="noreferrer noopener" aria-label="Watch: Set Free Anaheim Ministry Video">
+                  <Image src="https://img.youtube.com/vi/KYbuUC6tGUY/hqdefault.jpg" alt="Set Free Anaheim Ministry Video" fill className="object-cover" />
+                </a>
               </CardContent>
             </Card>
             <Card className="overflow-hidden bg-card/70 border-border/60 col-span-2">
@@ -83,6 +87,19 @@ export default function SetFreeAnaheimShowcase() {
                 <span className="scanline-overlay" />
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* CTA bar */}
+        <div className="border-t border-border/60 bg-black/30 p-6 flex flex-wrap gap-3 items-center justify-between">
+          <p className="text-sm text-muted-foreground">Want results like this? Let’s ship something fast, holy, and high‑tech.</p>
+          <div className="flex gap-3">
+            <Button asChild>
+              <a href="#contact">Get a free consult</a>
+            </Button>
+            <Button asChild variant="secondary">
+              <a href="#services">See services</a>
+            </Button>
           </div>
         </div>
       </div>

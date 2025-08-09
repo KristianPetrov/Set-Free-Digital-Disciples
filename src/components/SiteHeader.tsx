@@ -18,7 +18,7 @@ export default function SiteHeader() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="#work" legacyBehavior passHref>
+              <Link href="/work" legacyBehavior passHref>
                 <NavigationMenuLink className="px-3 py-2 text-sm hover:text-primary">
                   Work
                 </NavigationMenuLink>

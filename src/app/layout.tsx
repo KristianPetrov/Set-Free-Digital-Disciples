@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description:
     "Godly, futuristic web design and SEO. We craft high‑performance, high‑tech sites with Kingdom purpose.",
   metadataBase: new URL("https://setfreedigitaldisciples.com"),
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
   openGraph: {
     title: "Set Free Digital Disciples",
     description:

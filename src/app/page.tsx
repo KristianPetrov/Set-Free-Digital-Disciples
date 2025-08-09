@@ -69,20 +69,42 @@ export default function Home() {
               <CardHeader>
                 <CardTitle>Set Free Anaheim</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  A clean, fast ministry site built with Next.js and Tailwind, deployed to Vercel.
+                  Urban church and outreach hub in Anaheim, CA (“Magic House”). Built with a bold holy‑hood aesthetic,
+                  clear events, and strong CTAs to drive in‑person connection.
                 </p>
-                <div className="flex gap-2">
+                <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                  <li>Weekly gatherings: Sunday Service 10AM; Sunday Night Recovery 7PM; Wellbriety Mondays 7PM</li>
+                  <li>Location: 1171 N West St, Anaheim, CA 92801 (events also at 1567 W Embassy St)</li>
+                  <li>Media: YouTube stories and interviews; news highlights (Homeboy Industries)</li>
+                  <li>Contact: 714‑400‑4573 · setfreephil@aol.com · Instagram/Facebook/YouTube @setfreeanaheim</li>
+                </ul>
+                <div className="flex flex-wrap gap-2 pt-1">
                   <Badge variant="secondary">Next.js</Badge>
                   <Badge variant="secondary">Tailwind</Badge>
                   <Badge variant="secondary">Vercel</Badge>
+                  <Badge variant="secondary">Local SEO</Badge>
                 </div>
-                <div className="pt-2">
+                <div className="flex flex-wrap gap-3 pt-2">
                   <Button asChild>
                     <a href="https://set-free-anaheim-set-free-digital-desciples.vercel.app/" target="_blank" rel="noreferrer noopener">
                       Visit site
                     </a>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <a href="https://maps.google.com/?q=1171%20N%20West%20St%2C%20Anaheim%2C%20CA%2092801%2C%20USA" target="_blank" rel="noreferrer noopener">
+                      Map & directions
+                    </a>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <a href="tel:714-400-4573">Call</a>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <a href="mailto:setfreephil@aol.com">Email</a>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <a href="https://www.instagram.com/setfreeanaheim" target="_blank" rel="noreferrer noopener">Instagram</a>
                   </Button>
                 </div>
               </CardContent>

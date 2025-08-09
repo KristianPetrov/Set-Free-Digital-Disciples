@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
 
 export default function Home() {
   return (
@@ -61,64 +62,8 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Work teaser */}
-        <section id="work" className="py-12">
-          <h2 className="text-2xl font-semibold mb-4 glow-cyan">Selected Work</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card className="bg-card/70 border-border/60">
-              <CardHeader>
-                <CardTitle>Set Free Anaheim</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">
-                  Urban church and outreach hub in Anaheim, CA (“Magic House”). Built with a bold holy‑hood aesthetic,
-                  clear events, and strong CTAs to drive in‑person connection.
-                </p>
-                <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                  <li>Weekly gatherings: Sunday Service 10AM; Sunday Night Recovery 7PM; Wellbriety Mondays 7PM</li>
-                  <li>Location: 1171 N West St, Anaheim, CA 92801 (events also at 1567 W Embassy St)</li>
-                  <li>Media: YouTube stories and interviews; news highlights (Homeboy Industries)</li>
-                  <li>Contact: 714‑400‑4573 · setfreephil@aol.com · Instagram/Facebook/YouTube @setfreeanaheim</li>
-                </ul>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  <Badge variant="secondary">Next.js</Badge>
-                  <Badge variant="secondary">Tailwind</Badge>
-                  <Badge variant="secondary">Vercel</Badge>
-                  <Badge variant="secondary">Local SEO</Badge>
-                </div>
-                <div className="flex flex-wrap gap-3 pt-2">
-                  <Button asChild>
-                    <a href="https://set-free-anaheim-set-free-digital-desciples.vercel.app/" target="_blank" rel="noreferrer noopener">
-                      Visit site
-                    </a>
-                  </Button>
-                  <Button asChild variant="secondary">
-                    <a href="https://maps.google.com/?q=1171%20N%20West%20St%2C%20Anaheim%2C%20CA%2092801%2C%20USA" target="_blank" rel="noreferrer noopener">
-                      Map & directions
-                    </a>
-                  </Button>
-                  <Button asChild variant="secondary">
-                    <a href="tel:714-400-4573">Call</a>
-                  </Button>
-                  <Button asChild variant="secondary">
-                    <a href="mailto:setfreephil@aol.com">Email</a>
-                  </Button>
-                  <Button asChild variant="secondary">
-                    <a href="https://www.instagram.com/setfreeanaheim" target="_blank" rel="noreferrer noopener">Instagram</a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-border/60">
-              <CardContent className="p-6">
-                <p className="text-muted-foreground">
-                  More case studies are in production. Check back soon for fresh drops.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        {/* Showcase */}
+        <SetFreeAnaheimShowcase />
 
         {/* Contact */}
         <section id="contact" className="py-16 text-center">

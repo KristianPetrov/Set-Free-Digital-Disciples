@@ -20,8 +20,8 @@ export default function Home() {
               <span className="glow-cyan">Digital Disciples</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
-              Godly but futuristic web design and SEO. We build high‑tech, high‑performance experiences that feel
-              extra‑dimensional—holy street meets nerd‑core.
+              Kingdom code in the streets, clean commits in the cloud. Set Free Digital Disciples drops Next.js, Tailwind, and SEO like parables for the algorithm—turning clicks into conversions, and data into disciples.
+              Tech sharp enough to cut chains, faith strong enough to break ’em. We code like it’s the Book of Acts—just with Wi‑Fi.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild>
@@ -38,8 +38,8 @@ export default function Home() {
               <Badge variant="secondary">Performance</Badge>
             </div>
           </div>
-          <div className="relative h-72 md:h-96">
-            <Image src="/logo.png" alt="Set Free Digital Disciples" fill className="object-contain drop-shadow-[0_0_40px_var(--neon-cyan)]" />
+          <div className="relative h-100 md:h-124">
+            <Image src="/SetFreeDigitalDisciplesMatrix.png" alt="Set Free Digital Disciples" fill className="object-contain drop-shadow-[0_0_40px_var(--neon-cyan)]" />
           </div>
         </section>
 

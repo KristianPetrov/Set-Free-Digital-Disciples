@@ -63,15 +63,39 @@ export default function Home() {
 
         {/* Work teaser */}
         <section id="work" className="py-12">
-          <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-border/60">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-semibold mb-2 glow-cyan">Selected Work</h2>
-              <p className="text-muted-foreground max-w-prose">
-                Portfolio coming soon. We’re currently crafting case studies that demonstrate how faith‑filled design and
-                precise SEO set brands free to grow.
-              </p>
-            </CardContent>
-          </Card>
+          <h2 className="text-2xl font-semibold mb-4 glow-cyan">Selected Work</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <Card className="bg-card/70 border-border/60">
+              <CardHeader>
+                <CardTitle>Set Free Anaheim</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-muted-foreground">
+                  A clean, fast ministry site built with Next.js and Tailwind, deployed to Vercel.
+                </p>
+                <div className="flex gap-2">
+                  <Badge variant="secondary">Next.js</Badge>
+                  <Badge variant="secondary">Tailwind</Badge>
+                  <Badge variant="secondary">Vercel</Badge>
+                </div>
+                <div className="pt-2">
+                  <Button asChild>
+                    <a href="https://set-free-anaheim-set-free-digital-desciples.vercel.app/" target="_blank" rel="noreferrer noopener">
+                      Visit site
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-border/60">
+              <CardContent className="p-6">
+                <p className="text-muted-foreground">
+                  More case studies are in production. Check back soon for fresh drops.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* Contact */}

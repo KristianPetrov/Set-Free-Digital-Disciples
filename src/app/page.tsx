@@ -15,8 +15,9 @@ export default function Home() {
         {/* Hero */}
         <section className="pt-20 pb-16 grid md:grid-cols-2 items-center gap-8">
           <div>
-            <div className="relative h-20 w-[260px] md:h-28 md:w-[420px]">
-              <Image src="/digital-disciples-text.png" alt="Set Free Digital Disciples" fill className="object-contain" priority />
+            <div className="relative h-24 w-[320px] md:h-36 md:w-[560px]">
+              <Image src="/digital-disciples-text.png" alt="Set Free Digital Disciples" fill className="object-contain neon-glow" priority />
+              <span className="scanline-overlay" />
             </div>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
               Kingdom code in the streets, clean commits in the cloud. Set Free Digital Disciples drops Next.js, Tailwind, and SEO like parables for the algorithm—turning clicks into conversions, and data into disciples.

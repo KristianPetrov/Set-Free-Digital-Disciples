@@ -11,25 +11,19 @@ export default function SiteHeader() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="#services" legacyBehavior passHref>
-                <NavigationMenuLink className="px-3 py-2 text-sm hover:text-primary">
-                  Services
-                </NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink asChild className="px-3 py-2 text-sm hover:text-primary">
+                <Link href="#services">Services</Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/work" legacyBehavior passHref>
-                <NavigationMenuLink className="px-3 py-2 text-sm hover:text-primary">
-                  Work
-                </NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink asChild className="px-3 py-2 text-sm hover:text-primary">
+                <Link href="/work">Work</Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="#contact" legacyBehavior passHref>
-                <NavigationMenuLink className="px-3 py-2 text-sm hover:text-primary">
-                  Contact
-                </NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink asChild className="px-3 py-2 text-sm hover:text-primary">
+                <Link href="#contact">Contact</Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

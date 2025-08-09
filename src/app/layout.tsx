@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description:
     "Godly, futuristic web design and SEO. We craft high‑performance, high‑tech sites with Kingdom purpose.",
   metadataBase: new URL("https://setfreedigitaldisciples.com"),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -34,6 +37,7 @@ export const metadata: Metadata = {
     description:
       "Godly, futuristic web design and SEO. We craft high‑performance, high‑tech sites with Kingdom purpose.",
   },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
@@ -41,11 +45,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Set Free Digital Disciples",
+    url: "https://setfreedigitaldisciples.com",
+    sameAs: [
+      "https://www.instagram.com/setfreeanaheim",
+      "https://www.facebook.com/setfreeanaheim",
+      "https://www.youtube.com/@setfreeanaheim",
+    ],
+  };
+
   return (
     <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

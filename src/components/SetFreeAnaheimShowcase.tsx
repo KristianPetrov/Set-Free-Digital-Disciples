@@ -33,10 +33,12 @@ export default function SetFreeAnaheimShowcase() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 p-6 md:p-8">
-          {/* Left: description */}
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-semibold glow-cyan">Set Free Anaheim — the Magic House</h2>
-            <p className="text-muted-foreground">
+                      {/* Left: description */}
+            <div className="space-y-4">
+             <div className="relative w-full h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56">
+              <Image src="/set-free-anaheim-logo.png" alt="Set Free Anaheim" fill className="object-contain" />
+             </div>
+             <p className="text-muted-foreground">
               Designed and built a fast, punchy site that captures Set Free Anaheim’s voice and drives action.
               I delivered custom branding assets, a modern component system, and high‑impact sections that
               convert from search and social.

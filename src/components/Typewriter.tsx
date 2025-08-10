@@ -1,29 +1,33 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Segment = { text: string; className?: string };
 
 export default function Typewriter({
   segments,
-  charDelayMs = 28,
-  segmentDelayMs = 400,
+  charDelayMs = 45,
+  charJitterMs = 25,
+  minCharDelayMs = 18,
+  segmentDelayMs = 500,
   showCaret = true,
   className = "",
-  restartOnHover = true,
   restartOnReenterViewport = true,
   viewportThreshold = 0.2,
-  reentryDebounceMs = 1200,
+  preserveWidth = true,
+  onComplete,
 }: {
   segments: Segment[];
   charDelayMs?: number;
+  charJitterMs?: number;
+  minCharDelayMs?: number;
   segmentDelayMs?: number;
   showCaret?: boolean;
   className?: string;
-  restartOnHover?: boolean;
   restartOnReenterViewport?: boolean;
   viewportThreshold?: number;
-  reentryDebounceMs?: number;
+  preserveWidth?: boolean;
+  onComplete?: () => void;
 }) {
   const [typedCounts, setTypedCounts] = useState<number[]>(() =>
     segments.map(() => 0)
@@ -32,23 +36,36 @@ export default function Typewriter({
   const timerRef = useRef<number | null>(null);
   const rootRef = useRef<HTMLSpanElement | null>(null);
   const wasVisibleRef = useRef<boolean>(false);
-  const reentryTimerRef = useRef<number | null>(null);
+  const completedRef = useRef<boolean>(false);
 
   const totalTyped = useMemo(
     () => typedCounts.reduce((a, b) => a + b, 0),
     [typedCounts]
   );
 
-  const resetTypewriter = useCallback(() => {
+  function resetTypewriter() {
     if (timerRef.current) window.clearTimeout(timerRef.current);
     segIndexRef.current = 0;
+    completedRef.current = false;
     setTypedCounts(segments.map(() => 0));
-  }, [segments]);
+  }
+
+  function nextCharDelay() {
+    const jitter = (Math.random() * 2 - 1) * charJitterMs;
+    const delay = Math.max(minCharDelayMs, Math.round(charDelayMs + jitter));
+    return delay;
+  }
 
   useEffect(() => {
     function typeNextChar() {
       const i = segIndexRef.current;
-      if (i >= segments.length) return;
+      if (i >= segments.length) {
+        if (!completedRef.current) {
+          completedRef.current = true;
+          onComplete?.();
+        }
+        return;
+      }
       const seg = segments[i];
       const count = typedCounts[i];
       if (count < seg.text.length) {
@@ -57,11 +74,16 @@ export default function Typewriter({
           next[i] = count + 1;
           return next;
         });
-        timerRef.current = window.setTimeout(typeNextChar, charDelayMs);
+        timerRef.current = window.setTimeout(typeNextChar, nextCharDelay());
       } else {
         segIndexRef.current = i + 1;
         if (segIndexRef.current < segments.length) {
           timerRef.current = window.setTimeout(typeNextChar, segmentDelayMs);
+        } else {
+          if (!completedRef.current) {
+            completedRef.current = true;
+            onComplete?.();
+          }
         }
       }
     }
@@ -69,48 +91,46 @@ export default function Typewriter({
     return () => {
       if (timerRef.current) window.clearTimeout(timerRef.current);
     };
-  }, [segments, charDelayMs, segmentDelayMs, typedCounts]);
+  }, [segments, charDelayMs, charJitterMs, minCharDelayMs, segmentDelayMs, typedCounts, onComplete]);
 
   useEffect(() => {
-    if (!restartOnReenterViewport || !rootRef.current) return;
+    if (!restartOnReenterViewport || !rootRef .current) return;
     const el = rootRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
         const isNowVisible = entry.isIntersecting && entry.intersectionRatio >= viewportThreshold;
         if (isNowVisible && !wasVisibleRef.current) {
-          if (reentryTimerRef.current) window.clearTimeout(reentryTimerRef.current);
-          reentryTimerRef.current = window.setTimeout(() => {
-            resetTypewriter();
-          }, reentryDebounceMs);
-        }
-        if (!isNowVisible && reentryTimerRef.current) {
-          window.clearTimeout(reentryTimerRef.current);
-          reentryTimerRef.current = null;
+          resetTypewriter();
         }
         wasVisibleRef.current = isNowVisible;
       },
       { threshold: [viewportThreshold] }
     );
     observer.observe(el);
-    return () => {
-      observer.disconnect();
-      if (reentryTimerRef.current) window.clearTimeout(reentryTimerRef.current);
-    };
-  }, [restartOnReenterViewport, viewportThreshold, reentryDebounceMs, resetTypewriter]);
+    return () => observer.disconnect();
+  }, [restartOnReenterViewport, viewportThreshold, segments.length]);
 
   return (
     <span
       ref={rootRef}
       className={className}
       aria-live="polite"
-      onMouseEnter={restartOnHover ? resetTypewriter : undefined}
     >
-      {segments.map((seg, idx) => (
-        <span key={idx} className={seg.className}>
-          {seg.text.slice(0, typedCounts[idx])}
-        </span>
-      ))}
+      {segments.map((seg, idx) => {
+        const typed = seg.text.slice(0, typedCounts[idx]);
+        const remaining = seg.text.slice(typedCounts[idx]);
+        return (
+          <span key={idx} className={seg.className}>
+            {typed}
+            {preserveWidth && remaining && (
+              <span aria-hidden className="opacity-0 select-none pointer-events-none">
+                {remaining}
+              </span>
+            )}
+          </span>
+        );
+      })}
       {showCaret && (
         <span
           className={

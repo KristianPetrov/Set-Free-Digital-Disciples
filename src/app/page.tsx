@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
-import Typewriter from "@/components/Typewriter";
+import HeroTypewriters from "@/components/HeroTypewriters";
 
 export default function Home() {
   return (
@@ -19,23 +19,7 @@ export default function Home() {
         {/* Hero */}
         <section className="pt-20 pb-16 grid md:grid-cols-2 items-center gap-8">
           <div>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight neon-text matrix-flicker">
-              <Typewriter
-                segments={[
-                  { text: "Kingdom code ", className: "glow-green" },
-                  { text: "in the streets.", className: "glow-cyan" },
-                ]}
-                charDelayMs={22}
-                segmentDelayMs={280}
-              />
-            </h1>
-            <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight glow-yellow">
-              <Typewriter
-                segments={[{ text: "Clean commits in the cloud." }]}
-                charDelayMs={18}
-                segmentDelayMs={280}
-              />
-            </h2>
+            <HeroTypewriters />
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
               We drop Next.js, Tailwind, and SEO like parables for the algorithm—turning clicks into conversions, and data into disciples. Tech sharp enough to cut chains, faith strong enough to break ’em.
             </p>

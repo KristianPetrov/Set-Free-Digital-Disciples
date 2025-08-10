@@ -51,7 +51,7 @@ export default function SetFreeAnaheimShowcase() {
             </ul>
             <div className="flex flex-wrap gap-3 pt-1">
               <Button asChild>
-                <Link href="https://set-free-anaheim-set-free-digital-desciples.vercel.app/" target="_blank" rel="noreferrer noopener">
+                <Link href="https://magichousesetfree.com/" target="_blank" rel="noreferrer noopener">
                   Visit site
                 </Link>
               </Button>
@@ -83,8 +83,9 @@ export default function SetFreeAnaheimShowcase() {
                   showDots={true}
                   images={[
                     { src: "/set-free-anaheim-logo.png", alt: "Branding: Set Free Anaheim logo", caption: "Logo system" },
-                    { src: "/breaker-of-chains.png", alt: "Design: Breaker of Chains graphic", caption: "Breaker of Chains graphic" },
-                    { src: "/set-free-gangster-but-holy.png", alt: "Design: Gangster but Holy", caption: "Gangster but Holy design" },
+                    { src: "/holy-hood.png", alt: "Design: Breaker of Chains graphic", caption: "Design: Holy but Hood" },
+                    {src:"/holy-hood-congregation.png", alt: "Design: Holy Hood Congregation", caption: "Design: Holy Hood Congregation"},
+                    {src:"/jesus-unconditional-love.png", alt: "Design: Jesus Unconditional Love", caption: "Design: Jesus Unconditional Love"},
                   ]}
                   showCaptions={true}
                 />
@@ -100,9 +101,8 @@ export default function SetFreeAnaheimShowcase() {
                   preferFadeOnMobile={true}
                   showDots={true}
                   images={[
-                    { src: "/set-free-song-church-screenshot.png", alt: "Component: events calendar & schedule", caption: "Events calendar" },
-                    { src: "/set-free-sunday-phil-screenshot.png", alt: "Component: testimonial / CTA block", caption: "CTA & testimonies" },
-                    { src: "/set-free-sandra-fieldy-phil-screenshot.png", alt: "Component: media carousel / story", caption: "Media carousel" },
+                    {src:"/set-free-donations-screenshot.png", alt: "Design: Donations box", caption: "Design: Donations box"},
+                  {src:"/set-free-phil-blocks-screenshot.png", alt: "Design: Phil blocks", caption: "Design: Image Carousel"},
                   ]}
                   showCaptions={true}
                 />
@@ -112,13 +112,14 @@ export default function SetFreeAnaheimShowcase() {
               <CardContent className="p-0 relative h-40 md:h-56">
                 {/* Carousel C: full sections */}
                 <AutoCarousel
-                  objectFitClass="object-cover"
+                  objectFitClass="object-contain"
                   intervalMs={5500}
                   transitionMs={1100}
                   preferFadeOnMobile={true}
                   showDots={true}
                   images={[
                     { src: "/set-free-hero-section.png", alt: "Section: Home Hero", caption: "Hero section" },
+                    {src:"/set-free-stories-section.png", alt: "Section: Stories", caption: "Stories section"},
                     { src: "/set-free-about-section.png", alt: "Section: About / Story", caption: "About section" },
                     { src: "/set-free-news-section.png", alt: "Section: News & Events", caption: "News & Events" },
                     { src: "/set-free-footer-section.png", alt: "Section: Testimonials & Contact", caption: "Testimonials & Contact" },

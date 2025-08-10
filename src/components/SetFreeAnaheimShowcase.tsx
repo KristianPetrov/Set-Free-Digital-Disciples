@@ -37,15 +37,15 @@ export default function SetFreeAnaheimShowcase() {
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-semibold glow-cyan">Set Free Anaheim — the Magic House</h2>
             <p className="text-muted-foreground">
-              An urban church and outreach hub in Anaheim, CA. The site blends holy‑hood energy with clear
-              next steps: weekly schedule, maps, stories, and contact touchpoints. Built for speed, clarity,
-              and conversions from search and social.
+              Designed and built a fast, punchy site that captures Set Free Anaheim’s voice and drives action.
+              I delivered custom branding assets, a modern component system, and high‑impact sections that
+              convert from search and social.
             </p>
             <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-              <li>Weekly gatherings: Sunday Service 10AM; Sunday Night Recovery 7PM; Wellbriety Mondays 7PM</li>
-              <li>Locations: 1171 N West St and 1567 W Embassy St, Anaheim CA</li>
-              <li>Media: Story videos, press features, and social embeds</li>
-              <li>Performance: Vercel hosting, image optimization, clean IA</li>
+              <li><strong>Brand & visuals</strong>: custom logo lockups and digital designs for social and print</li>
+              <li><strong>Reusable components</strong>: donations box, CTA blocks, media carousel, events calendar</li>
+              <li><strong>Site sections</strong>: Hero, About/Story, News & Events, Testimonials, Contact</li>
+              <li><strong>Performance & SEO</strong>: image optimization, Core Web Vitals, Local SEO structure</li>
             </ul>
             <div className="flex flex-wrap gap-3 pt-1">
               <Button asChild>
@@ -72,7 +72,7 @@ export default function SetFreeAnaheimShowcase() {
           <div className="grid grid-cols-2 gap-3">
             <Card className="overflow-hidden bg-card/70 border-border/60">
               <CardContent className="p-0 relative h-40 md:h-44">
-                {/* Auto-rotating small carousel A */}
+                {/* Carousel A: branding & digital designs */}
                 <AutoCarousel
                   objectFitClass="object-contain"
                   intervalMs={3200}
@@ -80,16 +80,16 @@ export default function SetFreeAnaheimShowcase() {
                   preferFadeOnMobile={true}
                   showDots={true}
                   images={[
-                    { src: "/set-free-anaheim-logo.png", alt: "Set Free Anaheim Logo" },
-                    { src: "/breaker-of-chains.png", alt: "Breaker of Chains" },
-                    { src: "/jesus-unconditional-love.png", alt: "Jesus Unconditional Love" },
+                    { src: "/set-free-anaheim-logo.png", alt: "Branding: Set Free Anaheim logo" },
+                    { src: "/breaker-of-chains.png", alt: "Design: Breaker of Chains graphic" },
+                    { src: "/set-free-gangster-but-holy.png", alt: "Design: Gangster but Holy" },
                   ]}
                 />
               </CardContent>
             </Card>
             <Card className="overflow-hidden bg-card/70 border-border/60">
               <CardContent className="p-0 relative h-40 md:h-44">
-                {/* Auto-rotating small carousel B */}
+                {/* Carousel B: functional components (screenshots) */}
                 <AutoCarousel
                   objectFitClass="object-contain"
                   intervalMs={4200}
@@ -97,16 +97,16 @@ export default function SetFreeAnaheimShowcase() {
                   preferFadeOnMobile={true}
                   showDots={true}
                   images={[
-                    { src: "/holy-hood.png", alt: "Holy Hood" },
-                    { src: "/set-free-gangster-but-holy.png", alt: "Gangster but Holy" },
-                    { src: "/we-breakin-chains-hands.png", alt: "We Breakin Chains Hands" },
+                    { src: "/set-free-song-church-screenshot.png", alt: "Component: events calendar & schedule" },
+                    { src: "/set-free-sunday-phil-screenshot.png", alt: "Component: testimonial / CTA block" },
+                    { src: "/set-free-sandra-fieldy-phil-screenshot.png", alt: "Component: media carousel / story" },
                   ]}
                 />
               </CardContent>
             </Card>
             <Card className="overflow-hidden bg-card/70 border-border/60 col-span-2">
               <CardContent className="p-0 relative h-40 md:h-56">
-                {/* Auto-rotating large carousel */}
+                {/* Carousel C: full sections */}
                 <AutoCarousel
                   objectFitClass="object-cover"
                   intervalMs={5500}
@@ -114,10 +114,10 @@ export default function SetFreeAnaheimShowcase() {
                   preferFadeOnMobile={true}
                   showDots={true}
                   images={[
-                    { src: "/set-free-hero-screenshot.png", alt: "Set Free culture 1" },
-                    { src: "/set-free-sandra-fieldy-phil-screenshot.png", alt: "Set Free culture 2" },
-                    { src: "/set-free-song-church-screenshot.png", alt: "Set Free culture 3" },
-                    { src: "/set-free-sunday-phil-screenshot.png", alt: "Set Free culture 4" },
+                    { src: "/set-free-hero-screenshot.png", alt: "Section: Home Hero" },
+                    { src: "/set-free-sandra-fieldy-phil-screenshot.png", alt: "Section: About / Story" },
+                    { src: "/set-free-song-church-screenshot.png", alt: "Section: News & Events" },
+                    { src: "/set-free-sunday-phil-screenshot.png", alt: "Section: Testimonials & Contact" },
                   ]}
                 />
                 <span className="scanline-overlay" />

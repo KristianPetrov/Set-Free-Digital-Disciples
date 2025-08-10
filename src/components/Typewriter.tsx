@@ -13,6 +13,7 @@ export default function Typewriter({
   restartOnHover = true,
   restartOnReenterViewport = true,
   viewportThreshold = 0.2,
+  reentryDebounceMs = 1200,
 }: {
   segments: Segment[];
   charDelayMs?: number;
@@ -22,6 +23,7 @@ export default function Typewriter({
   restartOnHover?: boolean;
   restartOnReenterViewport?: boolean;
   viewportThreshold?: number;
+  reentryDebounceMs?: number;
 }) {
   const [typedCounts, setTypedCounts] = useState<number[]>(() =>
     segments.map(() => 0)
@@ -30,6 +32,7 @@ export default function Typewriter({
   const timerRef = useRef<number | null>(null);
   const rootRef = useRef<HTMLSpanElement | null>(null);
   const wasVisibleRef = useRef<boolean>(false);
+  const reentryTimerRef = useRef<number | null>(null);
 
   const totalTyped = useMemo(
     () => typedCounts.reduce((a, b) => a + b, 0),
@@ -76,15 +79,25 @@ export default function Typewriter({
         const entry = entries[0];
         const isNowVisible = entry.isIntersecting && entry.intersectionRatio >= viewportThreshold;
         if (isNowVisible && !wasVisibleRef.current) {
-          resetTypewriter();
+          if (reentryTimerRef.current) window.clearTimeout(reentryTimerRef.current);
+          reentryTimerRef.current = window.setTimeout(() => {
+            resetTypewriter();
+          }, reentryDebounceMs);
+        }
+        if (!isNowVisible && reentryTimerRef.current) {
+          window.clearTimeout(reentryTimerRef.current);
+          reentryTimerRef.current = null;
         }
         wasVisibleRef.current = isNowVisible;
       },
       { threshold: [viewportThreshold] }
     );
     observer.observe(el);
-    return () => observer.disconnect();
-  }, [restartOnReenterViewport, viewportThreshold, resetTypewriter]);
+    return () => {
+      observer.disconnect();
+      if (reentryTimerRef.current) window.clearTimeout(reentryTimerRef.current);
+    };
+  }, [restartOnReenterViewport, viewportThreshold, reentryDebounceMs, resetTypewriter]);
 
   return (
     <span

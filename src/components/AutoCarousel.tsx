@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 
-export type CarouselImage = { src: string; alt: string };
+export type CarouselImage = { src: string; alt: string; caption?: string };
 type CSSVars = { [key: `--${string}`]: string };
 
 export default function AutoCarousel({
@@ -14,6 +14,7 @@ export default function AutoCarousel({
   preferFadeOnMobile = true,
   mobileBreakpointPx = 768,
   showDots = true,
+  showCaptions = true,
 }: {
   images: CarouselImage[];
   intervalMs?: number;
@@ -22,6 +23,7 @@ export default function AutoCarousel({
   preferFadeOnMobile?: boolean;
   mobileBreakpointPx?: number;
   showDots?: boolean;
+  showCaptions?: boolean;
 }) {
   const slides = useMemo(() => images ?? [], [images]);
   const isSingle = slides.length <= 1;
@@ -109,6 +111,8 @@ export default function AutoCarousel({
   };
 
   const fadeStyle = { '--fade-ms': `${transitionMs}ms` } as CSSProperties & CSSVars;
+  const visibleIndex = isFadeMode ? index : ((index - 1 + slides.length) % Math.max(1, slides.length));
+  const visibleCaption = slides[visibleIndex]?.caption;
 
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -140,6 +144,14 @@ export default function AutoCarousel({
               <Image src={item.src} alt={item.alt} fill className={objectFitClass} priority />
             </div>
           ))}
+        </div>
+      )}
+
+      {showCaptions && visibleCaption && (
+        <div className="pointer-events-none absolute left-1 bottom-5 md:bottom-6 z-20">
+          <span className="rounded bg-black/50 text-white text-[10px] md:text-xs px-1.5 py-0.5 md:px-2 md:py-0.5 backdrop-blur-sm">
+            {visibleCaption}
+          </span>
         </div>
       )}
 

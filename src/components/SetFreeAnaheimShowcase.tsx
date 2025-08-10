@@ -80,10 +80,11 @@ export default function SetFreeAnaheimShowcase() {
                   preferFadeOnMobile={true}
                   showDots={true}
                   images={[
-                    { src: "/set-free-anaheim-logo.png", alt: "Branding: Set Free Anaheim logo" },
-                    { src: "/breaker-of-chains.png", alt: "Design: Breaker of Chains graphic" },
-                    { src: "/set-free-gangster-but-holy.png", alt: "Design: Gangster but Holy" },
+                    { src: "/set-free-anaheim-logo.png", alt: "Branding: Set Free Anaheim logo", caption: "Logo system" },
+                    { src: "/breaker-of-chains.png", alt: "Design: Breaker of Chains graphic", caption: "Breaker of Chains graphic" },
+                    { src: "/set-free-gangster-but-holy.png", alt: "Design: Gangster but Holy", caption: "Gangster but Holy design" },
                   ]}
+                  showCaptions={true}
                 />
               </CardContent>
             </Card>
@@ -97,10 +98,11 @@ export default function SetFreeAnaheimShowcase() {
                   preferFadeOnMobile={true}
                   showDots={true}
                   images={[
-                    { src: "/set-free-song-church-screenshot.png", alt: "Component: events calendar & schedule" },
-                    { src: "/set-free-sunday-phil-screenshot.png", alt: "Component: testimonial / CTA block" },
-                    { src: "/set-free-sandra-fieldy-phil-screenshot.png", alt: "Component: media carousel / story" },
+                    { src: "/set-free-song-church-screenshot.png", alt: "Component: events calendar & schedule", caption: "Events calendar" },
+                    { src: "/set-free-sunday-phil-screenshot.png", alt: "Component: testimonial / CTA block", caption: "CTA & testimonies" },
+                    { src: "/set-free-sandra-fieldy-phil-screenshot.png", alt: "Component: media carousel / story", caption: "Media carousel" },
                   ]}
+                  showCaptions={true}
                 />
               </CardContent>
             </Card>
@@ -114,11 +116,12 @@ export default function SetFreeAnaheimShowcase() {
                   preferFadeOnMobile={true}
                   showDots={true}
                   images={[
-                    { src: "/set-free-hero-screenshot.png", alt: "Section: Home Hero" },
-                    { src: "/set-free-sandra-fieldy-phil-screenshot.png", alt: "Section: About / Story" },
-                    { src: "/set-free-song-church-screenshot.png", alt: "Section: News & Events" },
-                    { src: "/set-free-sunday-phil-screenshot.png", alt: "Section: Testimonials & Contact" },
+                    { src: "/set-free-hero-screenshot.png", alt: "Section: Home Hero", caption: "Hero section" },
+                    { src: "/set-free-sandra-fieldy-phil-screenshot.png", alt: "Section: About / Story", caption: "About / Story" },
+                    { src: "/set-free-song-church-screenshot.png", alt: "Section: News & Events", caption: "News & Events" },
+                    { src: "/set-free-sunday-phil-screenshot.png", alt: "Section: Testimonials & Contact", caption: "Testimonials & Contact" },
                   ]}
+                  showCaptions={true}
                 />
                 <span className="scanline-overlay" />
               </CardContent>

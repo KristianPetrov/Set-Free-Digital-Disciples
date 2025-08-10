@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 
 type Segment = { text: string; className?: string };
 
@@ -10,23 +10,37 @@ export default function Typewriter({
   segmentDelayMs = 400,
   showCaret = true,
   className = "",
+  restartOnHover = true,
+  restartOnReenterViewport = true,
+  viewportThreshold = 0.2,
 }: {
   segments: Segment[];
   charDelayMs?: number;
   segmentDelayMs?: number;
   showCaret?: boolean;
   className?: string;
+  restartOnHover?: boolean;
+  restartOnReenterViewport?: boolean;
+  viewportThreshold?: number;
 }) {
   const [typedCounts, setTypedCounts] = useState<number[]>(() =>
     segments.map(() => 0)
   );
   const segIndexRef = useRef(0);
   const timerRef = useRef<number | null>(null);
+  const rootRef = useRef<HTMLSpanElement | null>(null);
+  const wasVisibleRef = useRef<boolean>(false);
 
   const totalTyped = useMemo(
     () => typedCounts.reduce((a, b) => a + b, 0),
     [typedCounts]
   );
+
+  const resetTypewriter = useCallback(() => {
+    if (timerRef.current) window.clearTimeout(timerRef.current);
+    segIndexRef.current = 0;
+    setTypedCounts(segments.map(() => 0));
+  }, [segments]);
 
   useEffect(() => {
     function typeNextChar() {
@@ -54,8 +68,31 @@ export default function Typewriter({
     };
   }, [segments, charDelayMs, segmentDelayMs, typedCounts]);
 
+  useEffect(() => {
+    if (!restartOnReenterViewport || !rootRef.current) return;
+    const el = rootRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        const isNowVisible = entry.isIntersecting && entry.intersectionRatio >= viewportThreshold;
+        if (isNowVisible && !wasVisibleRef.current) {
+          resetTypewriter();
+        }
+        wasVisibleRef.current = isNowVisible;
+      },
+      { threshold: [viewportThreshold] }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [restartOnReenterViewport, viewportThreshold, resetTypewriter]);
+
   return (
-    <span className={className} aria-live="polite">
+    <span
+      ref={rootRef}
+      className={className}
+      aria-live="polite"
+      onMouseEnter={restartOnHover ? resetTypewriter : undefined}
+    >
       {segments.map((seg, idx) => (
         <span key={idx} className={seg.className}>
           {seg.text.slice(0, typedCounts[idx])}

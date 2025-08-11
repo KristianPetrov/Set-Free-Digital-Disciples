@@ -18,23 +18,23 @@ export default function Home() {
       <main className="content-layer relative mx-auto max-w-6xl px-4">
         {/* Hero */}
         <section className="pt-20 pb-16 grid md:grid-cols-2 items-center gap-8">
-          <div>
+          <div className="order-2 md:order-1">
             <div className="text-4xl md:text-6xl font-extrabold leading-tight neon-text matrix-flicker glitch-strong">
               <Typewriter
                 segments={[
                   { text: "From The Block To The Cloud, ", className: "glow-green" },
                   { text: "I Deploy Thy Kingdom.", className: "block mt-1.5 md:mt-2 text-3xl md:text-5xl font-extrabold tracking-tight glow-cyan" },
                 ]}
-                charDelayMs={55}
-                charJitterMs={30}
-                minCharDelayMs={22}
-                segmentDelayMs={600}
-                segmentDelaysMs={[900]}
+                charDelayMs={42}
+                charJitterMs={18}
+                minCharDelayMs={16}
+                segmentDelayMs={520}
+                segmentDelaysMs={[750]}
                 showCaret={true}
                 naturalPauses={true}
-                spacePauseMs={35}
-                punctuationPauseMs={140}
-                newlinePauseMs={260}
+                spacePauseMs={28}
+                punctuationPauseMs={110}
+                newlinePauseMs={220}
               />
             </div>
             <p className="relative mt-3 text-xl md:text-2xl font-semibold tracking-tight bg-gradient-to-r from-[var(--neon-green)] via-[var(--neon-cyan)] to-[var(--neon-green)] bg-clip-text text-transparent neon-text matrix-flicker matrix-shimmer glitch-strong">
@@ -49,12 +49,15 @@ export default function Home() {
                       "These streets are my network, these skies my server farm. I preach in packets, drop miracles in megabytes, and commit salvation straight to the main branch of your soul. Next.js turns water to wine; Tailwind parts the Red Sea of bad design; SEO feeds the multitudes with loaves of clicks. I encrypt grace in the tongues of angels, debug demons in the dark web of the heart, and push eternal life to every open port. I am the Alpha commit and the Omega merge — and the repo has no end.",
                   },
                 ]}
-                charDelayMs={24}
-                charJitterMs={11}
-                minCharDelayMs={14}
+                charDelayMs={20}
+                charJitterMs={9}
+                minCharDelayMs={12}
                 segmentDelayMs={0}
                 showCaret={true}
                 naturalPauses={true}
+                spacePauseMs={24}
+                punctuationPauseMs={90}
+                newlinePauseMs={180}
               />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -72,7 +75,7 @@ export default function Home() {
               <Badge variant="secondary">Performance</Badge>
             </div>
           </div>
-          <div className="relative h-100 md:h-124">
+          <div className="relative h-100 md:h-124 order-1 md:order-2 mb-6 md:mb-0">
             <div className="absolute inset-0 rounded-xl bg-[conic-gradient(from_180deg_at_50%_50%,theme(colors.cyan.500/.25),theme(colors.green.500/.15),transparent_70%)] blur-2xl" />
             <Image src="/SetFreeDigitalDisciplesMatrix.png" alt="Set Free Digital Disciples" fill className="object-contain drop-shadow-[0_0_40px_var(--neon-cyan)]" />
             <span className="scanline-overlay" />

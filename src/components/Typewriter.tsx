@@ -42,6 +42,8 @@ export default function Typewriter({
   const [typedCounts, setTypedCounts] = useState<number[]>(() =>
     segments.map(() => 0)
   );
+  const typedCountsRef = useRef<number[]>(typedCounts);
+  const [runId, setRunId] = useState(0);
   const segIndexRef = useRef(0);
   const timerRef = useRef<number | null>(null);
   const rootRef = useRef<HTMLSpanElement | null>(null);
@@ -58,6 +60,8 @@ export default function Typewriter({
     segIndexRef.current = 0;
     completedRef.current = false;
     setTypedCounts(segments.map(() => 0));
+    typedCountsRef.current = segments.map(() => 0);
+    setRunId((id) => id + 1);
   }, [segments]);
 
   const nextCharDelay = useCallback(() => {
@@ -87,11 +91,12 @@ export default function Typewriter({
         return;
       }
       const seg = segments[i];
-      const count = typedCounts[i];
+      const count = typedCountsRef.current[i];
       if (count < seg.text.length) {
         setTypedCounts((prev) => {
           const next = [...prev];
           next[i] = count + 1;
+          typedCountsRef.current = next;
           return next;
         });
         const nextChar = seg.text.charAt(count);
@@ -121,7 +126,6 @@ export default function Typewriter({
     };
   }, [
     segments,
-    typedCounts,
     nextCharDelay,
     nextSegmentDelay,
     onComplete,
@@ -129,7 +133,13 @@ export default function Typewriter({
     spacePauseMs,
     punctuationPauseMs,
     newlinePauseMs,
+    runId,
   ]);
+
+  // Keep ref in sync for safety (not used to trigger effects)
+  useEffect(() => {
+    typedCountsRef.current = typedCounts;
+  }, [typedCounts]);
 
   useEffect(() => {
     if (!restartOnReenterViewport || !rootRef.current) return;

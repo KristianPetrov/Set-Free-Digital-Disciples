@@ -83,7 +83,7 @@ export default function SetFreeAnaheimShowcase() {
                   showDots={true}
                                      sizes="(max-width: 768px) 50vw, 33vw"
                    images={[
-                   
+
                     { src: "/holy-hood.png", alt: "Design: Breaker of Chains graphic", caption: "Design: Holy but Hood" },
                     {src:"/holy-hood-congregation.png", alt: "Design: Holy Hood Congregation", caption: "Design: Holy Hood Congregation"},
                     {src:"/jesus-unconditional-love.png", alt: "Design: Jesus Unconditional Love", caption: "Design: Jesus Unconditional Love"},
@@ -137,17 +137,20 @@ export default function SetFreeAnaheimShowcase() {
         </div>
 
         {/* CTA bar */}
-        <div className="border-t border-border/60 bg-black/30 p-6 flex flex-wrap gap-3 items-center justify-between">
-          <p className="text-sm text-muted-foreground">Want results like this? Let’s ship something fast, holy, and high‑tech.</p>
-          <div className="flex gap-3">
-            <Button asChild>
-              <Link href="#contact">Get a free consult</Link>
-            </Button>
-            <Button asChild variant="secondary">
-              <Link href="#services">See services</Link>
-            </Button>
+          <div className="border-t border-border/60 bg-black/30 p-6 flex flex-wrap gap-3 items-center justify-between">
+            <p className="text-sm text-muted-foreground">Want results like this? Let’s ship something fast, holy, and high‑tech.</p>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild>
+                <Link href="#contact">Get a free consult</Link>
+              </Button>
+              <Button asChild variant="secondary">
+                <Link href="mailto:petrovkristianpishka@gmail.com">Email</Link>
+              </Button>
+              <Button asChild variant="secondary">
+                <Link href="tel:9493314471">Call</Link>
+              </Button>
+            </div>
           </div>
-        </div>
       </div>
     </section>
   );

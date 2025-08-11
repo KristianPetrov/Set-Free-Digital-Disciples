@@ -106,9 +106,12 @@ export default function Home() {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Tell us about your mission. We’ll respond within 24 hours with next steps and a time for a call.
           </p>
-          <div className="mt-6 flex justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button asChild>
-              <a href="mailto:hello@setfreedigitaldisciples.com">Email us</a>
+              <a href="mailto:petrovkristianpishka@gmail.com">Email: petrovkristianpishka@gmail.com</a>
+            </Button>
+            <Button asChild variant="secondary">
+              <a href="tel:9493314471">Call: 949-331-4471</a>
             </Button>
             <Button asChild variant="secondary">
               <a href="https://cal.com" target="_blank" rel="noreferrer noopener">Schedule call</a>
@@ -118,7 +121,18 @@ export default function Home() {
       </main>
 
       <footer className="content-layer border-t border-border/60 mt-10 py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Set Free Digital Disciples. Crafted with prayer and precision.
+        <div>
+          © {new Date().getFullYear()} Set Free Digital Disciples. Crafted with prayer and precision.
+        </div>
+        <div className="mt-1 flex items-center justify-center gap-3">
+          <a className="hover:text-primary hover:underline underline-offset-4" href="mailto:petrovkristianpishka@gmail.com">
+            petrovkristianpishka@gmail.com
+          </a>
+          <span aria-hidden>•</span>
+          <a className="hover:text-primary hover:underline underline-offset-4" href="tel:9493314471">
+            949-331-4471
+          </a>
+        </div>
       </footer>
     </div>
   );

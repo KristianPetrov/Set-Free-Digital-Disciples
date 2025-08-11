@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
     type: "website",
-    url: "https://setfreedigitaldisciples.com",
+    url: "https://magichousesetfree.com",
     images: [
       {
         url: "/futuristic-jesus-portal-og.png",

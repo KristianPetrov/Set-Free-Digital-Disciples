@@ -30,12 +30,24 @@ export const metadata: Metadata = {
       "Godly, futuristic web design and SEO. We craft high‑performance, high‑tech sites with Kingdom purpose.",
     type: "website",
     url: "https://setfreedigitaldisciples.com",
+    images: [
+      {
+        url: "/SetFreeDigitalDisciplesMatrix.png",
+        alt: "Set Free Digital Disciples Matrix",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Set Free Digital Disciples",
     description:
       "Godly, futuristic web design and SEO. We craft high‑performance, high‑tech sites with Kingdom purpose.",
+    images: [
+      {
+        url: "/SetFreeDigitalDisciplesMatrix.png",
+        alt: "Set Free Digital Disciples Matrix",
+      },
+    ],
   },
   manifest: "/manifest.webmanifest",
 };

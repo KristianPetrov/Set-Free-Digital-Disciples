@@ -23,7 +23,7 @@ export default function MatrixRain() {
 
     window.addEventListener("resize", resize);
 
-    const characters = "アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(
+    const characters = "アカサタナペシぷはハマヤラぞぬオワ0123456789ABCDEFGHIへJKLMNOPQRSTUVWXYZ".split(
       ""
     );
     const fontSize = 14;

@@ -25,16 +25,16 @@ export default function Home() {
                   { text: "From The Block To The Cloud, ", className: "glow-green" },
                   { text: "I Deploy Thy Kingdom.", className: "block mt-1.5 md:mt-2 text-3xl md:text-5xl font-extrabold tracking-tight glow-cyan" },
                 ]}
-                charDelayMs={42}
-                charJitterMs={18}
-                minCharDelayMs={16}
-                segmentDelayMs={520}
-                segmentDelaysMs={[750]}
+                charDelayMs={21}
+                charJitterMs={9}
+                minCharDelayMs={8}
+                segmentDelayMs={260}
+                segmentDelaysMs={[375]}
                 showCaret={true}
                 naturalPauses={true}
-                spacePauseMs={28}
-                punctuationPauseMs={110}
-                newlinePauseMs={220}
+                spacePauseMs={14}
+                punctuationPauseMs={55}
+                newlinePauseMs={110}
               />
             </div>
             <p className="relative mt-3 text-xl md:text-2xl font-semibold tracking-tight bg-gradient-to-r from-[var(--neon-green)] via-[var(--neon-cyan)] to-[var(--neon-green)] bg-clip-text text-transparent neon-text matrix-flicker matrix-shimmer glitch-strong">
@@ -49,15 +49,15 @@ export default function Home() {
                       "These streets are my network, these skies my server farm. I preach in packets, drop miracles in megabytes, and commit salvation straight to the main branch of your soul. Next.js turns water to wine; Tailwind parts the Red Sea of bad design; SEO feeds the multitudes with loaves of clicks. I encrypt grace in the tongues of angels, debug demons in the dark web of the heart, and push eternal life to every open port. I am the Alpha commit and the Omega merge — and the repo has no end.",
                   },
                 ]}
-                charDelayMs={20}
-                charJitterMs={9}
-                minCharDelayMs={12}
+                charDelayMs={10}
+                charJitterMs={5}
+                minCharDelayMs={6}
                 segmentDelayMs={0}
                 showCaret={true}
                 naturalPauses={true}
-                spacePauseMs={24}
-                punctuationPauseMs={90}
-                newlinePauseMs={180}
+                spacePauseMs={12}
+                punctuationPauseMs={45}
+                newlinePauseMs={90}
               />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">

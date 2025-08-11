@@ -12,14 +12,14 @@ export const metadata = {
     title: "Work | Set Free Digital Disciples",
     description: "Selected projects and case studies crafted with neon‑holy precision.",
     images: [
-      { url: "/SetFreeDigitalDisciplesMatrix.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
+      { url: "/futuristic-jesus-portal-og.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
     ],
   },
   twitter: {
     title: "Work | Set Free Digital Disciples",
     description: "Selected projects and case studies crafted with neon‑holy precision.",
     images: [
-      { url: "/SetFreeDigitalDisciplesMatrix.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
+      { url: "/futuristic-jesus-portal-og.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
     ],
   },
 };

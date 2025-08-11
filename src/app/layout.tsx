@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: "https://setfreedigitaldisciples.com",
     images: [
       {
-        url: "/SetFreeDigitalDisciplesMatrix.png",
+        url: "/futuristic-jesus-portal-og.png",
         alt: "Set Free Digital Disciples Matrix",
         width: 1200,
         height: 630,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
     images: [
       {
-        url: "/SetFreeDigitalDisciplesMatrix.png",
+        url: "/futuristic-jesus-portal-og.png",
         alt: "Set Free Digital Disciples Matrix",
         width: 1200,
         height: 630,

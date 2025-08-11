@@ -13,14 +13,14 @@ export const metadata = {
     title: "Case Study: Set Free Anaheim | Set Free Digital Disciples",
     description: "How we shipped a neon‑holy, high‑performance site for Set Free Anaheim to drive connection and outreach.",
     images: [
-      { url: "/SetFreeDigitalDisciplesMatrix.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
+      { url: "/futuristic-jesus-portal-og.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
     ],
   },
   twitter: {
     title: "Case Study: Set Free Anaheim | Set Free Digital Disciples",
     description: "How we shipped a neon‑holy, high‑performance site for Set Free Anaheim to drive connection and outreach.",
     images: [
-      { url: "/SetFreeDigitalDisciplesMatrix.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
+      { url: "/futuristic-jesus-portal-og.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
     ],
   },
 };

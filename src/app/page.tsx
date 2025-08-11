@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
 import Typewriter from "@/components/Typewriter";
 import HeroGlitchMorph from "@/components/HeroGlitchMorph";
+import CalButton from "@/components/CalButton";
 
 export default function Home() {
   return (
@@ -128,9 +129,7 @@ export default function Home() {
             <Button asChild variant="secondary">
               <a href="tel:9493314471">Call: 949-331-4471</a>
             </Button>
-            <Button asChild variant="secondary">
-              <a href="https://cal.com" target="_blank" rel="noreferrer noopener">Schedule call</a>
-            </Button>
+            <CalButton variant="secondary">Schedule call</CalButton>
           </div>
         </section>
       </main>

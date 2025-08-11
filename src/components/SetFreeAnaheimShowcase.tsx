@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import CalButton from "@/components/CalButton";
 import Link from "next/link";
 import AutoCarousel from "@/components/AutoCarousel";
 
@@ -10,10 +11,10 @@ export default function SetFreeAnaheimShowcase() {
     <section id="work" className="py-16">
       <div className="relative overflow-hidden rounded-xl border border-border/60 bg-gradient-to-br from-primary/10 via-background/60 to-accent/10">
         {/* Banner image */}
-        <div className="relative h-64 md:h-80 bg-black">
+        <div className="relative h-72 md:h-86 bg-black">
           <Image
-            src="/digital-disciples-tron-matrix.png"
-            alt="Set Free Anaheim highlight"
+            src="/faith-works-showcase.png"
+            alt="Faith Works showcase artwork"
             fill
             className="object-cover"
             priority
@@ -24,10 +25,10 @@ export default function SetFreeAnaheimShowcase() {
               <Image src="/digital-disciples-text.png" alt="Set Free Digital Disciples" fill className="object-contain" />
             </div> */}
             <div className="ml-auto flex gap-2">
-              <Badge variant="secondary">Next.js</Badge>
-              <Badge variant="secondary">Tailwind</Badge>
-              <Badge variant="secondary">Vercel</Badge>
-              <Badge variant="secondary">Local SEO</Badge>
+              <Badge variant="secondary">Branding</Badge>
+              <Badge variant="secondary">Design</Badge>
+              <Badge variant="secondary">Artwork</Badge>
+              <Badge variant="secondary">Neon‑Holy</Badge>
             </div>
           </div>
         </div>
@@ -140,9 +141,7 @@ export default function SetFreeAnaheimShowcase() {
           <div className="border-t border-border/60 bg-black/30 p-6 flex flex-wrap gap-3 items-center justify-between">
             <p className="text-sm text-muted-foreground">Want results like this? Let’s ship something fast, holy, and high‑tech.</p>
             <div className="flex flex-wrap gap-3">
-              <Button asChild>
-                <Link href="#contact">Get a free consult</Link>
-              </Button>
+              <CalButton>Get a free consult</CalButton>
               <Button asChild variant="secondary">
                 <Link href="mailto:petrovkristianpishka@gmail.com">Email</Link>
               </Button>

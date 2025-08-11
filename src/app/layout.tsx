@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Set Free Digital Disciples | Web Design & SEO",
+  title: "Set Free Digital Disciples | Neon‑Holy Web Design & SEO",
   description:
-    "Godly, futuristic web design and SEO. We craft high‑performance, high‑tech sites with Kingdom purpose.",
+    "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
   metadataBase: new URL("https://setfreedigitaldisciples.com"),
   alternates: {
     canonical: "/",
@@ -25,27 +25,31 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   openGraph: {
-    title: "Set Free Digital Disciples",
+    title: "Set Free Digital Disciples | Neon‑Holy Web Design & SEO",
     description:
-      "Godly, futuristic web design and SEO. We craft high‑performance, high‑tech sites with Kingdom purpose.",
+      "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
     type: "website",
     url: "https://setfreedigitaldisciples.com",
     images: [
       {
         url: "/SetFreeDigitalDisciplesMatrix.png",
         alt: "Set Free Digital Disciples Matrix",
+        width: 1200,
+        height: 630,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Set Free Digital Disciples",
+    title: "Set Free Digital Disciples | Neon‑Holy Web Design & SEO",
     description:
-      "Godly, futuristic web design and SEO. We craft high‑performance, high‑tech sites with Kingdom purpose.",
+      "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
     images: [
       {
         url: "/SetFreeDigitalDisciplesMatrix.png",
         alt: "Set Free Digital Disciples Matrix",
+        width: 1200,
+        height: 630,
       },
     ],
   },

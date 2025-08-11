@@ -1,6 +1,6 @@
 export const revalidate = 86400;
 
-import Image from "next/image";
+// import Image from "next/image";
 import MatrixRain from "@/components/MatrixRain";
 import SiteHeader from "@/components/SiteHeader";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
 import Typewriter from "@/components/Typewriter";
+import HeroGlitchMorph from "@/components/HeroGlitchMorph";
 
 export default function Home() {
   return (
@@ -77,7 +78,18 @@ export default function Home() {
           </div>
           <div className="relative h-100 md:h-124 order-1 md:order-2 mb-6 md:mb-0">
             <div className="absolute inset-0 rounded-xl bg-[conic-gradient(from_180deg_at_50%_50%,theme(colors.cyan.500/.25),theme(colors.green.500/.15),transparent_70%)] blur-2xl" />
-            <Image src="/SetFreeDigitalDisciplesMatrix.png" alt="Set Free Digital Disciples" fill className="object-contain drop-shadow-[0_0_40px_var(--neon-cyan)]" />
+            <HeroGlitchMorph
+              imageA="/SetFreeDigitalDisciplesMatrix.png"
+              imageB="/SetFreeDigitalDisciplesPortal.png"
+              alt="Set Free Digital Disciples"
+              transitionMs={1400}
+              intervalMs={4000}
+              glitchDurationMs={420}
+              startOn="A"
+              objectFitClass="object-contain"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
             <span className="scanline-overlay" />
           </div>
         </section>

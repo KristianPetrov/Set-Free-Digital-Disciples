@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
-import HeroTypewriters from "@/components/HeroTypewriters";
+import Typewriter from "@/components/Typewriter";
 
 export default function Home() {
   return (
@@ -19,9 +19,43 @@ export default function Home() {
         {/* Hero */}
         <section className="pt-20 pb-16 grid md:grid-cols-2 items-center gap-8">
           <div>
-            <HeroTypewriters />
-            <p className="mt-4 text-lg text-muted-foreground max-w-prose">
-              We drop Next.js, Tailwind, and SEO like parables for the algorithm—turning clicks into conversions, and data into disciples. Tech sharp enough to cut chains, faith strong enough to break ’em.
+            <div className="text-4xl md:text-6xl font-extrabold leading-tight neon-text matrix-flicker glitch-strong">
+              <Typewriter
+                segments={[
+                  { text: "From The Block To The Cloud, ", className: "glow-green" },
+                  { text: "I Deploy Thy Kingdom.", className: "block mt-1.5 md:mt-2 text-3xl md:text-5xl font-extrabold tracking-tight glow-cyan" },
+                ]}
+                charDelayMs={55}
+                charJitterMs={30}
+                minCharDelayMs={22}
+                segmentDelayMs={600}
+                segmentDelaysMs={[900]}
+                showCaret={true}
+                naturalPauses={true}
+                spacePauseMs={35}
+                punctuationPauseMs={140}
+                newlinePauseMs={260}
+              />
+            </div>
+            <p className="relative mt-3 text-xl md:text-2xl font-semibold tracking-tight bg-gradient-to-r from-[var(--neon-green)] via-[var(--neon-cyan)] to-[var(--neon-green)] bg-clip-text text-transparent neon-text matrix-flicker matrix-shimmer glitch-strong">
+              <span>Preaching the Kingdom in code only the soul can compile.</span>
+              <span className="scanline-overlay rounded-sm" aria-hidden />
+            </p>
+            <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-prose neon-text-body matrix-flicker-subtle">
+              <Typewriter
+                segments={[
+                  {
+                    text:
+                      "These streets are my network, these skies my server farm. I preach in packets, drop miracles in megabytes, and commit salvation straight to the main branch of your soul. Next.js turns water to wine; Tailwind parts the Red Sea of bad design; SEO feeds the multitudes with loaves of clicks. I encrypt grace in the tongues of angels, debug demons in the dark web of the heart, and push eternal life to every open port. I am the Alpha commit and the Omega merge — and the repo has no end.",
+                  },
+                ]}
+                charDelayMs={24}
+                charJitterMs={11}
+                minCharDelayMs={14}
+                segmentDelayMs={0}
+                showCaret={true}
+                naturalPauses={true}
+              />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild>

@@ -81,8 +81,9 @@ export default function SetFreeAnaheimShowcase() {
                   transitionMs={900}
                   preferFadeOnMobile={true}
                   showDots={true}
-                  images={[
-                    { src: "/set-free-anaheim-logo.png", alt: "Branding: Set Free Anaheim logo", caption: "Logo system" },
+                                     sizes="(max-width: 768px) 50vw, 33vw"
+                   images={[
+                   
                     { src: "/holy-hood.png", alt: "Design: Breaker of Chains graphic", caption: "Design: Holy but Hood" },
                     {src:"/holy-hood-congregation.png", alt: "Design: Holy Hood Congregation", caption: "Design: Holy Hood Congregation"},
                     {src:"/jesus-unconditional-love.png", alt: "Design: Jesus Unconditional Love", caption: "Design: Jesus Unconditional Love"},
@@ -100,6 +101,7 @@ export default function SetFreeAnaheimShowcase() {
                   transitionMs={800}
                   preferFadeOnMobile={true}
                   showDots={true}
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   images={[
                     {src:"/set-free-donations-screenshot.png", alt: "Design: Donations box", caption: "Design: Donations box"},
                   {src:"/set-free-phil-blocks-screenshot.png", alt: "Design: Phil blocks", caption: "Design: Image Carousel"},
@@ -117,6 +119,8 @@ export default function SetFreeAnaheimShowcase() {
                   transitionMs={1100}
                   preferFadeOnMobile={true}
                   showDots={true}
+                  sizes="(max-width: 768px) 100vw, 66vw"
+                  priority={false}
                   images={[
                     { src: "/set-free-hero-section.png", alt: "Section: Home Hero", caption: "Hero section" },
                     {src:"/set-free-stories-section.png", alt: "Section: Stories", caption: "Stories section"},

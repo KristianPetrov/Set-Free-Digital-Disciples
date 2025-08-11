@@ -15,6 +15,8 @@ export default function AutoCarousel({
   mobileBreakpointPx = 768,
   showDots = true,
   showCaptions = true,
+  priority = false,
+  sizes,
 }: {
   images: CarouselImage[];
   intervalMs?: number;
@@ -24,6 +26,8 @@ export default function AutoCarousel({
   mobileBreakpointPx?: number;
   showDots?: boolean;
   showCaptions?: boolean;
+  priority?: boolean;
+  sizes?: string;
 }) {
   const slides = useMemo(() => images ?? [], [images]);
   const isSingle = slides.length <= 1;
@@ -117,7 +121,7 @@ export default function AutoCarousel({
   return (
     <div className="absolute inset-0 overflow-hidden">
       {isSingle ? (
-        <Image src={slides[0].src} alt={slides[0].alt} fill className={objectFitClass} priority />
+        <Image src={slides[0].src} alt={slides[0].alt} fill className={objectFitClass} priority={priority} sizes={sizes} />
       ) : isFadeMode ? (
         <div className="absolute inset-0">
           {slides.map((item, i) => (
@@ -127,7 +131,8 @@ export default function AutoCarousel({
                 alt={item.alt}
                 fill
                 className={`${objectFitClass} transition-opacity duration-[var(--fade-ms)] ease-in-out ${i === index ? 'opacity-100' : 'opacity-0'}`}
-                priority
+                priority={priority && i === index}
+                sizes={sizes}
                 style={fadeStyle}
               />
             </div>
@@ -141,7 +146,7 @@ export default function AutoCarousel({
         >
           {extended.map((item, i) => (
             <div key={`${item.src}-${i}`} className="relative h-full w-full flex-shrink-0">
-              <Image src={item.src} alt={item.alt} fill className={objectFitClass} priority />
+              <Image src={item.src} alt={item.alt} fill className={objectFitClass} priority={priority && i === index} sizes={sizes} />
             </div>
           ))}
         </div>

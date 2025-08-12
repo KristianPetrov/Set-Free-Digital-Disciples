@@ -11,7 +11,7 @@ export default function SetFreeAnaheimShowcase() {
     <section id="work" className="py-16">
       <div className="relative overflow-hidden rounded-xl border border-border/60 bg-gradient-to-br from-primary/10 via-background/60 to-accent/10">
         {/* Banner image */}
-        <div className="relative h-72 md:h-86 bg-black">
+        <div className="relative h-72 md:h-86 bg-black"></div>
           <Image
             src="/faith-works-showcase.png"
             alt="Faith Works showcase artwork"
@@ -37,7 +37,10 @@ export default function SetFreeAnaheimShowcase() {
                       {/* Left: description */}
             <div className="space-y-4">
              <div className="relative w-full h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56">
-              <Image src="/set-free-anaheim-logo.png" alt="Set Free Anaheim" fill className="object-contain" />
+               <div className="absolute inset-0 -z-10 opacity-35">
+                 <Image src="/god-father-phil.png" alt="" fill className="object-cover" />
+               </div>
+               <Image src="/set-free-anaheim-logo.png" alt="Set Free Anaheim" fill className="object-contain" />
              </div>
              <p className="text-muted-foreground">
               Designed and built a fast, punchy site that captures Set Free Anaheim’s voice and drives action.

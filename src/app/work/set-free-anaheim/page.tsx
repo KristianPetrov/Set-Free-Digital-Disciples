@@ -7,27 +7,43 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata = {
-  title: "Case Study: Set Free Anaheim | Set Free Digital Disciples",
-  description: "How we shipped a neon‑holy, high‑performance site for Set Free Anaheim to drive connection and outreach.",
+  title: "Case Study: Set Free Anaheim",
+  description: "How we shipped a Hood‑Sanctified & Scripted, high‑performance site for Set Free Anaheim to drive connection and outreach.",
+  alternates: { canonical: "/work/set-free-anaheim" },
   openGraph: {
     title: "Case Study: Set Free Anaheim | Set Free Digital Disciples",
-    description: "How we shipped a neon‑holy, high‑performance site for Set Free Anaheim to drive connection and outreach.",
+    description: "How we shipped a Hood‑Sanctified & Scripted, high‑performance site for Set Free Anaheim to drive connection and outreach.",
+    url: "/work/set-free-anaheim",
     images: [
-      { url: "/futuristic-jesus-portal-og.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
+      { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
     ],
   },
   twitter: {
     title: "Case Study: Set Free Anaheim | Set Free Digital Disciples",
-    description: "How we shipped a neon‑holy, high‑performance site for Set Free Anaheim to drive connection and outreach.",
+    description: "How we shipped a Hood‑Sanctified & Scripted, high‑performance site for Set Free Anaheim to drive connection and outreach.",
     images: [
-      { url: "/futuristic-jesus-portal-og.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
+      { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
     ],
   },
-};
+} as const;
 
 export default function CaseStudySetFreeAnaheim() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Set Free Anaheim",
+    url: "https://setfreeanaheim.com",
+    publisher: {
+      "@type": "Organization",
+      name: "Set Free Digital Disciples",
+    },
+  } as const;
   return (
     <div className="content-layer mx-auto max-w-6xl px-4 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Link href="/work" className="text-sm text-muted-foreground hover:text-primary">← Back to Work</Link>
       <header className="mt-2 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
         <div>
@@ -44,7 +60,7 @@ export default function CaseStudySetFreeAnaheim() {
         </div>
         <div className="flex gap-3">
           <Button asChild>
-            <a href="https://set-free-anaheim-set-free-digital-desciples.vercel.app/" target="_blank" rel="noreferrer noopener">Visit site</a>
+            <a href="https://setfreeanaheim.com/" target="_blank" rel="noreferrer noopener">Visit site</a>
           </Button>
           <Button asChild variant="secondary">
             <a href="https://maps.google.com/?q=1171%20N%20West%20St%2C%20Anaheim%2C%20CA%2092801%2C%20USA" target="_blank" rel="noreferrer noopener">Map</a>
@@ -78,7 +94,7 @@ export default function CaseStudySetFreeAnaheim() {
               <li>Schedule-first layout with multiple recurring gatherings</li>
               <li>Embedded media: YouTube stories and press features</li>
               <li>Action‑dense CTA clusters (map, call, email, socials)</li>
-              <li>Neon‑holy styling aligned to culture and community</li>
+            <li>Hood‑Sanctified & Scripted styling aligned to culture and community</li>
             </ul>
           </CardContent>
         </Card>

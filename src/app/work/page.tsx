@@ -6,23 +6,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata = {
-  title: "Work | Set Free Digital Disciples",
-  description: "Selected projects and case studies crafted with neon‑holy precision.",
+  title: "Work",
+  description: "Selected projects and case studies crafted with Hood‑Sanctified & Scripted precision.",
+  alternates: { canonical: "/work" },
   openGraph: {
     title: "Work | Set Free Digital Disciples",
-    description: "Selected projects and case studies crafted with neon‑holy precision.",
+    description: "Selected projects and case studies crafted with Hood‑Sanctified & Scripted precision.",
+    url: "/work",
     images: [
-      { url: "/futuristic-jesus-portal-og.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
+      { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
     ],
   },
   twitter: {
     title: "Work | Set Free Digital Disciples",
-    description: "Selected projects and case studies crafted with neon‑holy precision.",
+    description: "Selected projects and case studies crafted with Hood‑Sanctified & Scripted precision.",
     images: [
-      { url: "/futuristic-jesus-portal-og.png", width: 1200, height: 630, alt: "Set Free Digital Disciples Matrix" },
+      { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
     ],
   },
-};
+} as const;
 
 export default function WorkPage() {
   return (

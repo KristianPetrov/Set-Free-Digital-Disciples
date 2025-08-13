@@ -1,15 +1,52 @@
 export const revalidate = 86400;
+export const metadata = {
+  title: "Hood‑Sanctified & Scripted Web Design & SEO",
+  description: "Web design, performance, and SEO that ship kingdom outcomes.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
+    description: "Web design, performance, and SEO that ship kingdom outcomes.",
+    url: "/",
+    images: [
+      { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
+    ],
+  },
+  twitter: {
+    title: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
+    description: "Web design, performance, and SEO that ship kingdom outcomes.",
+    images: [
+      { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
+    ],
+  },
+} as const;
 
 // import Image from "next/image";
-import MatrixRain from "@/components/MatrixRain";
+import dynamic from "next/dynamic";
 import SiteHeader from "@/components/SiteHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
-import Typewriter from "@/components/Typewriter";
-import HeroGlitchMorph from "@/components/HeroGlitchMorph";
-import CalButton from "@/components/CalButton";
+
+const MatrixRain = dynamic(() => import("@/components/MatrixRain"), {
+  ssr: false,
+  loading: () => null,
+});
+
+const Typewriter = dynamic(() => import("@/components/Typewriter"), {
+  ssr: false,
+  loading: () => null,
+});
+
+const HeroGlitchMorph = dynamic(() => import("@/components/HeroGlitchMorph"), {
+  ssr: false,
+  loading: () => null,
+});
+
+const CalButton = dynamic(() => import("@/components/CalButton"), {
+  ssr: false,
+  loading: () => <Button disabled>Loading…</Button>,
+});
 
 export default function Home() {
   return (
@@ -98,7 +135,7 @@ export default function Home() {
         {/* Services */}
         <section id="services" className="py-12 grid md:grid-cols-3 gap-6">
           {[
-            { title: "Web Design", body: "Custom, blazing‑fast sites with a neon‑holy vibe and conversion‑first UX." },
+            { title: "Web Design", body: "Custom, blazing‑fast sites with a Hood‑Sanctified & Scripted vibe and conversion‑first UX." },
             { title: "SEO Campaigns", body: "Technical SEO, content, and authority building to rank and bring the right traffic." },
             { title: "Performance + Analytics", body: "Lighthouse 95+, Core Web Vitals, and insights that guide Kingdom business growth." },
           ].map((s) => (

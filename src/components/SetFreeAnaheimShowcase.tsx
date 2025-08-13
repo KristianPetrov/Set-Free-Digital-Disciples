@@ -1,10 +1,19 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import CalButton from "@/components/CalButton";
 import Link from "next/link";
-import AutoCarousel from "@/components/AutoCarousel";
+
+const AutoCarousel = dynamic(() => import("@/components/AutoCarousel"), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-black/20" />,
+});
+
+const CalButton = dynamic(() => import("@/components/CalButton"), {
+  ssr: false,
+  loading: () => <Button disabled>Loading…</Button>,
+});
 
 export default function SetFreeAnaheimShowcase() {
   return (
@@ -17,7 +26,7 @@ export default function SetFreeAnaheimShowcase() {
             alt="Faith Works showcase artwork"
             fill
             className="object-cover"
-            priority
+            priority={false}
           />
           <div className="absolute inset-0 bg-black/0" />
           <div className="absolute bottom-4 left-4 right-4 md:left-8 md:bottom-6 flex flex-wrap items-end gap-3">
@@ -28,7 +37,7 @@ export default function SetFreeAnaheimShowcase() {
               <Badge variant="secondary">Branding</Badge>
               <Badge variant="secondary">Design</Badge>
               <Badge variant="secondary">Artwork</Badge>
-              <Badge variant="secondary">Neon‑Holy</Badge>
+              <Badge variant="secondary">Hood‑Sanctified & Scripted</Badge>
             </div>
           </div>
         </div>
@@ -55,7 +64,7 @@ export default function SetFreeAnaheimShowcase() {
             </ul>
             <div className="flex flex-wrap gap-3 pt-1">
               <Button asChild>
-                <Link href="https://magichousesetfree.com/" target="_blank" rel="noreferrer noopener">
+                <Link href="https://setfreeanaheim.com/" target="_blank" rel="noreferrer noopener">
                   Visit site
                 </Link>
               </Button>

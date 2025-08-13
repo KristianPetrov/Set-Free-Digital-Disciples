@@ -14,9 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Set Free Digital Disciples | Neon‑Holy Web Design & SEO",
+  title: {
+    default: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
+    template: "%s | Set Free Digital Disciples",
+  },
   description:
     "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
+  keywords: [
+    "Next.js",
+    "Web Design",
+    "SEO",
+    "Tailwind",
+    "Performance",
+    "Core Web Vitals",
+    "Vercel",
+  ],
+  authors: [{ name: "Set Free Digital Disciples" }],
+  creator: "Set Free Digital Disciples",
+  publisher: "Set Free Digital Disciples",
   metadataBase: new URL("https://setfreedigitaldisciples.com"),
   alternates: {
     canonical: "/",
@@ -26,14 +41,16 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   openGraph: {
-    title: "Set Free Digital Disciples | Neon‑Holy Web Design & SEO",
+    title: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
     description:
-      "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
+      "Hood‑Sanctified & Scripted, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
     type: "website",
-    url: "https://magichousesetfree.com",
+    url: "https://setfreedigitaldisciples.com/",
+    siteName: "Set Free Digital Disciples",
+    locale: "en_US",
     images: [
       {
-        url: "/futuristic-jesus-portal-og.png",
+        url: "/matrix-jesus-og-image.png",
         alt: "Set Free Digital Disciples Matrix",
         width: 1200,
         height: 630,
@@ -42,17 +59,21 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Set Free Digital Disciples | Neon‑Holy Web Design & SEO",
+    title: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
     description:
-      "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
+      "Hood‑Sanctified & Scripted, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
     images: [
       {
-        url: "/futuristic-jesus-portal-og.png",
+        url: "/matrix-jesus-og-image.png",
         alt: "Set Free Digital Disciples Matrix",
         width: 1200,
         height: 630,
       },
     ],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   manifest: "/manifest.webmanifest",
 };

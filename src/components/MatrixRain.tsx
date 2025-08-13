@@ -23,10 +23,10 @@ export default function MatrixRain() {
 
     window.addEventListener("resize", resize);
 
-    const characters = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよりるれろわをんアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIへJKLMNOPQRSTUVWXYZ".split(
+    const characters = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよりるれろわをんアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(
       ""
     );
-    const fontSize = 18;
+    const fontSize = 16;
     let columns = Math.floor(width / fontSize);
     let drops: number[] = Array(columns).fill(1);
 

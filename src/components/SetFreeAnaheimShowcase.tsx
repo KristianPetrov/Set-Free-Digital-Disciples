@@ -153,7 +153,6 @@ export default function SetFreeAnaheimShowcase() {
               </Button>
             </div>
           </div>
-      </div>
-    </section>
+      </section>
   );
 }

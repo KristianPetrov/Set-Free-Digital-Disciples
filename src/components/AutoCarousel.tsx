@@ -17,6 +17,8 @@ export default function AutoCarousel({
   showCaptions = true,
   priority = false,
   sizes,
+  showArrows = true,
+  swipeThresholdPx = 40,
 }: {
   images: CarouselImage[];
   intervalMs?: number;
@@ -28,6 +30,8 @@ export default function AutoCarousel({
   showCaptions?: boolean;
   priority?: boolean;
   sizes?: string;
+  showArrows?: boolean;
+  swipeThresholdPx?: number;
 }) {
   const slides = useMemo(() => images ?? [], [images]);
   const isSingle = slides.length <= 1;
@@ -56,6 +60,8 @@ export default function AutoCarousel({
   const [index, setIndex] = useState<number>(() => (isSingle ? 0 : isFadeMode ? 0 : 1));
   const [isTransitioning, setIsTransitioning] = useState<boolean>(() => !isSingle && !isFadeMode);
   const timerRef = useRef<number | null>(null);
+  const touchStartXRef = useRef<number | null>(null);
+  const touchMovedRef = useRef<boolean>(false);
 
   // Reset indices when mode or slide count changes
   useEffect(() => {
@@ -95,6 +101,50 @@ export default function AutoCarousel({
     }
   };
 
+  const goNext = () => {
+    if (isSingle) return;
+    if (isFadeMode) {
+      setIndex((i) => (i + 1) % slides.length);
+    } else {
+      setIsTransitioning(true);
+      setIndex((i) => i + 1);
+    }
+  };
+
+  const goPrev = () => {
+    if (isSingle) return;
+    if (isFadeMode) {
+      setIndex((i) => (i - 1 + slides.length) % slides.length);
+    } else {
+      setIsTransitioning(true);
+      setIndex((i) => i - 1);
+    }
+  };
+
+  const onTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+    const clientX = 'touches' in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
+    touchStartXRef.current = clientX;
+    touchMovedRef.current = false;
+    if (timerRef.current) window.clearInterval(timerRef.current);
+  };
+
+  const onTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
+    if (touchStartXRef.current == null) return;
+    const clientX = 'touches' in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
+    if (Math.abs(clientX - touchStartXRef.current) > 5) touchMovedRef.current = true;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent | React.MouseEvent) => {
+    if (touchStartXRef.current == null) return;
+    const clientX = 'changedTouches' in e ? e.changedTouches[0].clientX : (e as React.MouseEvent).clientX;
+    const delta = clientX - touchStartXRef.current;
+    touchStartXRef.current = null;
+    if (Math.abs(delta) >= swipeThresholdPx) {
+      if (delta > 0) goPrev();
+      else goNext();
+    }
+  };
+
   const trackStyle: CSSProperties = isSingle || isFadeMode
     ? {}
     : {
@@ -119,7 +169,15 @@ export default function AutoCarousel({
   const visibleCaption = slides[visibleIndex]?.caption;
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div
+      className="absolute inset-0 overflow-hidden"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+      onMouseDown={onTouchStart}
+      onMouseMove={onTouchMove}
+      onMouseUp={onTouchEnd}
+    >
       {isSingle ? (
         <Image src={slides[0].src} alt={slides[0].alt} fill className={objectFitClass} priority={priority} sizes={sizes} />
       ) : isFadeMode ? (
@@ -175,6 +233,31 @@ export default function AutoCarousel({
               }}
             />)
           )}
+        </div>
+      )}
+
+      {showArrows && dotCount > 1 && (
+        <div className="pointer-events-none absolute inset-y-0 inset-x-0 z-10 hidden md:flex items-center justify-between px-1 md:px-2">
+          <button
+            aria-label="Previous slide"
+            className="pointer-events-auto inline-flex items-center justify-center h-7 w-7 md:h-8 md:w-8 rounded-full bg-black/35 text-white hover:bg-black/50 ring-1 ring-white/25"
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
+          >
+            ‹
+          </button>
+          <button
+            aria-label="Next slide"
+            className="pointer-events-auto inline-flex items-center justify-center h-7 w-7 md:h-8 md:w-8 rounded-full bg-black/35 text-white hover:bg-black/50 ring-1 ring-white/25"
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+          >
+            ›
+          </button>
         </div>
       )}
     </div>

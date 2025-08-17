@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import DonationButtons from "@/components/DonationButtons";
 
 type DonationContentProps = {
   headingClassName?: string;
@@ -10,6 +11,17 @@ type DonationContentProps = {
 export default function DonationContent({ headingClassName, hideHeader }: DonationContentProps) {
   return (
     <div className="space-y-6">
+      <div className="flex justify-center">
+        <div className="relative w-44 h-14 md:w-56 md:h-16">
+          <Image
+            src="/SetFreeDigitalDisciplesPortal.png"
+            alt="Set Free Digital Disciples"
+            fill
+            className="object-contain drop-shadow-[0_0_18px_rgba(0,255,200,0.25)]"
+            priority={false}
+          />
+        </div>
+      </div>
       {!hideHeader && (
         <div className="text-center space-y-3">
           <h1 className={`text-2xl md:text-3xl font-extrabold tracking-tight glow-green ${headingClassName ?? ""}`}>
@@ -21,28 +33,17 @@ export default function DonationContent({ headingClassName, hideHeader }: Donati
         </div>
       )}
 
-      <div className="rounded-lg border border-border/60 bg-card/70 p-4 md:p-6">
+      <div className="rounded-lg border border-border/60 bg-card/70 p-5 md:p-8 shadow-[0_0_40px_rgba(0,255,160,0.06)]">
         <div className="grid gap-4 md:grid-cols-2 md:gap-6 items-center">
           <div className="space-y-3">
-            <h2 className="text-lg font-semibold glow-yellow">Give Online</h2>
-            <p className="text-sm text-muted-foreground">
+            <h2 className="text-xl font-extrabold tracking-tight glow-yellow">Give Online</h2>
+            <p className="text-sm md:text-base text-muted-foreground">
               Secure giving processed by your provider of choice. Choose an option below. You can replace these links with your live giving platform when ready.
             </p>
-            <div className="flex flex-wrap gap-3 pt-1">
-              <Button asChild>
-                <a href="https://www.paypal.com/donate" target="_blank" rel="noopener noreferrer">
-                  Give via PayPal
-                </a>
-              </Button>
-              <Button asChild variant="secondary">
-                <a href="mailto:petrovkristianpishka@gmail.com?subject=Donation%20to%20Set%20Free%20Digital%20Disciples&body=Hey%20fam%2C%20I%27d%20like%20to%20sow%20into%20the%20mission.%20Please%20follow%20up%20with%20secure%20giving%20options.%20%F0%9F%94%A5%20%F0%9F%8F%86">
-                  Pledge &amp; We’ll Reach Out
-                </a>
-              </Button>
-            </div>
+            <DonationButtons cashTag="$KristianPetrov" paypalEmail="petrovkristian@ymail.com" />
           </div>
 
-          <div className="rounded-md border border-border/50 bg-background/60 p-4">
+          <div className="rounded-md border border-border/50 bg-background/60 p-4 shadow-[0_0_24px_rgba(0,200,255,0.05)]">
             <p className="text-sm text-muted-foreground">
               Prefer in-person or alternative ways to give? We got you.
             </p>

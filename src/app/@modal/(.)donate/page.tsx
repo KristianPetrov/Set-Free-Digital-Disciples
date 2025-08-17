@@ -1,23 +1,23 @@
 'use client';
+'use client';
 
 import { useRouter } from 'next/navigation';
-import DonationContent from '@/components/DonationContent';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import DonationModal from '@/components/donation-modal';
 
 export default function DonateModal() {
   const router = useRouter();
 
   return (
-    <Dialog open onOpenChange={(open) => { if (!open) router.back(); }}>
-      <DialogContent className="sm:max-w-[720px]">
-        <DialogHeader>
-          <DialogTitle className="glow-green">Donate</DialogTitle>
-        </DialogHeader>
-        <div className="max-h-[75vh] overflow-y-auto pr-1">
-          <DonationContent hideHeader headingClassName="text-xl" />
-        </div>
-      </DialogContent>
-    </Dialog>
+    <DonationModal
+      open
+      onClose={() => router.back()}
+      title="Donate to Set Free Digital Disciples"
+      subtitle="This ain’t about building fancy websites—it’s about building the Kingdom."
+      logoSrc="/SetFreeDigitalDisciplesPortal.png"
+      presetAmounts={[10,20,50,100,250,500]}
+      paypalEmail="petrovkristian@ymail.com"
+      cashAppTag="KristianPetrov"
+    />
   );
 }
 

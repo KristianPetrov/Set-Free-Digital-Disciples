@@ -82,6 +82,7 @@ export default function SetFreeAnaheimShowcase() {
                     { src: "/holy-hood.png", alt: "Design: Breaker of Chains graphic", caption: "Design: Holy but Hood" },
                     {src:"/holy-hood-congregation.png", alt: "Design: Holy Hood Congregation", caption: "Design: Holy Hood Congregation"},
                     {src:"/jesus-unconditional-love.png", alt: "Design: Jesus Unconditional Love", caption: "Design: Jesus Unconditional Love"},
+                    {src:"/tristin-upper-room-candle-logo.png", alt: "Logo: Upper Room", caption: "Logo: Upper Room"},
                   ]}
                   showCaptions={true}
                 />
@@ -100,6 +101,8 @@ export default function SetFreeAnaheimShowcase() {
                   images={[
                     {src:"/set-free-donations-screenshot.png", alt: "Design: Donations box", caption: "Design: Donations box"},
                   {src:"/set-free-phil-blocks-screenshot.png", alt: "Design: Phil blocks", caption: "Design: Image Carousel"},
+                  {src:"/prayer-wall-prayers-section.png", alt: "Prayer Wall: Prayers Section", caption: "Prayer Wall: Prayers"},
+                  {src:"/prayer-wall-submission-section.png", alt: "Prayer Wall: Submission Section", caption: "Prayer Wall: Submission"},
                   ]}
                   showCaptions={true}
                 />
@@ -122,6 +125,8 @@ export default function SetFreeAnaheimShowcase() {
                     { src: "/set-free-about-section.png", alt: "Section: About / Story", caption: "About section" },
                     { src: "/set-free-news-section.png", alt: "Section: News & Events", caption: "News & Events" },
                     { src: "/set-free-footer-section.png", alt: "Section: Testimonials & Contact", caption: "Testimonials & Contact" },
+                    { src: "/tristin-upper-room-cta-screenshot.png", alt: "Section: Upper Room CTA", caption: "Upper Room CTA" },
+                    { src: "/tristin-prayer-wall-screenshot.png", alt: "Section: Prayer Wall", caption: "Prayer Wall" },
                   ]}
                   showCaptions={true}
                 />

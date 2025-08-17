@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Set Free Digital Disciples",
   },
   description:
-    "Neon‑holy, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
+    "Hood-Sanctified, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
   keywords: [
     "Next.js",
     "Web Design",

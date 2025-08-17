@@ -21,32 +21,18 @@ export const metadata = {
 } as const;
 
 // import Image from "next/image";
-import dynamic from "next/dynamic";
 import SiteHeader from "@/components/SiteHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
+import MatrixRain from "@/components/MatrixRain";
+import Typewriter from "@/components/Typewriter";
+import HeroGlitchMorph from "@/components/HeroGlitchMorph";
+import CalButton from "@/components/CalButton";
+import Link from "next/link";
 
-const MatrixRain = dynamic(() => import("@/components/MatrixRain"), {
-  ssr: false,
-  loading: () => null,
-});
 
-const Typewriter = dynamic(() => import("@/components/Typewriter"), {
-  ssr: false,
-  loading: () => null,
-});
-
-const HeroGlitchMorph = dynamic(() => import("@/components/HeroGlitchMorph"), {
-  ssr: false,
-  loading: () => null,
-});
-
-const CalButton = dynamic(() => import("@/components/CalButton"), {
-  ssr: false,
-  loading: () => <Button disabled>Loading…</Button>,
-});
 
 export default function Home() {
   return (
@@ -100,9 +86,7 @@ export default function Home() {
               />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild>
-                <a href="#contact">Book a free strategy call</a>
-              </Button>
+              <CalButton>Book a free strategy call</CalButton>
               <Button asChild variant="secondary">
                 <a href="#services">Explore services</a>
               </Button>
@@ -153,6 +137,21 @@ export default function Home() {
         {/* Showcase */}
         <SetFreeAnaheimShowcase />
 
+        {/* Donate */}
+        <section id="donate" className="py-16">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-cyan">This ain’t about building fancy websites—it’s about building the Kingdom.</h2>
+            <p className="mt-4 text-muted-foreground text-base md:text-lg">
+              Every dollar you drop here goes straight into spreading the Gospel in a way the streets, the broken, and the lost can understand. We ain’t polished, we ain’t perfect, but we’re real—and we’re out here bringing Jesus where He’s needed most. You wanna sow into something that actually changes lives? This is it.
+            </p>
+            <div className="mt-6 flex justify-center">
+              <Button asChild size="lg">
+                <Link href="/donate">Donate &amp; Be Part of the Movement</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
         <section id="contact" className="py-16 text-center">
           <h2 className="text-3xl font-bold mb-4 glow-green">Ready to build something anointed and next‑level?</h2>
@@ -160,12 +159,7 @@ export default function Home() {
             Tell us about your mission. We’ll respond within 24 hours with next steps and a time for a call.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Button asChild>
-              <a href="mailto:petrovkristianpishka@gmail.com">Email: petrovkristianpishka@gmail.com</a>
-            </Button>
-            <Button asChild variant="secondary">
-              <a href="tel:9493314471">Call: 949-331-4471</a>
-            </Button>
+            <CalButton>Book a free strategy call</CalButton>
             <CalButton variant="secondary">Schedule call</CalButton>
           </div>
         </section>

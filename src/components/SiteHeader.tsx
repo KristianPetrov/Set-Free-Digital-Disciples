@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import CalButton from "@/components/CalButton";
 
 export default function SiteHeader() {
   return (
     <header className="content-layer sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-black/30 border-b border-border">
-      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-4">
         <div />
         <NavigationMenu>
           <NavigationMenuList>
@@ -25,6 +27,12 @@ export default function SiteHeader() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+        <div className="ml-auto flex items-center gap-2">
+          <Button asChild size="sm">
+            <Link href="/donate">Donate</Link>
+          </Button>
+          <CalButton variant="secondary">Schedule</CalButton>
+        </div>
       </div>
     </header>
   );

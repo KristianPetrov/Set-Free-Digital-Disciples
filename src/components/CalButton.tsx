@@ -1,6 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 type CalButtonProps = {
   children: React.ReactNode;
@@ -9,14 +11,19 @@ type CalButtonProps = {
 };
 
 export default function CalButton({ children, variant = "default", className }: CalButtonProps) {
+  useEffect(() => {
+    (async () => {
+      const cal = await getCalApi();
+      cal("ui", { theme: "dark" });
+    })();
+  }, []);
+
   return (
     <Button
       variant={variant}
       className={className}
-      onClick={() => {
-        // @ts-expect-error Cal embed global
-        window.Cal?.show?.({ calLink: "kristian-petrov/break-chains-build-kingdom-let-s-deploy" });
-      }}
+      data-cal-link="kristian-petrov/break-chains-build-kingdom-let-s-deploy"
+      data-cal-config='{"layout":"month_view"}'
     >
       {children}
     </Button>

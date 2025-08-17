@@ -1,19 +1,10 @@
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
-const AutoCarousel = dynamic(() => import("@/components/AutoCarousel"), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-black/20" />,
-});
-
-const CalButton = dynamic(() => import("@/components/CalButton"), {
-  ssr: false,
-  loading: () => <Button disabled>Loading…</Button>,
-});
+import AutoCarousel from "@/components/AutoCarousel";
+import CalButton from "@/components/CalButton";
 
 export default function SetFreeAnaheimShowcase() {
   return (
@@ -63,23 +54,14 @@ export default function SetFreeAnaheimShowcase() {
               <li><strong>Performance & SEO</strong>: image optimization, Core Web Vitals, Local SEO structure</li>
             </ul>
             <div className="flex flex-wrap gap-3 pt-1">
-              <Button asChild>
-                <Link href="https://setfreeanaheim.com/" target="_blank" rel="noreferrer noopener">
-                  Visit site
-                </Link>
-              </Button>
+              <CalButton>Book a free strategy call</CalButton>
               <Button asChild variant="secondary">
                 <Link
                  href="https://maps.google.com/?q=1171%20N%20West%20St%2C%20Anaheim%2C%20CA%2092801%2C%20USA" target="_blank" rel="noreferrer noopener">
                   Map & directions
                 </Link>
               </Button>
-              <Button asChild variant="secondary">
-                <Link href="tel:714-400-4573">Call</Link>
-              </Button>
-              <Button asChild variant="secondary">
-                <Link href="mailto:setfreephil@aol.com">Email</Link>
-              </Button>
+              <CalButton variant="secondary">Schedule consult</CalButton>
             </div>
           </div>
 

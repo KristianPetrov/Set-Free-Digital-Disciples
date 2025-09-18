@@ -13,7 +13,7 @@ export default function RootedInTraditionShowcase() {
           <div className="space-y-4">
             <h3 className="text-2xl md:text-3xl font-bold glow-cyan">Rooted In Tradition</h3>
             <div className="relative w-full h-24 sm:h-32 md:h-40">
-              <Image src="/rooted-in-tradition-logo.png" alt="Rooted In Tradition" fill className="object-contain" />
+              <Image src="/rooted-in-tradition-banner.png" alt="Rooted In Tradition" fill className="object-contain" />
             </div>
             <p className="text-muted-foreground">
               Rooted In Tradition exists to fill the gap for our Native and Indigenous brothers and sisters, creating structured sober living that heals mind, body, and spirit. We provide housing, community, and clinical support — building families, resilience, and growth through traditional values and working with natural strengths. Designed with the latest Next.js SEO and SSR features, with every design custom‑made by me to honor the mission and audience.

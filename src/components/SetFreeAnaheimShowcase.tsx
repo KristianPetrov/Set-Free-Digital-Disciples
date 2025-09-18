@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AutoCarousel from "@/components/AutoCarousel";
@@ -10,28 +9,6 @@ export default function SetFreeAnaheimShowcase() {
   return (
     <section id="work" className="py-16">
       <div className="relative overflow-hidden rounded-xl border border-border/60 bg-gradient-to-br from-primary/10 via-background/60 to-accent/10">
-        {/* Banner image */}
-        <div className="relative h-72 md:h-86 bg-black"></div>
-          <Image
-            src="/faith-works-showcase.png"
-            alt="Faith Works showcase artwork"
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-black/0" />
-          <div className="absolute bottom-4 left-4 right-4 md:left-8 md:bottom-6 flex flex-wrap items-end gap-3">
-            {/* <div className="relative h-10 w-[240px] md:h-12 md:w-[320px]">
-              <Image src="/digital-disciples-text.png" alt="Set Free Digital Disciples" fill className="object-contain" />
-            </div> */}
-            <div className="ml-auto flex gap-2">
-              <Badge variant="secondary">Branding</Badge>
-              <Badge variant="secondary">Design</Badge>
-              <Badge variant="secondary">Artwork</Badge>
-              <Badge variant="secondary">Hood‑Sanctified & Scripted</Badge>
-            </div>
-          </div>
-        </div>
 
         <div className="grid md:grid-cols-2 gap-6 p-6 md:p-8">
                       {/* Left: description */}
@@ -142,13 +119,14 @@ export default function SetFreeAnaheimShowcase() {
             <div className="flex flex-wrap gap-3">
               <CalButton>Get a free consult</CalButton>
               <Button asChild variant="secondary">
-                <Link href="mailto:petrovkristianpishka@gmail.com">Email</Link>
+                <Link href="mailto:kristpetrov@setfreedigitaldisciples.com">Email</Link>
               </Button>
               <Button asChild variant="secondary">
                 <Link href="tel:9493314471">Call</Link>
               </Button>
             </div>
           </div>
+      </div>
       </section>
   );
 }

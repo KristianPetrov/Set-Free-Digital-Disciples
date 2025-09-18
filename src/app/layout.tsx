@@ -91,9 +91,9 @@ export default function RootLayout({
     name: "Set Free Digital Disciples",
     url: "https://setfreedigitaldisciples.com",
     sameAs: [
-      "https://www.instagram.com/setfreeanaheim",
-      "https://www.facebook.com/setfreeanaheim",
-      "https://www.youtube.com/@setfreeanaheim",
+      "https://www.facebook.com/profile.php?id=61579041676384",
+      "https://www.instagram.com/kristianpetrov/",
+      "https://x.com/kristianpeetrov?s=21",
     ],
   };
 

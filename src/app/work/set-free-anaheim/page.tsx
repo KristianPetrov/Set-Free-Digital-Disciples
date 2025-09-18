@@ -116,7 +116,7 @@ export default function CaseStudySetFreeAnaheim() {
         <p className="text-muted-foreground max-w-2xl mx-auto mt-2">Let’s ship a site that hits different—holy grit meets high tech.</p>
         <div className="mt-4 flex justify-center gap-3">
           <Button asChild>
-            <a href="mailto:hello@setfreedigitaldisciples.com">Start a project</a>
+            <a href="mailto:kristpetrov@setfreedigitaldisciples.com">Start a project</a>
           </Button>
           <Button asChild variant="secondary">
             <Link href="/#services">Explore services</Link>

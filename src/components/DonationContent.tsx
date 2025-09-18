@@ -55,7 +55,7 @@ export default function DonationContent({ headingClassName, hideHeader }: Donati
                 Prefer to talk first? Use the scheduler above to book a quick call.
               </li>
               <li>
-                Email <Link className="underline underline-offset-4 hover:text-primary" href="mailto:petrovkristianpishka@gmail.com">petrovkristianpishka@gmail.com</Link>
+                Email <Link className="underline underline-offset-4 hover:text-primary" href="mailto:kristpetrov@setfreedigitaldisciples.com">kristpetrov@setfreedigitaldisciples.com</Link>
               </li>
             </ul>
           </div>

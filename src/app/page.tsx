@@ -25,7 +25,7 @@ import SiteHeader from "@/components/SiteHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
+import HomeShowcaseTabs from "@/components/HomeShowcaseTabs";
 import MatrixRain from "@/components/MatrixRain";
 import Typewriter from "@/components/Typewriter";
 import HeroGlitchMorph from "@/components/HeroGlitchMorph";
@@ -135,7 +135,7 @@ export default function Home() {
         </section>
 
         {/* Showcase */}
-        <SetFreeAnaheimShowcase />
+        <HomeShowcaseTabs />
 
         {/* Donate */}
         <section id="donate" className="py-16">
@@ -154,7 +154,7 @@ export default function Home() {
 
         {/* Contact */}
         <section id="contact" className="py-16 text-center">
-          <h2 className="text-3xl font-bold mb-4 glow-green">Ready to build something anointed and next‑level?</h2>
+          <h2 className="text-3xl font-bold mb-4 glow-green">Ready to build something anointed and next‑level?</h2>nn
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Tell us about your mission. We’ll respond within 24 hours with next steps and a time for a call.
           </p>
@@ -170,8 +170,8 @@ export default function Home() {
           © {new Date().getFullYear()} Set Free Digital Disciples. Crafted with prayer and precision.
         </div>
         <div className="mt-1 flex items-center justify-center gap-3">
-          <a className="hover:text-primary hover:underline underline-offset-4" href="mailto:petrovkristianpishka@gmail.com">
-            petrovkristianpishka@gmail.com
+          <a className="hover:text-primary hover:underline underline-offset-4" href="mailto:kristpetrov@setfreedigitaldisciples.com">
+            kristpetrov@setfreedigitaldisciples.com
           </a>
           <span aria-hidden>•</span>
           <a className="hover:text-primary hover:underline underline-offset-4" href="tel:9493314471">

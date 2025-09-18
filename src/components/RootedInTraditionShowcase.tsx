@@ -78,7 +78,7 @@ export default function RootedInTraditionShowcase() {
                   showDots={true}
                   sizes="(max-width: 768px) 100vw, 66vw"
                   images={[
-                    { src: "/rooted-in-tradition-desktop-screenshot.png", alt: "Rooted In Tradition – Desktop screenshot", caption: "Desktop: Home" },
+                    { src: "/rooted-in-tradition-screenshot-desktop.png", alt: "Rooted In Tradition – Desktop screenshot", caption: "Desktop: Home" },
                   ]}
                   showCaptions={true}
                 />

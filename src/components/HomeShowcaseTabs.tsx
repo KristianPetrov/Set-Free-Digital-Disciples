@@ -4,6 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import SetFreeAnaheimShowcase from "@/components/SetFreeAnaheimShowcase";
 import LemontedEditionShowcase from "@/components/LemontedEditionShowcase";
 import FromAshesShowcase from "@/components/FromAshesShowcase";
+import RootedInTraditionShowcase from "@/components/RootedInTraditionShowcase";
 
 export default function HomeShowcaseTabs() {
   return (
@@ -13,6 +14,7 @@ export default function HomeShowcaseTabs() {
           <TabsTrigger value="anaheim" className="px-5 py-2.5 text-lg">Set Free Anaheim</TabsTrigger>
           <TabsTrigger value="from-ashes" className="px-5 py-2.5 text-lg">From Ashes To Angels</TabsTrigger>
           <TabsTrigger value="lemonted" className="px-5 py-2.5 text-lg">Lemonted Edition</TabsTrigger>
+          <TabsTrigger value="rooted" className="px-5 py-2.5 text-lg">Rooted In Tradition</TabsTrigger>
         </TabsList>
         <div className="mt-4">
           <TabsContent value="anaheim">
@@ -23,6 +25,9 @@ export default function HomeShowcaseTabs() {
           </TabsContent>
           <TabsContent value="lemonted">
             <LemontedEditionShowcase />
+          </TabsContent>
+          <TabsContent value="rooted">
+            <RootedInTraditionShowcase />
           </TabsContent>
         </div>
       </Tabs>

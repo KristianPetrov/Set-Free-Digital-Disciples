@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import CartProvider from "@/components/cart/CartProvider";
+import dynamic from "next/dynamic";
+
+const CartSheet = dynamic(() => import("@/components/cart/CartSheet"));
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -106,8 +110,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
-        {modal}
+        <CartProvider>
+          {children}
+          {modal}
+          <CartSheet />
+        </CartProvider>
         <Analytics />
       </body>
     </html>

@@ -14,6 +14,9 @@ export default function WorkTabs() {
         <TabsTrigger value="anaheim">
           <Link href="/work/anaheim">Set Free Anaheim</Link>
         </TabsTrigger>
+        <TabsTrigger value="real-love">
+          <Link href="/work/real-love">Real Love Studio</Link>
+        </TabsTrigger>
         <TabsTrigger value="lemonted">
           <Link href="/work/lemonted">Lemonted Edition</Link>
         </TabsTrigger>

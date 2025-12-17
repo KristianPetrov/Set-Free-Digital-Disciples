@@ -23,7 +23,7 @@ export default function HeroTypewriters() {
             { text: "Kingdom code ", className: "glow-green" },
             { text: "in the streets.", className: "glow-cyan" },
           ]}
-          charDelayMs={95}
+          charDelayMs={55}
           charJitterMs={40}
           minCharDelayMs={35}
           segmentDelayMs={800}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import CalButton from "@/components/CalButton";
+import CartButton from "@/components/cart/CartButton";
 
 export default function SiteHeader() {
   return (
@@ -12,7 +13,7 @@ export default function SiteHeader() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuLink asChild className="px-3 py-2 text-sm hover:text-primary">
-                <Link href="#services">Services</Link>
+                <Link href="/#services">Services</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -22,12 +23,18 @@ export default function SiteHeader() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild className="px-3 py-2 text-sm hover:text-primary">
-                <Link href="#contact">Contact</Link>
+                <Link href="/store">Store</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild className="px-3 py-2 text-sm hover:text-primary">
+                <Link href="/#contact">Contact</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
         <div className="ml-auto flex items-center gap-2">
+          <CartButton />
           <Button asChild size="sm">
             <Link href="/donate">Donate</Link>
           </Button>

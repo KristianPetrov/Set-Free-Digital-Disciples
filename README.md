@@ -34,3 +34,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Store Setup
+
+### Environment
+
+Create `.env.local` with:
+
+```
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+STRIPE_SHIPPING_RATE_STANDARD=shr_...
+STRIPE_SHIPPING_RATE_EXPRESS=shr_...
+STANDARD_SHIPPING_AMOUNT_CENTS=500
+EXPRESS_SHIPPING_AMOUNT_CENTS=1500
+```
+
+### Product prices
+
+Optionally add `priceIdBySize` mapping to products in `src/lib/products.ts` to use Stripe Price IDs per size. If omitted, the checkout uses ad‑hoc price_data with the product’s `priceCents`.
+
+### Webhooks
+
+Create a Stripe webhook to `POST /api/stripe/webhook` with `checkout.session.completed`. Set the signing secret as `STRIPE_WEBHOOK_SECRET`.
+
+### Success/Cancel pages
+
+Default redirects: `/store?success=true` and `/store?canceled=true`. You can swap to `/store/success` and `/store/canceled` by editing `src/app/api/checkout/route.ts`.

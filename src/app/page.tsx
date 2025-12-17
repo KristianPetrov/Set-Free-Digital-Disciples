@@ -39,7 +39,6 @@ export default function Home() {
     <div className="font-sans min-h-screen">
       <MatrixRain />
       <SiteHeader />
-
       <main className="content-layer relative mx-auto max-w-6xl px-4">
         {/* Hero */}
         <section className="pt-20 pb-16 grid md:grid-cols-2 items-center gap-8">
@@ -154,7 +153,7 @@ export default function Home() {
 
         {/* Contact */}
         <section id="contact" className="py-16 text-center">
-          <h2 className="text-3xl font-bold mb-4 glow-green">Ready to build something anointed and next‑level?</h2>nn
+          <h2 className="text-3xl font-bold mb-4 glow-green">Ready to build something anointed and next‑level?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Tell us about your mission. We’ll respond within 24 hours with next steps and a time for a call.
           </p>

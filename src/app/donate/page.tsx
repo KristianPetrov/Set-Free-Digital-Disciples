@@ -5,8 +5,13 @@ import DonationInline from "@/components/DonationInline";
 
 export const metadata: Metadata = {
   title: "Donate",
-  description: "Fuel the mission. Give to Set Free Digital Disciples.",
+  description: "Give to Set Free Digital Disciples. Support websites and Gospel work built for the streets.",
   alternates: { canonical: "/donate" },
+  openGraph: {
+    title: "Donate | Set Free Digital Disciples",
+    description: "Give to Set Free Digital Disciples. Support websites and Gospel work built for the streets.",
+    url: "/donate",
+  },
 };
 
 // metadata is not exported from client components

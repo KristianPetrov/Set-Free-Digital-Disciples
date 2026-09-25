@@ -48,6 +48,7 @@ export default function Typewriter({
   const timerRef = useRef<number | null>(null);
   const rootRef = useRef<HTMLSpanElement | null>(null);
   const wasVisibleRef = useRef<boolean>(false);
+  const hasLeftViewportRef = useRef<boolean>(false);
   const completedRef = useRef<boolean>(false);
 
   const totalTyped = useMemo(
@@ -148,8 +149,14 @@ export default function Typewriter({
       (entries) => {
         const entry = entries[0];
         const isNowVisible = entry.isIntersecting && entry.intersectionRatio >= viewportThreshold;
-        if (isNowVisible && !wasVisibleRef.current) {
+        // The first time the line enters the viewport is the initial run.
+        // Restart only after it has actually left and come back, or the
+        // opening animation resets mid-type and looks broken.
+        if (isNowVisible && !wasVisibleRef.current && hasLeftViewportRef.current) {
           resetTypewriter();
+        }
+        if (!isNowVisible && wasVisibleRef.current) {
+          hasLeftViewportRef.current = true;
         }
         wasVisibleRef.current = isNowVisible;
       },

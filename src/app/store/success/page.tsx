@@ -28,33 +28,6 @@ export default function SuccessPage() {
   );
 }
 
-import SiteHeader from "@/components/SiteHeader";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-
-export const metadata = {
-  title: "Order Success",
-  description: "Thank you for your order!",
-  alternates: { canonical: "/store/success" },
-} as const;
-
-export default function SuccessPage() {
-  return (
-    <div className="min-h-screen">
-      <SiteHeader />
-      <main className="content-layer mx-auto max-w-2xl px-4 py-16 text-center">
-        <h1 className="text-3xl font-extrabold glow-green">Thank you for your order!</h1>
-        <p className="mt-3 text-muted-foreground">Your order is being processed. You’ll receive an email confirmation shortly.</p>
-        <div className="mt-6">
-          <Button asChild>
-            <Link href="/store">Continue shopping</Link>
-          </Button>
-        </div>
-      </main>
-    </div>
-  );
-}
-
 
 
 

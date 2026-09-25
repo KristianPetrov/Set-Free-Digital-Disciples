@@ -4,12 +4,17 @@ import Stripe from "stripe";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-    apiVersion: "2024-09-30.acacia",
-});
+function getStripe() {
+    const key = process.env.STRIPE_SECRET_KEY;
+    if (!key) return null;
+    return new Stripe(key, { apiVersion: "2025-09-30.clover" });
+}
 
 export async function POST (request: Request)
 {
+    const stripe = getStripe();
+    if (!stripe) return NextResponse.json({ error: "Stripe is not configured" }, { status: 500 });
+
     const sig = request.headers.get("stripe-signature");
     if (!sig) return NextResponse.json({ error: "Missing signature" }, { status: 400 });
     const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;

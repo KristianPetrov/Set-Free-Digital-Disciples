@@ -19,19 +19,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
+    default: "Set Free Digital Disciples | Websites that look like you",
     template: "%s | Set Free Digital Disciples",
   },
   description:
-    "Hood-Sanctified, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
+    "Websites for churches, shops, and local businesses. Bold enough to stop someone. Clear enough that a first-time visitor knows what to do.",
   keywords: [
-    "Next.js",
-    "Web Design",
+    "web design",
+    "church websites",
+    "small business websites",
     "SEO",
-    "Tailwind",
-    "Performance",
-    "Core Web Vitals",
-    "Vercel",
+    "Set Free Digital Disciples",
   ],
   authors: [{ name: "Set Free Digital Disciples" }],
   creator: "Set Free Digital Disciples",
@@ -45,9 +43,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   openGraph: {
-    title: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
+    title: "Set Free Digital Disciples | Websites that look like you",
     description:
-      "Hood‑Sanctified & Scripted, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
+      "Websites for churches, shops, and local businesses. Bold on the surface. Easy to understand the moment you land.",
     type: "website",
     url: "https://setfreedigitaldisciples.com/",
     siteName: "Set Free Digital Disciples",
@@ -63,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
+    title: "Set Free Digital Disciples | Websites that look like you",
     description:
-      "Hood‑Sanctified & Scripted, high‑performance web design and SEO. Clean commits, kingdom outcomes.",
+      "Websites for churches, shops, and local businesses. Bold on the surface. Easy to understand the moment you land.",
     images: [
       {
         url: "/matrix-jesus-og-image.png",

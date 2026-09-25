@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import CartProvider from "@/components/cart/CartProvider";
 import dynamic from "next/dynamic";
+import { defaultDescription, defaultTitle, siteJsonLd, siteName, siteUrl } from "@/lib/seo";
 
 const CartSheet = dynamic(() => import("@/components/cart/CartSheet"));
 
@@ -18,64 +19,51 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Set Free Digital Disciples | Websites that look like you",
-    template: "%s | Set Free Digital Disciples",
+    default: `${siteName} | ${defaultTitle}`,
+    template: `%s | ${siteName}`,
   },
-  description:
-    "Websites for churches, shops, and local businesses. Bold enough to stop someone. Clear enough that a first-time visitor knows what to do.",
+  description: defaultDescription,
+  applicationName: siteName,
+  category: "web design",
   keywords: [
-    "web design",
+    "Next.js web design",
+    "technical SEO",
+    "Core Web Vitals",
     "church websites",
-    "small business websites",
-    "SEO",
+    "local business websites",
+    "schema markup",
     "Set Free Digital Disciples",
   ],
-  authors: [{ name: "Set Free Digital Disciples" }],
-  creator: "Set Free Digital Disciples",
-  publisher: "Set Free Digital Disciples",
-  metadataBase: new URL("https://setfreedigitaldisciples.com"),
-  alternates: {
-    canonical: "/",
-  },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-  },
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
+  publisher: siteName,
+  referrer: "origin-when-cross-origin",
+  formatDetection: { telephone: true, email: true, address: false },
   openGraph: {
-    title: "Set Free Digital Disciples | Websites that look like you",
-    description:
-      "Websites for churches, shops, and local businesses. Bold on the surface. Easy to understand the moment you land.",
     type: "website",
-    url: "https://setfreedigitaldisciples.com/",
-    siteName: "Set Free Digital Disciples",
     locale: "en_US",
-    images: [
-      {
-        url: "/matrix-jesus-og-image.png",
-        alt: "Set Free Digital Disciples Matrix",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    url: siteUrl,
+    siteName,
+    title: `${siteName} | ${defaultTitle}`,
+    description: defaultDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Set Free Digital Disciples | Websites that look like you",
-    description:
-      "Websites for churches, shops, and local businesses. Bold on the surface. Easy to understand the moment you land.",
-    images: [
-      {
-        url: "/matrix-jesus-og-image.png",
-        alt: "Set Free Digital Disciples Matrix",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    title: `${siteName} | ${defaultTitle}`,
+    description: defaultDescription,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   manifest: "/manifest.webmanifest",
 };
@@ -87,18 +75,6 @@ export default function RootLayout({
   children: React.ReactNode;
   modal: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Set Free Digital Disciples",
-    url: "https://setfreedigitaldisciples.com",
-    sameAs: [
-      "https://www.facebook.com/profile.php?id=61579041676384",
-      "https://www.instagram.com/kristianpetrov/",
-      "https://x.com/kristianpeetrov?s=21",
-    ],
-  };
-
   return (
     <html lang="en" className="dark">
       <body
@@ -106,7 +82,7 @@ export default function RootLayout({
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
         <CartProvider>
           {children}

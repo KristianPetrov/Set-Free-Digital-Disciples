@@ -8,8 +8,13 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Store",
-  description: "T‑shirts, hoodies, and crewnecks by Set Free Digital Disciples.",
+  description: "Hood-sanctified tees and crewnecks from Set Free Digital Disciples. Real product pages, clear prices, fast checkout.",
   alternates: { canonical: "/store" },
+  openGraph: {
+    title: "Store | Set Free Digital Disciples",
+    description: "Hood-sanctified tees and crewnecks. Real product pages, clear prices, fast checkout.",
+    url: "/store",
+  },
 };
 
 export default function StorePage() {

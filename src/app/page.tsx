@@ -26,7 +26,8 @@ import { Badge } from "@/components/ui/badge";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import MatrixRain from "@/components/MatrixRain";
 import HeroGlitchMorph from "@/components/HeroGlitchMorph";
-import CalButton from "@/components/CalButton";
+import ContactActions from "@/components/ContactActions";
+import { contactEmail, contactPhoneDisplay, emailHref, textToScheduleHref } from "@/lib/contact";
 import Link from "next/link";
 
 
@@ -60,7 +61,7 @@ export default function Home() {
               <Button asChild variant="secondary">
                 <a href="#work">See the live work</a>
               </Button>
-              <CalButton variant="secondary">Book a free call</CalButton>
+              <ContactActions textVariant="secondary" emailVariant="secondary" />
             </div>
             <ul className="mt-6 flex flex-wrap items-center gap-2 text-xs">
               {["Next.js", "React", "TypeScript", "Tailwind", "Vercel", "JSON-LD", "Sitemaps"].map((item) => (
@@ -176,13 +177,10 @@ export default function Home() {
         <section id="contact" className="py-16 text-center">
           <h2 className="text-3xl font-bold mb-4 glow-green">Pretty and invisible is a build problem.</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tell me who you serve and what you want them to do. I’ll write back within a day with a time to talk, and a straight read on what is holding the site back.
+            Tell me who you serve and what you want them to do. Text me to schedule a call, or email me. I’ll write back within a day with a straight read on what is holding the site back.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <CalButton>Book a free call</CalButton>
-            <Button asChild variant="secondary">
-              <a href="mailto:kristpetrov@setfreedigitaldisciples.com">Email Krist</a>
-            </Button>
+            <ContactActions />
           </div>
         </section>
       </main>
@@ -192,12 +190,12 @@ export default function Home() {
           © {new Date().getFullYear()} Set Free Digital Disciples. Crafted with prayer and precision.
         </div>
         <div className="mt-1 flex items-center justify-center gap-3">
-          <a className="hover:text-primary hover:underline underline-offset-4" href="mailto:kristpetrov@setfreedigitaldisciples.com">
-            kristpetrov@setfreedigitaldisciples.com
+          <a className="hover:text-primary hover:underline underline-offset-4" href={emailHref}>
+            {contactEmail}
           </a>
           <span aria-hidden>•</span>
-          <a className="hover:text-primary hover:underline underline-offset-4" href="tel:9493314471">
-            949-331-4471
+          <a className="hover:text-primary hover:underline underline-offset-4" href={textToScheduleHref}>
+            Text {contactPhoneDisplay}
           </a>
         </div>
       </footer>

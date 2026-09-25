@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import CalButton from "@/components/CalButton";
+import ContactActions from "@/components/ContactActions";
 import { getProject, projects } from "@/lib/projects";
 
 export const revalidate = 86400;
@@ -151,7 +151,7 @@ export default async function ProjectPage({
           Tell me who you serve. I’ll build the front door so a stranger gets it, then I’ll stick around.
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-3">
-          <CalButton>Book a free call</CalButton>
+          <ContactActions />
           <Button asChild variant="secondary">
             <Link href="/work">See the rest</Link>
           </Button>

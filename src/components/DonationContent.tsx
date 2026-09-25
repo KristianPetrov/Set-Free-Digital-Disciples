@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import DonationButtons from "@/components/DonationButtons";
+import { contactPhoneDisplay, textToScheduleHref } from "@/lib/contact";
 
 type DonationContentProps = {
   headingClassName?: string;
@@ -52,7 +53,11 @@ export default function DonationContent({ headingClassName, hideHeader }: Donati
                 Cash or check at Set Free Anaheim gatherings
               </li>
               <li>
-                Prefer to talk first? Use the scheduler above to book a quick call.
+                Prefer to talk first?{" "}
+                <a className="underline underline-offset-4 hover:text-primary" href={textToScheduleHref}>
+                  Text {contactPhoneDisplay}
+                </a>{" "}
+                to schedule a call.
               </li>
               <li>
                 Email <Link className="underline underline-offset-4 hover:text-primary" href="mailto:kristpetrov@setfreedigitaldisciples.com">kristpetrov@setfreedigitaldisciples.com</Link>

@@ -8,16 +8,13 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "The work",
   description:
-    "Live websites I built and still look after. Churches, shops, a tow yard, and a veteran mission — shown with the real screens and photos.",
+    "Production Next.js sites with technical SEO. Churches, shops, a tow yard, and a veteran mission, shown with the live screens and photos.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "The work | Set Free Digital Disciples",
+    title: "Live Next.js builds | Set Free Digital Disciples",
     description:
-      "Live websites I built and still look after, with the real screens and photos from each one.",
+      "Production websites with technical SEO, shown with the real screens and photos from each live site.",
     url: "/work",
-    images: [
-      { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
-    ],
   },
 };
 

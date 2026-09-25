@@ -30,7 +30,13 @@ export async function generateMetadata({
       title: `${project.name} | Set Free Digital Disciples`,
       description: project.plain,
       url: `/work/${project.slug}`,
-      images: [{ url: project.screenshot, alt: project.screenshotAlt }],
+      images: [{ url: project.screenshot, alt: project.screenshotAlt, width: 1440, height: 1000 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} | Set Free Digital Disciples`,
+      description: project.plain,
+      images: [project.screenshot],
     },
   };
 }

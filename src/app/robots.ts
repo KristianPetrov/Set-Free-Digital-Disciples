@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/seo";
 
-export default function robots (): MetadataRoute.Robots
-{
-    const base = "https://setfreedigitaldisciples.com";
-    return {
-        rules: {
-            userAgent: "*",
-            allow: "/",
-        },
-        sitemap: `${base}/sitemap.xml`,
-    };
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/api/", "/store/success", "/store/canceled"],
+    },
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
+  };
 }

@@ -2,17 +2,29 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { products, type ProductSize } from "@/lib/products";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-    apiVersion: "2024-09-30.acacia",
-});
+function getStripe() {
+    const key = process.env.STRIPE_SECRET_KEY;
+    if (!key) return null;
+    return new Stripe(key, { apiVersion: "2025-09-30.clover" });
+}
 
 export async function POST (request: Request)
 {
+    const stripe = getStripe();
+    if (!stripe) {
+        return NextResponse.json({ error: "Checkout is not configured" }, { status: 500 });
+    }
+
     try {
         const body = await request.json().catch(() => null) as null | { items?: Array<{ productId: string; size?: ProductSize; quantity: number }> };
         const cartItems = body?.items ?? [];
 
-        const line_items = (cartItems.length > 0 ? cartItems : products.slice(0, 1).map((p) => ({ productId: p.id, quantity: 1 })))
+        const source: Array<{ productId: string; size?: ProductSize; quantity: number }> =
+            cartItems.length > 0
+                ? cartItems
+                : products.slice(0, 1).map((p) => ({ productId: p.id, quantity: 1 }));
+
+        const line_items = source
             .map(({ productId, size, quantity }) =>
             {
                 const p = products.find((x) => x.id === productId);

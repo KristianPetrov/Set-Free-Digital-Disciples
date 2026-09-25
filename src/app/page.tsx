@@ -1,19 +1,22 @@
 export const revalidate = 86400;
 export const metadata = {
-  title: "Hood‑Sanctified & Scripted Web Design & SEO",
-  description: "Web design, performance, and SEO that ship kingdom outcomes.",
+  title: "Websites that look like you",
+  description:
+    "I build and look after websites for churches, shops, and local businesses. Bold enough to stop someone. Clear enough that a first-time visitor knows what to do.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
-    description: "Web design, performance, and SEO that ship kingdom outcomes.",
+    title: "Set Free Digital Disciples | Websites that look like you",
+    description:
+      "Websites for churches, shops, and local businesses. Bold on the surface. Easy to understand the moment you land.",
     url: "/",
     images: [
       { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
     ],
   },
   twitter: {
-    title: "Set Free Digital Disciples | Hood‑Sanctified & Scripted Web Design & SEO",
-    description: "Web design, performance, and SEO that ship kingdom outcomes.",
+    title: "Set Free Digital Disciples | Websites that look like you",
+    description:
+      "Websites for churches, shops, and local businesses. Bold on the surface. Easy to understand the moment you land.",
     images: [
       { url: "/matrix-jesus-og-image.png", width: 1200, height: 630, alt: "Set Free Digital Disciples" },
     ],
@@ -25,7 +28,7 @@ import SiteHeader from "@/components/SiteHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import HomeShowcaseTabs from "@/components/HomeShowcaseTabs";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import MatrixRain from "@/components/MatrixRain";
 import Typewriter from "@/components/Typewriter";
 import HeroGlitchMorph from "@/components/HeroGlitchMorph";
@@ -41,60 +44,41 @@ export default function Home() {
       <SiteHeader />
       <main className="content-layer relative mx-auto max-w-6xl px-4">
         {/* Hero */}
-        <section className="pt-20 pb-16 grid md:grid-cols-2 items-center gap-8">
+        <section className="pt-16 pb-16 grid md:grid-cols-2 items-center gap-8">
           <div className="order-2 md:order-1">
-            <div className="text-4xl md:text-6xl font-extrabold leading-tight neon-text matrix-flicker glitch-strong">
-              <Typewriter
-                segments={[
-                  { text: "From The Block To The Cloud, ", className: "glow-green" },
-                  { text: "I Deploy Thy Kingdom.", className: "block mt-1.5 md:mt-2 text-3xl md:text-5xl font-extrabold tracking-tight glow-cyan" },
-                ]}
-                charDelayMs={21}
-                charJitterMs={9}
-                minCharDelayMs={8}
-                segmentDelayMs={260}
-                segmentDelaysMs={[375]}
-                showCaret={true}
-                naturalPauses={true}
-                spacePauseMs={14}
-                punctuationPauseMs={55}
-                newlinePauseMs={110}
-              />
-            </div>
-            <p className="relative mt-3 text-xl md:text-2xl font-semibold tracking-tight bg-gradient-to-r from-[var(--neon-green)] via-[var(--neon-cyan)] to-[var(--neon-green)] bg-clip-text text-transparent neon-text matrix-flicker matrix-shimmer glitch-strong">
-              <span>Preaching the Kingdom in code only the soul can compile.</span>
-              <span className="scanline-overlay rounded-sm" aria-hidden />
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Set Free Digital Disciples</p>
+            <h1 className="mt-3 text-4xl md:text-6xl font-extrabold leading-[1.05] glow-green glitch-strong">
+              Websites that look like you.
+              <span className="mt-2 block text-3xl md:text-5xl glow-cyan">Clear the second you land.</span>
+            </h1>
+            <p className="mt-5 max-w-prose text-base md:text-lg leading-relaxed text-foreground/90">
+              I build and look after sites for churches, shops, and local businesses.
+              The look stays bold. The words stay human. A stranger can tell what you do,
+              and what to do next, without a tour.
             </p>
-            <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-prose neon-text-body matrix-flicker-subtle">
+            <p className="relative mt-4 max-w-prose text-sm md:text-base font-medium text-primary">
               <Typewriter
                 segments={[
-                  {
-                    text:
-                      "These streets are my network, these skies my server farm. I preach in packets, drop miracles in megabytes, and commit salvation straight to the main branch of your soul. Next.js turns water to wine; Tailwind parts the Red Sea of bad design; SEO feeds the multitudes with loaves of clicks. I encrypt grace in the tongues of angels, debug demons in the dark web of the heart, and push eternal life to every open port. I am the Alpha commit and the Omega merge — and the repo has no end.",
-                  },
+                  { text: "From the block to the cloud. Still preaching — just in a language everybody gets." },
                 ]}
-                charDelayMs={10}
-                charJitterMs={5}
-                minCharDelayMs={6}
-                segmentDelayMs={0}
+                charDelayMs={18}
+                charJitterMs={6}
+                minCharDelayMs={8}
                 showCaret={true}
                 naturalPauses={true}
-                spacePauseMs={12}
-                punctuationPauseMs={45}
-                newlinePauseMs={90}
               />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <CalButton>Book a free strategy call</CalButton>
-              <Button asChild variant="secondary">
-                <a href="#services">Explore services</a>
+              <Button asChild>
+                <a href="#work">See the live work</a>
               </Button>
+              <CalButton variant="secondary">Book a free call</CalButton>
             </div>
-            <div className="mt-6 flex items-center gap-2 text-xs">
-              <Badge variant="secondary">Next.js</Badge>
-              <Badge variant="secondary">Tailwind</Badge>
-              <Badge variant="secondary">SEO</Badge>
-              <Badge variant="secondary">Performance</Badge>
+            <div className="mt-6 flex flex-wrap items-center gap-2 text-xs">
+              <Badge variant="secondary">Churches</Badge>
+              <Badge variant="secondary">Shops</Badge>
+              <Badge variant="secondary">Local businesses</Badge>
+              <Badge variant="outline">I stay after launch</Badge>
             </div>
           </div>
           <div className="relative h-100 md:h-124 order-1 md:order-2 mb-6 md:mb-0">
@@ -116,32 +100,74 @@ export default function Home() {
         </section>
 
         {/* Services */}
-        <section id="services" className="py-12 grid md:grid-cols-3 gap-6">
-          {[
-            { title: "Web Design", body: "Custom, blazing‑fast sites with a Hood‑Sanctified & Scripted vibe and conversion‑first UX." },
-            { title: "SEO Campaigns", body: "Technical SEO, content, and authority building to rank and bring the right traffic." },
-            { title: "Performance + Analytics", body: "Lighthouse 95+, Core Web Vitals, and insights that guide Kingdom business growth." },
-          ].map((s) => (
-            <Card key={s.title} className="bg-card/70 border-border/60">
-              <CardHeader>
-                <CardTitle className="glow-yellow">{s.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{s.body}</p>
-              </CardContent>
-            </Card>
-          ))}
+        <section id="services" className="py-12">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-yellow">What you actually get</h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            You do not need to know how websites are built. You need one that feels like you and tells people what to do.
+          </p>
+          <div className="mt-6 grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "A look that is yours",
+                body: "Your photos, your words, your people. Not a template that could belong to anyone on the block.",
+              },
+              {
+                title: "A next step nobody misses",
+                body: "Call. Visit Sunday. Donate. Order. The button is obvious, and it says what it does.",
+              },
+              {
+                title: "Someone who stays",
+                body: "I do not vanish after launch. The sites below are live, and I still look after them.",
+              },
+            ].map((s) => (
+              <Card key={s.title} className="bg-card/70 border-border/60">
+                <CardHeader>
+                  <CardTitle className="glow-yellow">{s.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{s.body}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            For the curious: they load fast, show up on Google, and are built to last. The craft stays in the background so your people never have to think about it.
+          </p>
         </section>
 
-        {/* Showcase */}
-        <HomeShowcaseTabs />
+        <section id="work" className="scroll-mt-24 py-12">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-cyan">Work that is live right now</h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            These are not mockups. I pulled the screens and photos from the sites themselves. Churches, a tow yard, a veteran mission, and shops I still maintain.
+          </p>
+          <div className="mt-6">
+            <ProjectShowcase priorityFirst />
+          </div>
+        </section>
+
+        <section className="py-12">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-green">How it goes</h2>
+          <ol className="mt-6 grid gap-4 md:grid-cols-3">
+            {[
+              { step: "01", title: "You talk. I listen.", body: "Tell me who you serve and what you want them to do. A call, a visit, a gift, an order." },
+              { step: "02", title: "I build it in your voice.", body: "It should feel like walking into your place. A first-timer should get it in a few seconds." },
+              { step: "03", title: "It goes live. I stay.", body: "We put it on the internet, then I keep it running. Questions later are part of the job." },
+            ].map((item) => (
+              <li key={item.step} className="rounded-xl border border-border/60 bg-card/60 p-5">
+                <p className="font-mono text-xs text-primary">{item.step}</p>
+                <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{item.body}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
 
         {/* Donate */}
         <section id="donate" className="py-16">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-cyan">This ain’t about building fancy websites—it’s about building the Kingdom.</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-cyan">This ain’t about fancy websites. It’s about the Kingdom.</h2>
             <p className="mt-4 text-muted-foreground text-base md:text-lg">
-              Every dollar you drop here goes straight into spreading the Gospel in a way the streets, the broken, and the lost can understand. We ain’t polished, we ain’t perfect, but we’re real—and we’re out here bringing Jesus where He’s needed most. You wanna sow into something that actually changes lives? This is it.
+              Every dollar goes into telling the Gospel in a way the streets can actually hear. We ain’t polished. We are real, and the work is for people who need Jesus where they already are. If you want to sow into that, this is the door.
             </p>
             <div className="mt-6 flex justify-center">
               <Button asChild size="lg">
@@ -153,13 +179,15 @@ export default function Home() {
 
         {/* Contact */}
         <section id="contact" className="py-16 text-center">
-          <h2 className="text-3xl font-bold mb-4 glow-green">Ready to build something anointed and next‑level?</h2>
+          <h2 className="text-3xl font-bold mb-4 glow-green">Got something that needs a front door?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tell us about your mission. We’ll respond within 24 hours with next steps and a time for a call.
+            Tell me what you do and who you want to reach. I’ll write back within a day with a time to talk. No tech quiz. No pitch deck.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <CalButton>Book a free strategy call</CalButton>
-            <CalButton variant="secondary">Schedule call</CalButton>
+            <CalButton>Book a free call</CalButton>
+            <Button asChild variant="secondary">
+              <a href="mailto:kristpetrov@setfreedigitaldisciples.com">Email Krist</a>
+            </Button>
           </div>
         </section>
       </main>

@@ -41,7 +41,7 @@ export default function WorkPage() {
       </p>
       <p className="mt-2 text-sm">
         <Link href="/#contact" className="text-primary underline-offset-4 hover:underline">
-          Want one of your own? Start with a call.
+          Want one of your own? Text or email to schedule a call.
         </Link>
       </p>
       <div className="mt-8">

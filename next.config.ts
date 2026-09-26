@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
       { source: "/work/real-love", destination: "/work", permanent: false },
       { source: "/work/lemonted", destination: "/work", permanent: false },
       { source: "/work/from-ashes", destination: "/work", permanent: false },
+      { source: "/store", destination: "/", permanent: false },
+      { source: "/store/:path*", destination: "/", permanent: false },
     ];
   },
   images: {

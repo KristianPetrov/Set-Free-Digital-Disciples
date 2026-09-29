@@ -10,8 +10,8 @@ export default function DonateModal() {
     <DonationModal
       open
       onClose={() => router.back()}
-      title="Donate to Set Free Digital Disciples"
-      subtitle="This ain’t about building fancy websites—it’s about building the Kingdom."
+      title="Support Set Free Digital Disciples"
+      subtitle="Your gift helps carry a faith-rooted mission into the places and spaces where people need hope."
       logoSrc="/SetFreeDigitalDisciplesPortal.png"
       presetAmounts={[10,20,50,100,250,500]}
       paypalEmail="petrovkristian@ymail.com"
@@ -19,5 +19,4 @@ export default function DonateModal() {
     />
   );
 }
-
 

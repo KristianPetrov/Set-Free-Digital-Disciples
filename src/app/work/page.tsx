@@ -8,12 +8,12 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "The work",
   description:
-    "Production Next.js sites with technical SEO. Churches, shops, a tow yard, and a veteran mission, shown with the live screens and photos.",
+    "Live websites built for churches, nonprofits, local businesses, and online shops, with clear case studies and real project screens.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Live Next.js builds | Set Free Digital Disciples",
+    title: "Live website projects | Set Free Digital Disciples",
     description:
-      "Production websites with technical SEO, shown with the real screens and photos from each live site.",
+      "Real website projects for churches, nonprofits, local businesses, and online shops.",
     url: "/work",
   },
 };
@@ -32,16 +32,16 @@ export default function WorkPage() {
   };
 
   return (
-    <main className="content-layer mx-auto max-w-6xl px-4 py-12">
+    <main className="content-layer mx-auto max-w-7xl px-4 py-10 md:py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Live sites</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Built for real people</p>
       <h1 className="mt-2 text-3xl font-extrabold tracking-tight glow-cyan md:text-5xl">The work</h1>
       <p className="mt-3 max-w-2xl text-muted-foreground">
-        Seven sites I built and still look after. The screenshots and photos are from the live pages, so you are seeing the real thing.
+        Seven live websites, each made for a different audience. Explore real screens, the thinking behind each build, and how people use it.
       </p>
       <p className="mt-2 text-sm">
         <Link href="/#contact" className="text-primary underline-offset-4 hover:underline">
-          Want one of your own? Text or email to schedule a call.
+          Have a site in mind? Text or email and tell me what you need.
         </Link>
       </p>
       <div className="mt-8">

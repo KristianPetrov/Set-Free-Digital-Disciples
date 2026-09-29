@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ContactActions from "@/components/ContactActions";
+import ProjectPreview from "@/components/ProjectPreview";
 import { getProject, projects } from "@/lib/projects";
 
 export const revalidate = 86400;
@@ -51,14 +52,14 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   return (
-    <main className="content-layer mx-auto max-w-6xl px-4 py-12">
+    <main className="content-layer mx-auto max-w-7xl px-4 py-10 md:py-12">
       <Link href="/work" className="text-sm text-muted-foreground hover:text-primary">
-        ← All the work
+        ← All projects
       </Link>
       <div className="mt-4 flex flex-wrap items-center gap-2">
         <Badge>{project.kind}</Badge>
         {project.place ? <Badge variant="secondary">{project.place}</Badge> : null}
-        <Badge variant="outline">Live, and I still run it</Badge>
+        <Badge variant="outline">Built &amp; maintained</Badge>
       </div>
       <header className="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
@@ -72,88 +73,80 @@ export default async function ProjectPage({
         </div>
         <Button asChild>
           <a href={project.url} target="_blank" rel="noreferrer noopener">
-            Visit {project.displayUrl}
+            View live site
             <ArrowUpRight />
           </a>
         </Button>
       </header>
 
-      <div className="mt-8 overflow-hidden rounded-xl border border-white/10 bg-black/70">
-        <div className="flex items-center gap-2 border-b border-white/10 px-3 py-2 text-[11px] text-muted-foreground">
-          <span className="size-2 rounded-full bg-red-400/80" />
-          <span className="size-2 rounded-full bg-yellow-300/80" />
-          <span className="size-2 rounded-full bg-emerald-400/80" />
-          <span className="ml-2 font-mono">{project.displayUrl}</span>
-        </div>
-        <div className="relative aspect-[16/10]">
-          <Image
-            src={project.screenshot}
-            alt={project.screenshotAlt}
-            fill
-            priority
-            className="object-cover object-top"
-            sizes="(max-width: 1152px) 100vw, 1152px"
-          />
-          <span className="scanline-overlay" />
+      <div className="mt-7 grid items-start gap-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(19rem,0.8fr)] lg:gap-8">
+        <ProjectPreview project={project} priority showMobileOverlay={false} />
+        <div className="grid items-start gap-5 sm:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] lg:grid-cols-1">
+          <figure className="mx-auto w-full max-w-[13rem] sm:mx-0 sm:max-w-none lg:mx-auto lg:max-w-[13rem]">
+            <div className="overflow-hidden rounded-[1.5rem] border border-white/20 bg-[#05070b] p-1.5 shadow-[0_12px_36px_rgba(0,0,0,0.55)]">
+              <div className="relative aspect-[390/844] overflow-hidden rounded-[1.1rem]">
+                <Image
+                  src={project.mobile}
+                  alt={`${project.name} on a phone`}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 48vw, (max-width: 1024px) 32vw, 200px"
+                />
+              </div>
+            </div>
+            <figcaption className="mt-2 text-center text-xs text-muted-foreground">Designed for the phone screen, too</figcaption>
+          </figure>
+          <div className="space-y-4">
+            <p className="text-muted-foreground">{project.built}</p>
+            <p className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm leading-relaxed">
+              <span className="font-semibold text-primary">The experience: </span>
+              {project.visitor}
+            </p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {project.points.map((point) => (
+                <li key={point} className="flex gap-2">
+                  <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div className="mt-8 grid gap-6 md:grid-cols-12">
-        <div className="md:col-span-4">
-          <div className="mx-auto w-full max-w-56 overflow-hidden rounded-[1.4rem] border border-white/15 bg-black p-1.5">
-            <div className="relative aspect-[390/844] overflow-hidden rounded-[1.1rem]">
+      <h2 className="mt-12 text-2xl font-bold glow-yellow">More from the live site</h2>
+      <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+        A closer look at the pages, products, and details that make {project.displayUrl} feel like itself.
+      </p>
+      <ul
+        aria-label={`${project.name} gallery`}
+        className="project-gallery mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3"
+      >
+        {project.gallery.map((shot) => (
+          <li key={shot.src} className="w-[82vw] max-w-[420px] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-black/50 sm:w-auto">
+            <div className="relative aspect-[5/4]">
               <Image
-                src={project.mobile}
-                alt={`${project.name} on a phone`}
+                src={shot.src}
+                alt={shot.alt}
                 fill
-                className="object-cover object-top"
-                sizes="224px"
+                className="object-contain"
+                sizes="(max-width: 640px) 82vw, (max-width: 1024px) 46vw, 30vw"
               />
             </div>
-          </div>
-          <p className="mt-2 text-center text-xs text-muted-foreground">The same site on a phone</p>
-        </div>
-        <div className="space-y-4 md:col-span-8">
-          <p className="text-muted-foreground">{project.built}</p>
-          <p className="rounded-lg border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
-            <span className="font-semibold text-primary">What a visitor can do. </span>
-            {project.visitor}
-          </p>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            {project.points.map((point) => (
-              <li key={point} className="flex gap-2">
-                <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <h2 className="mt-12 text-2xl font-bold glow-yellow">From the live site</h2>
-      <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        Photos, product shots, and sections pulled from {project.displayUrl}.
-      </p>
-      <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {project.gallery.map((shot) => (
-          <li key={shot.src} className="overflow-hidden rounded-xl border border-white/10 bg-black/40">
-            <div className="relative aspect-[4/3]">
-              <Image src={shot.src} alt={shot.alt} fill className="object-contain" sizes="(max-width: 640px) 100vw, 33vw" />
-            </div>
-            <p className="px-3 py-2 text-sm text-muted-foreground">{shot.caption}</p>
+            <p className="px-4 py-3 text-sm text-muted-foreground">{shot.caption}</p>
           </li>
         ))}
       </ul>
 
       <section className="mt-14 rounded-2xl border border-primary/20 bg-card/50 px-6 py-10 text-center">
-        <h2 className="text-2xl font-bold glow-green">Want a site that feels like yours?</h2>
+        <h2 className="text-2xl font-bold glow-green">Want your site to feel this clear?</h2>
         <p className="mx-auto mt-2 max-w-xl text-muted-foreground">
-          Tell me who you serve. I’ll build the front door so a stranger gets it, then I’ll stick around.
+          Tell me who you serve and what visitors need to do. I’ll build a clear digital front door and bring the same care to the work behind it.
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-3">
           <ContactActions />
           <Button asChild variant="secondary">
-            <Link href="/work">See the rest</Link>
+            <Link href="/work">All projects</Link>
           </Button>
         </div>
       </section>

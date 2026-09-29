@@ -101,5 +101,5 @@ export default function MatrixRain() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} aria-hidden className="matrix-overlay opacity-40" />;
+  return <canvas ref={canvasRef} aria-hidden className="matrix-overlay" />;
 }

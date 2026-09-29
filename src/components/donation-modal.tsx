@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState } from 'react'
+import Image from 'next/image'
 import { X } from 'lucide-react'
 
 type DonationModalProps = {
@@ -28,11 +29,11 @@ type DonationModalProps = {
 export function DonationModal({
   open,
   onClose,
-  title = 'Donate to Set Free Digital Disciples',
-  subtitle = 'This ain’t about building fancy websites—it’s about building the Kingdom.',
+  title = 'Support Set Free Digital Disciples',
+  subtitle = 'Your gift helps carry a faith-rooted mission into the places and spaces where people need hope.',
   logoSrc = '/SetFreeDigitalDisciplesPortal.png',
-  scripture = 'Every dollar fuels outreach that meets people where they are.',
-  message = 'You wanna sow into something that actually changes lives? This is it.',
+  scripture = 'Every gift helps make room for outreach that meets people where they are.',
+  message = 'Thank you for being part of this work.',
   presetAmounts = [10, 20, 50, 100, 250, 500],
   initialAmount,
   currencySymbol = '$',
@@ -74,11 +75,11 @@ export function DonationModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
       <div className="relative max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-        <div className="bg-gray-900 border border-red-900/50 rounded-lg shadow-xl">
+        <div className="site-panel rounded-2xl border border-white/10 shadow-[0_20px_70px_rgba(0,0,0,0.5)]">
           <div className="relative p-6">
             <button
               onClick={onClose}
-              className="absolute right-4 top-4 text-gray-400 hover:text-white transition-colors"
+              className="absolute right-4 top-4 rounded-full p-2 text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
               aria-label="Close donation modal"
             >
               <X className="h-6 w-6" />
@@ -86,33 +87,33 @@ export function DonationModal({
 
             {logoSrc ? (
               <div className="flex justify-center mb-4">
-                <img
+                <Image
                   src={logoSrc}
-                  alt="Logo"
-                  className="h-[250px] object-contain"
+                  alt="Set Free Digital Disciples"
+                  width={280}
+                  height={210}
+                  className="h-40 w-auto object-contain"
                 />
               </div>
             ) : null}
 
-            <h2 className="text-center text-2xl font-bold text-red-500">{title}</h2>
+            <h2 className="text-center text-2xl font-bold tracking-tight glow-green">{title}</h2>
             {subtitle ? (
-              <p className="text-center text-gray-300 mt-2">{subtitle}</p>
+              <p className="mx-auto mt-3 max-w-xl text-center leading-relaxed text-muted-foreground">{subtitle}</p>
             ) : null}
           </div>
 
           <div className="p-6 pt-0 space-y-6">
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Choose an Amount</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-4">Choose an amount</h3>
               <div className="grid grid-cols-3 gap-3">
                 {presetAmounts.map((preset) => (
                   <button
                     key={preset}
-                    className={`border rounded-md border-red-900/50 font-bold py-3 transition-all duration-300 ${
+                    className={`rounded-xl border font-semibold py-3 transition-colors ${
                       selectedAmount === preset
-                        ? 'ring-2 ring-red-500 bg-red-600 text-white border-red-600'
-                        : preset > 100
-                          ? 'text-yellow-400 hover:bg-yellow-600 hover:border-yellow-600 hover:text-black'
-                          : 'text-red-400 hover:bg-red-600 hover:border-red-600 hover:text-white'
+                        ? 'ring-2 ring-primary/60 bg-primary text-primary-foreground border-primary'
+                        : 'border-white/10 bg-white/5 text-foreground hover:border-primary/50 hover:bg-primary/10'
                     }`}
                     onClick={() => {
                       setSelectedAmount(preset)
@@ -126,7 +127,7 @@ export function DonationModal({
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Custom Amount</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-4">Custom amount</h3>
               <form
                 className="flex gap-2"
                 onSubmit={(e) => {
@@ -145,37 +146,37 @@ export function DonationModal({
                       setCustomAmount(e.target.value)
                       setSelectedAmount(null)
                     }}
-                    className={`w-full pl-8 pr-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none transition-all duration-300 ${
-                      customAmount ? 'border-red-500 ring-2 ring-red-500/50' : 'border-gray-600 focus:border-red-500'
+                    className={`w-full rounded-xl border bg-black/30 py-3 pl-8 pr-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 ${
+                      customAmount ? 'border-primary/70' : 'border-white/15 focus:border-primary/60'
                     }`}
                   />
                 </div>
-                <button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold px-8 rounded-md">
+                <button type="submit" className="rounded-xl bg-primary px-6 font-semibold text-primary-foreground hover:brightness-110">
                   Set
                 </button>
               </form>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Payment Methods {hasAmount ? <span className="text-green-400">- Ready for {currencySymbol}{amount}</span> : null}
+              <h3 className="text-lg font-semibold text-foreground mb-4">
+                Payment methods {hasAmount ? <span className="text-accent">· {currencySymbol}{amount} selected</span> : null}
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 <button
-                  className={`border rounded-md font-bold py-3 transition-all duration-300 ${
-                    hasAmount
-                      ? 'border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white shadow-lg shadow-blue-500/50 animate-pulse'
-                      : 'border-blue-500/50 text-blue-400 hover:bg-blue-600 hover:text-white'
+                    className={`rounded-xl border font-semibold py-3 transition-colors ${
+                      hasAmount
+                        ? 'border-primary text-primary shadow-[0_0_20px_rgba(34,211,238,0.16)]'
+                        : 'border-white/15 text-foreground hover:border-primary/50 hover:bg-primary/10'
                   }`}
                   onClick={handlePayPal}
                 >
                   PayPal
                 </button>
                 <button
-                  className={`border rounded-md font-bold py-3 transition-all duration-300 ${
-                    hasAmount
-                      ? 'border-green-500 text-green-400 hover:bg-green-600 hover:text-white shadow-lg shadow-green-500/50 animate-pulse'
-                      : 'border-green-500/50 text-green-400 hover:bg-green-600 hover:text-white'
+                    className={`rounded-xl border font-semibold py-3 transition-colors ${
+                      hasAmount
+                        ? 'border-accent text-accent shadow-[0_0_20px_rgba(61,255,122,0.14)]'
+                        : 'border-white/15 text-foreground hover:border-accent/50 hover:bg-accent/10'
                   }`}
                   onClick={handleCashApp}
                 >
@@ -185,12 +186,12 @@ export function DonationModal({
             </div>
 
             {(scripture || message) && (
-              <div className="bg-gray-800/50 rounded-lg p-4 border border-red-900/30">
+              <div className="rounded-xl border border-primary/15 bg-primary/5 p-4">
                 {scripture ? (
-                  <p className="text-gray-300 text-center italic">{scripture}</p>
+                  <p className="text-center italic text-foreground/85">{scripture}</p>
                 ) : null}
                 {message ? (
-                  <p className="text-gray-400 text-sm text-center mt-2">{message}</p>
+                  <p className="mt-2 text-center text-sm text-muted-foreground">{message}</p>
                 ) : null}
               </div>
             )}
@@ -202,5 +203,3 @@ export function DonationModal({
 }
 
 export default DonationModal
-
-

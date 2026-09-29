@@ -2,10 +2,10 @@ export const siteUrl = "https://setfreedigitaldisciples.com";
 
 export const siteName = "Set Free Digital Disciples";
 
-export const defaultTitle = "Next.js Websites & Technical SEO";
+export const defaultTitle = "Purpose-built Websites & Technical SEO";
 
 export const defaultDescription =
-  "Next.js websites with technical SEO, Core Web Vitals, and schema markup. Churches, shops, and local businesses get pages that load fast, read clean, and rank.";
+  "Faith-rooted Next.js websites and technical SEO for churches, local businesses, and purpose-led brands. Fast, clear experiences built around the people you serve.";
 
 export const organizationId = `${siteUrl}/#organization`;
 export const websiteId = `${siteUrl}/#website`;

@@ -5,11 +5,11 @@ import DonationInline from "@/components/DonationInline";
 
 export const metadata: Metadata = {
   title: "Donate",
-  description: "Give to Set Free Digital Disciples. Support websites and Gospel work built for the streets.",
+  description: "Support Set Free Digital Disciples and a faith-rooted mission that serves people online and in the community.",
   alternates: { canonical: "/donate" },
   openGraph: {
     title: "Donate | Set Free Digital Disciples",
-    description: "Give to Set Free Digital Disciples. Support websites and Gospel work built for the streets.",
+    description: "Support Set Free Digital Disciples and a faith-rooted mission that serves people online and in the community.",
     url: "/donate",
   },
 };
@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 
 export default function DonatePage() {
   return (
-    <main className="content-layer relative mx-auto max-w-4xl px-4 py-12">
+    <main className="content-layer relative mx-auto max-w-4xl px-4 py-10 md:py-12">
       <div className="mb-4">
         <Button asChild variant="secondary" size="sm">
           <Link href="/">← Back to home</Link>
         </Button>
       </div>
       <DonationInline
-        title="Donate to Set Free Digital Disciples"
-        subtitle="This ain’t about building fancy websites—it’s about building the Kingdom."
+        title="Support Set Free Digital Disciples"
+        subtitle="Your gift helps carry a faith-rooted mission into the places and spaces where people need hope."
         logoSrc="/SetFreeDigitalDisciplesPortal.png"
         presetAmounts={[10,20,50,100,250,500]}
         paypalEmail="petrovkristian@ymail.com"
@@ -35,5 +35,4 @@ export default function DonatePage() {
     </main>
   );
 }
-
 

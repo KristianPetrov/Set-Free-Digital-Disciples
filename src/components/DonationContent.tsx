@@ -26,10 +26,10 @@ export default function DonationContent({ headingClassName, hideHeader }: Donati
       {!hideHeader && (
         <div className="text-center space-y-3">
           <h1 className={`text-2xl md:text-3xl font-extrabold tracking-tight glow-green ${headingClassName ?? ""}`}>
-            Fuel the Mission
+            Support the mission
           </h1>
           <p className="text-muted-foreground">
-            This ain’t about building fancy websites—it’s about building the Kingdom. Every dollar you drop here goes straight into spreading the Gospel in a way the streets, the broken, and the lost can understand. We ain’t polished, we ain’t perfect, but we’re real—and we’re out here bringing Jesus where He’s needed most. You wanna sow into something that actually changes lives? This is it.
+            Faith is at the heart of this work. Your gift helps us serve people in the community and share the hope of Jesus online and in person.
           </p>
         </div>
       )}
@@ -39,14 +39,14 @@ export default function DonationContent({ headingClassName, hideHeader }: Donati
           <div className="space-y-3">
             <h2 className="text-xl font-extrabold tracking-tight glow-yellow">Give Online</h2>
             <p className="text-sm md:text-base text-muted-foreground">
-              Secure giving processed by your provider of choice. Choose an option below. You can replace these links with your live giving platform when ready.
+              Choose a giving amount below and continue securely with PayPal or Cash App.
             </p>
             <DonationButtons cashTag="$KristianPetrov" paypalEmail="petrovkristian@ymail.com" />
           </div>
 
           <div className="rounded-md border border-border/50 bg-background/60 p-4 shadow-[0_0_24px_rgba(0,200,255,0.05)]">
             <p className="text-sm text-muted-foreground">
-              Prefer in-person or alternative ways to give? We got you.
+              Prefer another way to give? We can help.
             </p>
             <ul className="mt-2 list-disc pl-5 text-sm text-muted-foreground space-y-1">
               <li>
@@ -75,5 +75,4 @@ export default function DonationContent({ headingClassName, hideHeader }: Donati
     </div>
   );
 }
-
 

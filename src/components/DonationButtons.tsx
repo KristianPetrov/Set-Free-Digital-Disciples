@@ -53,12 +53,10 @@ export default function DonationButtons({ cashTag, paypalEmail, amounts = [10, 2
           <Button
             key={amount}
             variant="outline"
-            className={`border-red-900/50 font-bold py-3 transition-all duration-300 ${
+            className={`border-white/10 font-semibold py-3 transition-colors ${
               selectedAmount === amount
-                ? 'ring-2 ring-red-500 bg-red-600 text-white border-red-600'
-                : amount > 100
-                  ? 'text-yellow-400 hover:bg-yellow-600 hover:border-yellow-600 hover:text-black'
-                  : 'text-red-400 hover:bg-red-600 hover:border-red-600 hover:text-white'
+                ? 'ring-2 ring-primary/60 bg-primary text-primary-foreground border-primary'
+                : 'bg-white/5 text-foreground hover:border-primary/50 hover:bg-primary/10'
             }`}
             onClick={(e) => {
               e.preventDefault();
@@ -87,14 +85,14 @@ export default function DonationButtons({ cashTag, paypalEmail, amounts = [10, 2
                 if (!Number.isNaN(num)) setSelectedAmount(num);
               }}
               placeholder="Enter amount"
-              className={`w-full pl-8 pr-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none transition-all duration-300 ${
-                customAmount ? 'border-red-500 ring-2 ring-red-500/50' : 'border-gray-600 focus:border-red-500'
+              className={`w-full rounded-xl border bg-black/30 py-3 pl-8 pr-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 ${
+                customAmount ? 'border-primary/70' : 'border-white/15 focus:border-primary/60'
               }`}
             />
           </div>
           <Button
             type="button"
-            className="bg-red-600 hover:bg-red-700 text-white font-bold px-6"
+            className="bg-primary px-6 font-semibold text-primary-foreground hover:brightness-110"
             onClick={() => {
               const num = Number(customAmount);
               if (!Number.isNaN(num) && num > 0) onSelect(num);
@@ -108,8 +106,8 @@ export default function DonationButtons({ cashTag, paypalEmail, amounts = [10, 2
       <div className="grid grid-cols-2 gap-3 mt-3">
         <Button
           variant="outline"
-          className={`font-bold py-3 transition-all duration-300 ${
-            hasAmount ? 'border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white shadow-lg shadow-blue-500/50 animate-pulse' : 'border-blue-500/50 text-blue-400 hover:bg-blue-600 hover:text-white'
+          className={`font-semibold py-3 transition-colors ${
+            hasAmount ? 'border-primary text-primary shadow-[0_0_20px_rgba(34,211,238,0.16)]' : 'border-white/15 text-foreground hover:border-primary/50 hover:bg-primary/10'
           }`}
           onClick={openPayPal}
         >
@@ -117,8 +115,8 @@ export default function DonationButtons({ cashTag, paypalEmail, amounts = [10, 2
         </Button>
         <Button
           variant="outline"
-          className={`font-bold py-3 transition-all duration-300 ${
-            hasAmount ? 'border-green-500 text-green-400 hover:bg-green-600 hover:text-white shadow-lg shadow-green-500/50 animate-pulse' : 'border-green-500/50 text-green-400 hover:bg-green-600 hover:text-white'
+          className={`font-semibold py-3 transition-colors ${
+            hasAmount ? 'border-accent text-accent shadow-[0_0_20px_rgba(61,255,122,0.14)]' : 'border-white/15 text-foreground hover:border-accent/50 hover:bg-accent/10'
           }`}
           onClick={openCashApp}
         >
@@ -132,5 +130,4 @@ export default function DonationButtons({ cashTag, paypalEmail, amounts = [10, 2
     </div>
   );
 }
-
 

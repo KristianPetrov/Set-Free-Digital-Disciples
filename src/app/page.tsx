@@ -1,20 +1,20 @@
 export const revalidate = 86400;
 export const metadata = {
-  title: { absolute: "Set Free Digital Disciples | Next.js Websites & Technical SEO" },
+  title: { absolute: "Set Free Digital Disciples | Purpose-built Websites & Technical SEO" },
   description:
-    "Next.js websites with technical SEO, Core Web Vitals, and schema markup. Churches, shops, and local businesses get pages that load fast, read clean, and rank.",
+    "Faith-rooted Next.js websites and technical SEO for churches, local businesses, and purpose-led brands. Fast, clear experiences built around the people you serve.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Set Free Digital Disciples | Next.js Websites & Technical SEO",
+    title: "Set Free Digital Disciples | Purpose-built Websites & Technical SEO",
     description:
-      "Server-rendered Next.js sites with technical SEO, Core Web Vitals, and schema that matches the page.",
+      "Custom websites with clear messaging, technical SEO, and the speed people expect.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Set Free Digital Disciples | Next.js Websites & Technical SEO",
+    title: "Set Free Digital Disciples | Purpose-built Websites & Technical SEO",
     description:
-      "Server-rendered Next.js sites with technical SEO, Core Web Vitals, and schema that matches the page.",
+      "Custom websites with clear messaging, technical SEO, and the speed people expect.",
   },
 } as const;
 
@@ -37,26 +37,26 @@ export default function Home() {
     <div className="font-sans min-h-screen">
       <MatrixRain />
       <SiteHeader />
-      <main className="content-layer relative mx-auto max-w-6xl px-4">
+      <main className="content-layer relative mx-auto max-w-7xl px-4">
         {/* Hero */}
-        <section className="pt-16 pb-16 grid md:grid-cols-2 items-center gap-8">
-          <div className="order-2 md:order-1">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Next.js · Technical SEO · Core Web Vitals</p>
+        <section className="grid items-center gap-5 py-8 sm:gap-7 md:grid-cols-2 md:gap-10 md:py-12">
+          <div className="order-1">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Faith-rooted design · Next.js · Technical SEO</p>
             <h1 className="mt-3 text-4xl md:text-6xl font-extrabold leading-[1.05] glow-green glitch-strong">
               Sites that rank.
               <span className="mt-2 block text-3xl md:text-5xl glow-cyan">Looks that hit.</span>
             </h1>
             <p className="mt-5 max-w-prose text-base md:text-lg leading-relaxed text-foreground/90">
-              I build on Next.js and ship the signals Google actually uses. The page is rendered
-              before the crawler asks. It loads fast. The title, the headings, and the schema all
-              say the same thing. Then a real person knows whether to call, visit, donate, or buy.
+              Fast, clear websites for churches, local businesses, and brands with a purpose. I use
+              Next.js and technical SEO to help people find you, understand what you offer, and take
+              the next step.
             </p>
             <p className="mt-4 max-w-prose text-sm md:text-base font-medium text-primary">
-              From the block to the cloud. Hood-sanctified craft. Search-engine sharp.
+              From the block to the cloud. Faith at the center. Built for real people.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild>
-                <a href="#rank">Why they rank</a>
+                <a href="#rank">How it works</a>
               </Button>
               <Button asChild variant="secondary">
                 <a href="#work">See the live work</a>
@@ -71,7 +71,7 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <div className="relative h-100 md:h-124 order-1 md:order-2 mb-6 md:mb-0 overflow-hidden rounded-xl">
+          <div className="relative order-2 h-48 overflow-hidden rounded-xl sm:h-64 md:h-[26rem]">
             <div className="absolute inset-0 rounded-xl bg-[conic-gradient(from_180deg_at_50%_50%,theme(colors.cyan.500/.25),theme(colors.green.500/.15),transparent_70%)] blur-2xl" />
             <HeroGlitchMorph
               imageA="/SetFreeDigitalDisciplesMatrix.png"
@@ -89,65 +89,66 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services */}
-        <section id="services" className="py-12">
-          <div id="rank" className="scroll-mt-24">
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-yellow">Why these sites rank higher</h2>
-            <p className="mt-3 max-w-2xl text-muted-foreground">
-              Rankings are not a trick. They are a fast page, a clear offer, and technical signals that all tell Google the same story.
+        {/* Work */}
+        <section id="work" className="scroll-mt-24 py-10 md:py-14">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Real sites. Real people.</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight glow-cyan md:text-4xl">Built with purpose. Ready for the real world.</h2>
+            <p className="mt-3 text-muted-foreground">
+              Seven live websites, each shaped around the people it serves—from churches and nonprofits to local businesses and online shops.
             </p>
           </div>
-          <div className="mt-6 grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "The first byte is the page",
-                body: "Next.js App Router renders the real HTML before anyone arrives. Googlebot is not staring at an empty JavaScript shell waiting for your name, your city, or your service to show up.",
-              },
-              {
-                title: "Speed Google can measure",
-                body: "next/image, next/font, and static generation keep the heavy work off the first paint. Faster Largest Contentful Paint. Less layout shift. Fewer people bouncing before the page even settles.",
-              },
-              {
-                title: "Signals that agree",
-                body: "One title. One canonical URL. Headings that match the search. A sitemap and robots.txt that point at the pages worth ranking. Duplicate thin URLs do not get a vote.",
-              },
-              {
-                title: "Schema that matches the screen",
-                body: "JSON-LD for the business, the service, and the website. Phone, email, and the offer are machine-readable, and they say the same thing a person reads above the fold.",
-              },
-            ].map((s) => (
-              <Card key={s.title} className="bg-card/70 border-border/60">
-                <CardHeader>
-                  <CardTitle className="glow-yellow">{s.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{s.body}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <p className="mt-4 max-w-3xl text-sm text-muted-foreground">
-            The stack under it: Next.js App Router, React, TypeScript, Tailwind, Vercel, next/image, next/font, XML sitemaps, and schema.org. The look stays hood-sanctified. The crawl stays clean.
-          </p>
-        </section>
-
-        <section id="work" className="scroll-mt-24 py-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-cyan">Work that is live right now</h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            Seven production sites. Same stack. Churches, a tow yard, a veteran mission, and shops I still maintain. The screenshots are from the live pages, not a pitch deck.
-          </p>
           <div className="mt-6">
             <ProjectShowcase priorityFirst />
           </div>
         </section>
 
+        {/* Services */}
+        <section id="services" className="scroll-mt-24 py-10 md:py-14">
+          <div id="rank" className="scroll-mt-24">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">The craft behind the screen</p>
+            <h2 className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight glow-yellow">Easy to find. Easy to use. Built to last.</h2>
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              Strong websites make sense to people first, then give search engines the clear signals they need.
+            </p>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Search can understand it",
+                body: "Clear titles, headings, and structured data explain each page to people and Google. Under the hood: Next.js rendering, canonical URLs, schema.org, and XML sitemaps.",
+              },
+              {
+                title: "Fast from the first tap",
+                body: "A quick page feels better to use. Optimized images, responsive layouts, and Core Web Vitals help keep the experience smooth on phones and desktops.",
+              },
+              {
+                title: "A clear next step",
+                body: "Visitors should know whether to call, visit, donate, or buy. Each page puts the useful details up front and makes the next move simple.",
+              },
+            ].map((s) => (
+              <Card key={s.title} className="site-panel border-white/10 bg-card/70">
+                <CardHeader>
+                  <CardTitle className="text-xl glow-yellow">{s.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <p className="mt-4 max-w-3xl text-sm text-muted-foreground">
+            The stack: React, TypeScript, Tailwind, Vercel, optimized images, structured data, and XML sitemaps. The goal is simple—make every page easier to find and use.
+          </p>
+        </section>
+
         <section className="py-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-green">How a site gets built</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-green">From first conversation to launch</h2>
           <ol className="mt-6 grid gap-4 md:grid-cols-3">
             {[
-              { step: "01", title: "The offer", body: "Who you serve, what they search, and the one action the page has to earn. Call, visit, donate, or buy." },
-              { step: "02", title: "The build", body: "Next.js, your look, the speed budget, and the SEO layer: titles, canonicals, schema, sitemap, internal links." },
-              { step: "03", title: "The launch", body: "It goes live on Vercel. I watch the crawl, and I stay on the site after the first deploy." },
+              { step: "01", title: "Get clear on the goal", body: "Who you serve, what they need, and the one next step your website should make easy." },
+              { step: "02", title: "Design and build", body: "Your look and content, brought together with Next.js, technical SEO, and a mobile-first experience." },
+              { step: "03", title: "Launch and keep moving", body: "The site goes live, search signals get watched, and I stay available as your work grows." },
             ].map((item) => (
               <li key={item.step} className="rounded-xl border border-border/60 bg-card/60 p-5">
                 <p className="font-mono text-xs text-primary">{item.step}</p>
@@ -159,15 +160,16 @@ export default function Home() {
         </section>
 
         {/* Donate */}
-        <section id="donate" className="py-16">
+        <section id="donate" className="py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight glow-cyan">This ain’t about fancy websites. It’s about the Kingdom.</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Faith guides the work</p>
+            <h2 className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight glow-cyan">Technology in service of something bigger.</h2>
             <p className="mt-4 text-muted-foreground text-base md:text-lg">
-              Every dollar goes into telling the Gospel in a way the streets can actually hear. We ain’t polished. We are real, and the work is for people who need Jesus where they already are. If you want to sow into that, this is the door.
+              Set Free Digital Disciples uses technology to serve people and share the hope of Jesus where it is needed most. If you believe in that mission, your gift helps carry it further.
             </p>
             <div className="mt-6 flex justify-center">
               <Button asChild size="lg">
-                <Link href="/donate">Donate &amp; Be Part of the Movement</Link>
+                <Link href="/donate">Support the mission</Link>
               </Button>
             </div>
           </div>
@@ -175,9 +177,9 @@ export default function Home() {
 
         {/* Contact */}
         <section id="contact" className="py-16 text-center">
-          <h2 className="text-3xl font-bold mb-4 glow-green">Pretty and invisible is a build problem.</h2>
+          <h2 className="text-3xl font-bold mb-4 glow-green">Need a website that works harder?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tell me who you serve and what you want them to do. Text me to schedule a call, or email me. I’ll write back within a day with a straight read on what is holding the site back.
+            Tell me who you serve, what your website needs to do, and what is getting in the way. I’ll reply within a day with a clear next step.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <ContactActions />

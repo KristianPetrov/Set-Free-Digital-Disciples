@@ -6,7 +6,7 @@ import ContactActions from "@/components/ContactActions";
 export default function SiteHeader() {
   return (
     <header className="content-layer sticky top-0 z-20 border-b border-border backdrop-blur supports-[backdrop-filter]:bg-black/30">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3 md:flex-nowrap">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3 md:flex-nowrap">
         <Link href="/" className="order-1 shrink-0 text-sm font-semibold tracking-wide glow-green">
           Set Free
         </Link>

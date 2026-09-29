@@ -35,16 +35,16 @@ export const projects: Project[] = [
     group: "ministry",
     place: "Anaheim, California",
     plain:
-      "A church site with the same voice as the room. Real talk, real photos, and Sunday at 10am sitting right where a new person can see it.",
+      "A church site with the warmth and honesty of the room. New visitors can find service times, meet the community, and know what to expect.",
     built:
-      "I designed and built the whole site, and I still look after it. Service times, donations, a prayer wall, events, stories, and the news all live in one place.",
+      "I designed and built the site, then kept it current with service details, giving, a prayer wall, events, stories, and news.",
     visitor:
-      "A first-time visitor can find Sunday service, watch a story, give, or get directions without digging.",
+      "A first-time visitor can find Sunday service, watch a story, give, or get directions without digging through menus.",
     points: [
-      "Sunday at 10am and a donate button are on the page before the scroll gets long",
-      "Real photos of the people, the bikes, and the room — not stock smiles",
-      "Stories, news, and a prayer wall so the site keeps feeling alive",
-      "A thrift shop and Set Free University, linked from the same front door",
+      "Sunday service and giving are easy to spot from the first screen",
+      "Real photography shows the people, bikes, and room",
+      "Events, stories, news, and prayer requests help the site stay current",
+      "The thrift shop and Set Free University are linked from the same front door",
     ],
     screenshot: "/projects/set-free-anaheim/section-community.jpg",
     screenshotAlt: "Set Free Anaheim homepage with the Set Free wordmark, Real Community, and Unconditional Love",
@@ -92,16 +92,16 @@ export const projects: Project[] = [
     group: "local",
     place: "Hilo, Hawaiʻi",
     plain:
-      "A 24/7 towing site for the Big Island. Built for someone on the side of the road who needs a number, a price, and a truck — not a brochure.",
+      "A 24/7 towing site for Big Island drivers. If you are stuck, you need clear prices, a phone number, and a way to get help right now.",
     built:
-      "I built the site around the real trucks, plain starting prices, and a quote tool. Dispatch is one tap away, day or night.",
+      "I built the site around the real fleet, upfront starting prices, and a quick estimate tool. Dispatch is one tap away, day or night.",
     visitor:
-      "A stranded driver can call (808) 785-4988, see that a local tow starts at $95, or get a quick estimate.",
+      "A driver can call (808) 785-4988, see that local tows start at $95, or get an estimate before dispatch.",
     points: [
-      "The phone number stays in reach — header, hero, and the bottom of the page",
-      "Starting prices are listed in plain numbers before anyone has to call",
-      "A quote tool for local tows, lockouts, jumps, tires, and winch recovery",
-      "Real photos of the flatbeds, including a classic car and a U-Haul on the bed",
+      "The phone number stays easy to reach throughout the page",
+      "Starting prices are shown before a driver has to call",
+      "A quote tool covers tows, lockouts, jump starts, tires, and winch recovery",
+      "Real photos show the flatbeds at work, including classic cars and U-Hauls",
     ],
     screenshot: "/projects/iwm-towing/desktop.jpg",
     screenshotAlt: "IWM Towing homepage with a flatbed truck and the line When the road stops, we don't",
@@ -143,16 +143,16 @@ export const projects: Project[] = [
     kind: "Veteran nonprofit",
     group: "ministry",
     plain:
-      "A quiet site for veterans moving out of homelessness. No noise. A mission, three promises, and a way to start.",
+      "A calm, dignified front door for veterans transitioning out of homelessness and the people helping them find support.",
     built:
-      "I built a single calm page: who they serve, what they provide, how intake works, and a phone number that is never hard to find.",
+      "I built a focused page that explains who they serve, what support includes, how intake works, and how to get in touch.",
     visitor:
-      "A veteran, or someone calling for one, can start intake or call 562-618-6191 without hunting through menus.",
+      "A veteran or someone calling for them can start intake or call 562-618-6191 without hunting through menus.",
     points: [
-      "The promise is the headline: every veteran deserves a second chance",
-      "Stability, recovery, and independence are spelled out in everyday words",
+      "A direct headline states the promise: every veteran deserves a second chance",
+      "Stability, recovery, and independence are explained in everyday language",
       "Intake is a clear next step, not a buried form",
-      "The phone number stays on the page from top to bottom",
+      "The phone number stays easy to find from top to bottom",
     ],
     screenshot: "/projects/2nd-chance-at-life/desktop.jpg",
     screenshotAlt: "2nd Chance at Life homepage with the headline Every veteran deserves a second chance",
@@ -185,16 +185,16 @@ export const projects: Project[] = [
     group: "shop",
     place: "Sheridan, Wyoming",
     plain:
-      "A research catalog that leads with a simple promise: affordable, quick, and simple. Prices, certificates, and the rules are out in the open.",
+      "A research-use shop where prices, product details, lab documents, and ordering rules are easy to find.",
     built:
-      "I built and maintain the store — age check, catalog, volume pricing, order tracking, and a mission page that sounds like the people behind it.",
+      "I built and maintain the store with age confirmation, a searchable catalog, volume pricing, order tracking, and a mission page in the shop’s own voice.",
     visitor:
-      "A visitor can browse the catalog, open a certificate of analysis, and see the price for 1, 5, or 10 vials before checkout.",
+      "A visitor can compare prices for 1, 5, or 10 vials and open a certificate of analysis before checkout.",
     points: [
-      "An age check at the door, then a homepage that says what the shop is",
-      "Featured compounds with the price and the bulk discount in the same glance",
-      "Certificates of analysis linked from the product, not hidden in a PDF drawer",
-      "Order tracking, a calculator, and a contact path that includes a phone number",
+      "Age confirmation appears before the catalog",
+      "Featured items show the price and volume discount together",
+      "Certificates of analysis are linked from each product page",
+      "Order tracking, a calculator, and a direct contact path are built in",
     ],
     screenshot: "/projects/pure-energy-peptides/desktop.jpg",
     screenshotAlt: "Pure Energy Peptides homepage with Affordable, Quick, Simple and featured research compounds",
@@ -236,16 +236,16 @@ export const projects: Project[] = [
     kind: "Online shop",
     group: "shop",
     plain:
-      "A darker, quieter research catalog. Fifty-plus items, prices you can read, and the research-use rules sitting in the open instead of the fine print.",
+      "A focused research-use catalog with more than 50 items, clear prices, and use information in view instead of fine print.",
     built:
-      "I built the storefront, the product photos, the cart, and the pages a buyer hits on the way to checkout. I still maintain it.",
+      "I built and maintain the storefront, product photography, cart, and the pages customers use on the way to checkout.",
     visitor:
-      "Someone can scan the lineup, open a product, and know the price — starting around $5 — before they make an account.",
+      "A visitor can scan the lineup, open a product, and see prices starting around $5 before creating an account.",
     points: [
-      "A homepage that shows the lineup instead of making you open a menu",
-      "Clear USD prices on every card",
-      "Research-use language on the header, the catalog, and checkout",
-      "Categories, order tracking, and a cart that starts empty and says so",
+      "The homepage previews the catalog without hiding it behind a menu",
+      "Prices are visible on every product card",
+      "Research-use information is clear from the header through checkout",
+      "Categories, order tracking, and a cart with a clear empty state",
     ],
     screenshot: "/projects/infinity-peptides/desktop.jpg",
     screenshotAlt: "Infinity Peptides homepage with the infinity mark and a row of research products",
@@ -287,16 +287,16 @@ export const projects: Project[] = [
     kind: "Online shop",
     group: "shop",
     plain:
-      "A research shop aimed at people who want the catalog, the paperwork, and the price without a lecture. Easy, fast, affordable — said in that order.",
+      "A straightforward research-use shop that puts its catalog, lab documents, and pricing in one place.",
     built:
-      "I built the store, order lookup, mission and vision pages, and a purity FAQ that answers the question in normal sentences. I still maintain it.",
+      "I built and maintain the store, order lookup, mission and vision pages, and a plain-language FAQ about purity reports.",
     visitor:
-      "A visitor can check a price, look up an order, text the shop, or read what purity numbers actually mean.",
+      "Visitors can check a price, look up an order, text the shop, or get a clear explanation of purity reports.",
     points: [
-      "Lab-grade standards and transparent pricing, stated before the catalog",
-      "Catalog highlights with the dose size and the price on the card",
-      "A purity FAQ written as straight answers, not a wall of jargon",
-      "Find-an-order, contact, and a text number in the header",
+      "Quality standards and pricing are stated before the catalog",
+      "Catalog cards show the product size and price together",
+      "The purity FAQ answers common questions in plain language",
+      "Order lookup, contact details, and text support are easy to find",
     ],
     screenshot: "/projects/affordable-peptides/desktop.jpg",
     screenshotAlt: "Affordable Peptides homepage with the line Lab-Grade Standards. Transparent Catalog Pricing.",
@@ -328,16 +328,16 @@ export const projects: Project[] = [
     kind: "Online shop",
     group: "shop",
     plain:
-      "A research shop for vials, blends, and sprays. You can see the product, the strength, and the price without opening a single menu.",
+      "A research-use shop for vials, blends, and sprays. Product details, strength, and pricing are visible without digging through menus.",
     built:
-      "I built a storefront that puts the lineup on the homepage, with kit pricing, product photography, and a use notice that stays visible. I still maintain it.",
+      "I built and maintain a storefront with the catalog on the homepage, kit pricing, product photography, and a visible use notice.",
     visitor:
-      "A visitor can compare a single vial against a 10-vial kit, then add it to the cart from the homepage.",
+      "A visitor can compare a single vial with a 10-vial kit and add the right option to the cart from the homepage.",
     points: [
-      "Featured products rotate on the homepage with strength and price",
-      "Single vial and 10-vial kit, shown before checkout",
-      "Real product photos for vials, sprays, and reconstitution supplies",
-      "A use notice that stays on the page, written in plain language",
+      "Featured products show their strength and price on the homepage",
+      "Single-vial and 10-vial kit options appear before checkout",
+      "Product photos show vials, sprays, and supplies",
+      "A plain-language use notice stays visible on the page",
     ],
     screenshot: "/projects/east-coast-wellness/desktop.jpg",
     screenshotAlt: "East Coast Wellness homepage with the logo and a precision molecule catalog headline",
@@ -379,8 +379,8 @@ export const projects: Project[] = [
 ];
 
 export const projectGroups: { id: "all" | ProjectGroup; label: string }[] = [
-  { id: "all", label: "All of it" },
-  { id: "ministry", label: "Churches & missions" },
+  { id: "all", label: "All projects" },
+  { id: "ministry", label: "Churches & nonprofits" },
   { id: "shop", label: "Online shops" },
   { id: "local", label: "Local businesses" },
 ];

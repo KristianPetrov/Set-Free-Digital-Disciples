@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Code2, Compass, ScanLine } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
@@ -6,7 +5,8 @@ import SiteFooter from "@/components/SiteFooter";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import ContactActions from "@/components/ContactActions";
 import { Button } from "@/components/ui/button";
-import { projects } from "@/lib/projects";
+import MatrixRain from "@/components/MatrixRain";
+import HeroGlitchMorph from "@/components/HeroGlitchMorph";
 
 export const revalidate = 86400;
 export const metadata = {
@@ -53,12 +53,13 @@ const services = [
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <MatrixRain />
       <SiteHeader />
       <main id="main-content" tabIndex={-1} className="content-layer">
         <section className="hero-section site-container">
           <div className="hero-copy">
             <p className="eyebrow"><span className="status-dot" /> Independent design &amp; development</p>
-            <h1 className="hero-title">Bold websites.<br /><span>Real purpose.</span></h1>
+            <h1 className="hero-title glow-green glitch-strong">Bold websites.<br /><span>Real purpose.</span></h1>
             <p className="hero-description">
               Fast, distinctive websites for businesses, ministries, and big ideas—built to help people find you and take the next step.
             </p>
@@ -72,22 +73,21 @@ export default function Home() {
             </div>
             <p className="hero-signature">Guided by faith. Built with care.</p>
           </div>
-          <div className="hero-stage" aria-label="A selection of real websites built by Set Free Digital Disciples">
-            <div className="hero-orbit" aria-hidden="true" />
-            <div className="hero-screen hero-screen-back">
-              <div className="mini-browser"><span /><span /><span /><p>iwmtow.com</p></div>
-              <div className="relative aspect-[16/10]">
-                <Image src={projects[1].screenshot} alt={projects[1].screenshotAlt} fill sizes="440px" className="object-cover object-top" />
-              </div>
-            </div>
-            <div className="hero-screen hero-screen-front">
-              <div className="mini-browser"><span /><span /><span /><p>setfreeanaheim.com</p></div>
-              <div className="relative aspect-[16/10]">
-                <Image src={projects[0].screenshot} alt={projects[0].screenshotAlt} fill sizes="470px" className="object-cover object-top" />
-              </div>
-            </div>
-            <div className="hero-stage-caption"><span className="status-dot" /> Real projects. Live on the web. <ArrowUpRight className="size-3.5" /></div>
-            <span className="stage-coordinate" aria-hidden="true">DESIGNED TO MAKE A DIFFERENCE</span>
+          <div className="hero-stage" aria-label="Set Free Digital Disciples animated logos">
+            <div className="hero-logo-glow" aria-hidden="true" />
+            <HeroGlitchMorph
+              imageA="/SetFreeDigitalDisciplesMatrix.png"
+              imageB="/SetFreeDigitalDisciplesPortal.png"
+              alt="Set Free Digital Disciples"
+              transitionMs={1400}
+              intervalMs={4000}
+              glitchDurationMs={420}
+              startOn="A"
+              objectFitClass="object-contain"
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 520px, 50vw"
+              priority
+            />
+            <span className="scanline-overlay" aria-hidden="true" />
           </div>
         </section>
 

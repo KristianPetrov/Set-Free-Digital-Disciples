@@ -32,18 +32,13 @@ export default function WorkPage() {
   };
 
   return (
-    <main className="content-layer mx-auto max-w-7xl px-4 py-10 md:py-12">
+    <main id="main-content" tabIndex={-1} className="content-layer site-container work-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Built for real people</p>
-      <h1 className="mt-2 text-3xl font-extrabold tracking-tight glow-cyan md:text-5xl">The work</h1>
-      <p className="mt-3 max-w-2xl text-muted-foreground">
-        Seven live websites, each made for a different audience. Explore real screens, the thinking behind each build, and how people use it.
-      </p>
-      <p className="mt-2 text-sm">
-        <Link href="/#contact" className="text-primary underline-offset-4 hover:underline">
-          Have a site in mind? Text or email and tell me what you need.
-        </Link>
-      </p>
+      <Link href="/" className="back-link">← Back to Set Free</Link>
+      <header className="section-heading">
+        <div><p className="eyebrow">Websites with a reason to exist</p><h1>The work.<br /><span className="text-primary">Out in the world.</span></h1></div>
+        <p>Seven real websites. Explore the design, the thinking, and the details that help each one serve its people.</p>
+      </header>
       <div className="mt-8">
         <ProjectShowcase heading="h2" priorityFirst />
       </div>

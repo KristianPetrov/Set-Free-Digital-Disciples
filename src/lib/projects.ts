@@ -35,7 +35,7 @@ export const projects: Project[] = [
     group: "ministry",
     place: "Anaheim, California",
     plain:
-      "A church site with the warmth and honesty of the room. New visitors can find service times, meet the community, and know what to expect.",
+      "A church’s heart, brought to the screen. Real stories, a welcoming community, and a clear invitation to come as you are.",
     built:
       "I designed and built the site, then kept it current with service details, giving, a prayer wall, events, stories, and news.",
     visitor:
@@ -46,30 +46,35 @@ export const projects: Project[] = [
       "Events, stories, news, and prayer requests help the site stay current",
       "The thrift shop and Set Free University are linked from the same front door",
     ],
-    screenshot: "/projects/set-free-anaheim/section-community.jpg",
-    screenshotAlt: "Set Free Anaheim homepage with the Set Free wordmark, Real Community, and Unconditional Love",
-    mobile: "/projects/set-free-anaheim/mobile.jpg",
+    screenshot: "/projects/set-free-anaheim/desktop-studio.jpg",
+    screenshotAlt: "Set Free Anaheim homepage with a portrait of Pastor Phil, the Set Free logo, and an invitation to Sunday service",
+    mobile: "/projects/set-free-anaheim/mobile-studio.jpg",
     logo: "/projects/set-free-anaheim/logo.png",
     gallery: [
       {
+        src: "/projects/set-free-anaheim/section-community.jpg",
+        alt: "Community and unconditional love on the Set Free Anaheim site",
+        caption: "Community and purpose",
+      },
+      {
         src: "/projects/set-free-anaheim/photo-mic.jpg",
         alt: "Pastor Phil speaking into a microphone",
-        caption: "The room, on the site",
+        caption: "Pastor Phil",
       },
       {
         src: "/projects/set-free-anaheim/photo-bike.jpg",
         alt: "Set Free riders with a motorcycle",
-        caption: "The crew",
+        caption: "The Set Free community",
       },
       {
         src: "/projects/set-free-anaheim/graphic-disciples.jpg",
         alt: "Holy disciples artwork used on the Set Free Anaheim site",
-        caption: "Artwork made for the ministry",
+        caption: "Custom ministry artwork",
       },
       {
         src: "/projects/set-free-anaheim/section-stories.jpg",
         alt: "In the News section on setfreeanaheim.com",
-        caption: "Press, on the homepage",
+        caption: "Stories and news",
       },
       {
         src: "/projects/set-free-anaheim/graphic-love.jpg",
@@ -79,7 +84,7 @@ export const projects: Project[] = [
       {
         src: "/projects/set-free-anaheim/photo-fieldy.jpg",
         alt: "Community photo from the Set Free Anaheim gallery",
-        caption: "People, not placeholders",
+        caption: "Community moments",
       },
     ],
   },
@@ -92,46 +97,46 @@ export const projects: Project[] = [
     group: "local",
     place: "Hilo, Hawaiʻi",
     plain:
-      "A 24/7 towing site for Big Island drivers. If you are stuck, you need clear prices, a phone number, and a way to get help right now.",
+      "Roadside help, one tap away. A bold, practical site that connects Big Island drivers with the people ready to get them moving.",
     built:
       "I built the site around the real fleet, upfront starting prices, and a quick estimate tool. Dispatch is one tap away, day or night.",
     visitor:
-      "A driver can call (808) 785-4988, see that local tows start at $95, or get an estimate before dispatch.",
+      "A driver can call dispatch, compare starting prices, or use the estimate tool right from the homepage.",
     points: [
       "The phone number stays easy to reach throughout the page",
       "Starting prices are shown before a driver has to call",
       "A quote tool covers tows, lockouts, jump starts, tires, and winch recovery",
       "Real photos show the flatbeds at work, including classic cars and U-Hauls",
     ],
-    screenshot: "/projects/iwm-towing/desktop.jpg",
+    screenshot: "/projects/iwm-towing/desktop-studio.jpg",
     screenshotAlt: "IWM Towing homepage with a flatbed truck and the line When the road stops, we don't",
-    mobile: "/projects/iwm-towing/mobile.jpg",
+    mobile: "/projects/iwm-towing/mobile-studio.jpg",
     logo: "/projects/iwm-towing/logo.png",
     gallery: [
       {
         src: "/projects/iwm-towing/classic.jpg",
         alt: "Island Wide Motors flatbed towing a classic convertible",
-        caption: "Careful with the nice ones",
+        caption: "Classic car transport",
       },
       {
         src: "/projects/iwm-towing/truck.jpg",
         alt: "Island Wide Motors flatbed tow truck",
-        caption: "The truck people actually see",
+        caption: "The towing fleet",
       },
       {
         src: "/projects/iwm-towing/ramp.jpg",
         alt: "Flatbed ramp in use at the Hilo yard",
-        caption: "The ramp, in action",
+        caption: "Ready for recovery",
       },
       {
         src: "/projects/iwm-towing/uhaul.jpg",
         alt: "Island Wide Motors truck transporting a U-Haul",
-        caption: "Bigger than a sedan",
+        caption: "Heavy vehicle transport",
       },
       {
         src: "/projects/iwm-towing/section-fleet.jpg",
         alt: "Our fleet in action section on iwmtow.com",
-        caption: "The fleet, on the site",
+        caption: "Fleet gallery",
       },
     ],
   },
@@ -143,36 +148,36 @@ export const projects: Project[] = [
     kind: "Veteran nonprofit",
     group: "ministry",
     plain:
-      "A calm, dignified front door for veterans transitioning out of homelessness and the people helping them find support.",
+      "A new beginning deserves a clear path. A calm, welcoming site that helps veterans find support and take the first step toward stability.",
     built:
       "I built a focused page that explains who they serve, what support includes, how intake works, and how to get in touch.",
     visitor:
-      "A veteran or someone calling for them can start intake or call 562-618-6191 without hunting through menus.",
+      "A veteran, family member, or support worker can understand the program and get directly to intake or contact.",
     points: [
       "A direct headline states the promise: every veteran deserves a second chance",
       "Stability, recovery, and independence are explained in everyday language",
-      "Intake is a clear next step, not a buried form",
+      "Intake gives visitors a clear starting point",
       "The phone number stays easy to find from top to bottom",
     ],
-    screenshot: "/projects/2nd-chance-at-life/desktop.jpg",
+    screenshot: "/projects/2nd-chance-at-life/desktop-studio.jpg",
     screenshotAlt: "2nd Chance at Life homepage with the headline Every veteran deserves a second chance",
-    mobile: "/projects/2nd-chance-at-life/mobile.jpg",
+    mobile: "/projects/2nd-chance-at-life/mobile-studio.jpg",
     logo: "/projects/2nd-chance-at-life/logo.png",
     gallery: [
       {
         src: "/projects/2nd-chance-at-life/section-provide.jpg",
         alt: "What we provide section: Stability, Recovery, and Independence",
-        caption: "What they actually provide",
+        caption: "Support, explained",
       },
       {
         src: "/projects/2nd-chance-at-life/logo.png",
         alt: "2nd Chance at Life logo",
-        caption: "The mark",
+        caption: "Brand identity",
       },
       {
-        src: "/projects/2nd-chance-at-life/desktop.jpg",
+        src: "/projects/2nd-chance-at-life/desktop-studio.jpg",
         alt: "2nd Chance at Life homepage headline",
-        caption: "The front door",
+        caption: "A clear mission",
       },
     ],
   },
@@ -185,7 +190,7 @@ export const projects: Project[] = [
     group: "shop",
     place: "Sheridan, Wyoming",
     plain:
-      "A research-use shop where prices, product details, lab documents, and ordering rules are easy to find.",
+      "A detailed catalog made easy to explore. Clear product information, volume pricing, and lab documents give this research-use store a confident digital home.",
     built:
       "I built and maintain the store with age confirmation, a searchable catalog, volume pricing, order tracking, and a mission page in the shop’s own voice.",
     visitor:
@@ -204,22 +209,22 @@ export const projects: Project[] = [
       {
         src: "/projects/pure-energy-peptides/product-cjc.png",
         alt: "CJC-1295 plus IPA product image from the Pure Energy catalog",
-        caption: "Catalog photography",
+        caption: "Product photography",
       },
       {
         src: "/projects/pure-energy-peptides/product-nad.png",
         alt: "NAD+ product image from the Pure Energy catalog",
-        caption: "Same look, every vial",
+        caption: "Consistent product identity",
       },
       {
         src: "/projects/pure-energy-peptides/product-bpc.png",
         alt: "BPC-157 product image from the Pure Energy catalog",
-        caption: "Built to scan fast",
+        caption: "Catalog details",
       },
       {
         src: "/projects/pure-energy-peptides/section-products.jpg",
         alt: "Featured compounds section on pureenergypeptides.com",
-        caption: "Prices on the homepage",
+        caption: "Featured products",
       },
       {
         src: "/projects/pure-energy-peptides/product-tb.png",
@@ -236,26 +241,26 @@ export const projects: Project[] = [
     kind: "Online shop",
     group: "shop",
     plain:
-      "A focused research-use catalog with more than 50 items, clear prices, and use information in view instead of fine print.",
+      "A distinctive brand with a catalog to match. A focused research-use storefront that makes product discovery, pricing, and ordering easy to follow.",
     built:
       "I built and maintain the storefront, product photography, cart, and the pages customers use on the way to checkout.",
     visitor:
-      "A visitor can scan the lineup, open a product, and see prices starting around $5 before creating an account.",
+      "A visitor can explore the lineup, open a product, and compare its size and price before creating an account.",
     points: [
-      "The homepage previews the catalog without hiding it behind a menu",
+      "Featured products introduce the catalog on the homepage",
       "Prices are visible on every product card",
       "Research-use information is clear from the header through checkout",
       "Categories, order tracking, and a cart with a clear empty state",
     ],
-    screenshot: "/projects/infinity-peptides/desktop.jpg",
-    screenshotAlt: "Infinity Peptides homepage with the infinity mark and a row of research products",
-    mobile: "/projects/infinity-peptides/mobile.jpg",
+    screenshot: "/projects/infinity-peptides/desktop-studio.jpg",
+    screenshotAlt: "Infinity Peptides homepage with a colorful infinity mark, clear typography, and a research catalog introduction",
+    mobile: "/projects/infinity-peptides/mobile-studio.jpg",
     logo: "/projects/infinity-peptides/logo.png",
     gallery: [
       {
         src: "/projects/infinity-peptides/product-reta.png",
         alt: "Retatrutide vial from the Infinity Peptides catalog",
-        caption: "Product shots with the mark",
+        caption: "Branded product imagery",
       },
       {
         src: "/projects/infinity-peptides/product-glow.png",
@@ -265,12 +270,12 @@ export const projects: Project[] = [
       {
         src: "/projects/infinity-peptides/product-blend.png",
         alt: "BPC-157 and TB-500 vial from the Infinity Peptides catalog",
-        caption: "Blends, labeled clearly",
+        caption: "Clearly labeled blends",
       },
       {
         src: "/projects/infinity-peptides/section-products.jpg",
         alt: "Product lineup on infinity-peptides.com",
-        caption: "The lineup, up front",
+        caption: "Catalog overview",
       },
       {
         src: "/projects/infinity-peptides/product-nad.png",
@@ -287,7 +292,7 @@ export const projects: Project[] = [
     kind: "Online shop",
     group: "shop",
     plain:
-      "A straightforward research-use shop that puts its catalog, lab documents, and pricing in one place.",
+      "Straightforward shopping, thoughtfully designed. Product details, pricing, and lab information come together in a clean research-use storefront.",
     built:
       "I built and maintain the store, order lookup, mission and vision pages, and a plain-language FAQ about purity reports.",
     visitor:
@@ -306,17 +311,17 @@ export const projects: Project[] = [
       {
         src: "/projects/affordable-peptides/section-catalog.jpg",
         alt: "Catalog highlights for Tirzepatide, AOD 9604, and BPC-157",
-        caption: "Prices you can see",
+        caption: "Catalog highlights",
       },
       {
         src: "/projects/affordable-peptides/logo.png",
         alt: "Affordable Peptides logo",
-        caption: "The mark",
+        caption: "Brand identity",
       },
       {
         src: "/projects/affordable-peptides/mobile.jpg",
         alt: "Affordable Peptides homepage on a phone",
-        caption: "Same offer on a phone",
+        caption: "Designed for phones",
       },
     ],
   },
@@ -328,7 +333,7 @@ export const projects: Project[] = [
     kind: "Online shop",
     group: "shop",
     plain:
-      "A research-use shop for vials, blends, and sprays. Product details, strength, and pricing are visible without digging through menus.",
+      "A fresh visual identity for a varied research-use catalog. Vials, blends, and sprays are presented with clear options and a simple path to the cart.",
     built:
       "I built and maintain a storefront with the catalog on the homepage, kit pricing, product photography, and a visible use notice.",
     visitor:
@@ -339,25 +344,25 @@ export const projects: Project[] = [
       "Product photos show vials, sprays, and supplies",
       "A plain-language use notice stays visible on the page",
     ],
-    screenshot: "/projects/east-coast-wellness/desktop.jpg",
+    screenshot: "/projects/east-coast-wellness/desktop-studio.jpg",
     screenshotAlt: "East Coast Wellness homepage with the logo and a precision molecule catalog headline",
-    mobile: "/projects/east-coast-wellness/mobile.jpg",
+    mobile: "/projects/east-coast-wellness/mobile-studio.jpg",
     logo: "/projects/east-coast-wellness/logo.png",
     gallery: [
       {
         src: "/projects/east-coast-wellness/vials.png",
         alt: "East Coast Wellness reconstitution vials",
-        caption: "The vials",
+        caption: "Product photography",
       },
       {
         src: "/projects/east-coast-wellness/sprays.png",
         alt: "East Coast Wellness research sprays",
-        caption: "Sprays, photographed",
+        caption: "Research sprays",
       },
       {
         src: "/projects/east-coast-wellness/product-glow.png",
         alt: "GLOW product bottle from the East Coast Wellness catalog",
-        caption: "Labeled so you can read it",
+        caption: "Readable product labels",
       },
       {
         src: "/projects/east-coast-wellness/product-bpc.png",
@@ -367,7 +372,7 @@ export const projects: Project[] = [
       {
         src: "/projects/east-coast-wellness/section-products.jpg",
         alt: "Featured products on eastcoastwellness.co",
-        caption: "Buy from the homepage",
+        caption: "Featured catalog",
       },
       {
         src: "/projects/east-coast-wellness/product-wolverine.png",
@@ -387,4 +392,13 @@ export const projectGroups: { id: "all" | ProjectGroup; label: string }[] = [
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
+}
+
+export function getProjectScreens(project: Project): ProjectImage[] {
+  const screens = [
+    { src: project.screenshot, alt: project.screenshotAlt, caption: "Desktop experience" },
+    { src: project.mobile, alt: project.name + " on a phone", caption: "Mobile experience" },
+    ...project.gallery,
+  ];
+  return screens.filter((screen, index) => screens.findIndex((item) => item.src === screen.src) === index);
 }

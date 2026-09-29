@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import DonationInline from "@/components/DonationInline";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -18,7 +20,9 @@ export const metadata: Metadata = {
 
 export default function DonatePage() {
   return (
-    <main className="content-layer relative mx-auto max-w-4xl px-4 py-10 md:py-12">
+    <div className="min-h-screen">
+      <SiteHeader />
+    <main id="main-content" tabIndex={-1} className="content-layer relative mx-auto max-w-4xl px-4 py-10 md:py-12">
       <div className="mb-4">
         <Button asChild variant="secondary" size="sm">
           <Link href="/">← Back to home</Link>
@@ -26,13 +30,15 @@ export default function DonatePage() {
       </div>
       <DonationInline
         title="Support Set Free Digital Disciples"
-        subtitle="Your gift helps carry a faith-rooted mission into the places and spaces where people need hope."
+        subtitle="Your gift helps us use technology to serve people and share the hope of Jesus."
         logoSrc="/SetFreeDigitalDisciplesPortal.png"
         presetAmounts={[10,20,50,100,250,500]}
         paypalEmail="petrovkristian@ymail.com"
         cashAppTag="KristianPetrov"
       />
     </main>
+      <SiteFooter />
+    </div>
   );
 }
 

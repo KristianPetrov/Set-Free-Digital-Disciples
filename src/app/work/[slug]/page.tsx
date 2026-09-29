@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { ProjectCover, ProjectScreens } from "@/components/ProjectMedia";
 import { getProject, projects } from "@/lib/projects";
+import { siteUrl, organizationId, serializeJsonLd } from "@/lib/seo";
 
 export const revalidate = 86400;
 
@@ -24,16 +25,18 @@ export async function generateMetadata({
     description: project.plain,
     alternates: { canonical: `/work/${project.slug}` },
     openGraph: {
+      type: "website",
+      siteName: "Set Free Digital Disciples",
       title: `${project.name} | Set Free Digital Disciples`,
       description: project.plain,
       url: `/work/${project.slug}`,
-      images: [{ url: project.screenshot, alt: project.screenshotAlt, width: 1440, height: 1000 }],
+      images: [{ url: `${siteUrl}/work/${project.slug}/opengraph-image`, alt: `${project.name} by Set Free Digital Disciples`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.name} | Set Free Digital Disciples`,
       description: project.plain,
-      images: [project.screenshot],
+      images: [`${siteUrl}/work/${project.slug}/twitter-image`],
     },
   };
 }
@@ -46,6 +49,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   return (
     <main id="main-content" tabIndex={-1} className="content-layer site-container work-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd({
+        "@context": "https://schema.org", "@graph": [
+          { "@type": "WebPage", "@id": `${siteUrl}/work/${project.slug}#webpage`, url: `${siteUrl}/work/${project.slug}`,
+            name: project.name, description: project.plain, isPartOf: { "@id": `${siteUrl}/#website` },
+            breadcrumb: { "@id": `${siteUrl}/work/${project.slug}#breadcrumb` },
+            mainEntity: { "@id": `${siteUrl}/work/${project.slug}#project` } },
+          { "@type": "CreativeWork", "@id": `${siteUrl}/work/${project.slug}#project`, name: project.name,
+            description: project.plain, url: project.url, image: `${siteUrl}${project.screenshot}`,
+            creator: { "@id": organizationId }, inLanguage: "en-US" },
+          { "@type": "BreadcrumbList", "@id": `${siteUrl}/work/${project.slug}#breadcrumb`, itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Set Free", item: siteUrl },
+            { "@type": "ListItem", position: 2, name: "Website Projects", item: `${siteUrl}/work` },
+            { "@type": "ListItem", position: 3, name: project.name, item: `${siteUrl}/work/${project.slug}` },
+          ] },
+        ],
+      }) }} />
       <Link href="/work" className="back-link"><ArrowLeft className="size-3.5" /> All projects</Link>
       <header className="project-page-header">
         <div className="project-meta"><span>{project.kind}{project.place ? " / " + project.place : ""}</span><span className="live-label"><span className="status-dot" /> Live website</span></div>

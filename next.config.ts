@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
+  outputFileTracingIncludes: {
+    "/work/**/opengraph-image": ["./public/brand/set-free-logo-social.png", "./public/projects/*/desktop*.jpg"],
+    "/work/**/twitter-image": ["./public/brand/set-free-logo-social.png", "./public/projects/*/desktop*.jpg"],
+  },
   async redirects() {
     return [
       { source: "/work/anaheim", destination: "/work/set-free-anaheim", permanent: true },

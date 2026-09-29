@@ -16,7 +16,7 @@ export default function ProjectPreview({ project, priority = false, showMobileOv
         <ArrowUpRight className="size-3" aria-hidden="true" />
       </div>
       <div className="preview-screen">
-        <Image src={project.screenshot} alt={project.screenshotAlt} fill priority={priority} className="object-cover object-top" sizes={sizes} />
+        <Image src={project.screenshot} alt={project.screenshotAlt} fill preload={priority} className="object-cover object-top" sizes={sizes} />
       </div>
       {showMobileOverlay ? (
         <div className="preview-phone" aria-hidden="true">

@@ -9,7 +9,10 @@ export const metadata: Metadata = {
   title: "Donate",
   description: "Support Set Free Digital Disciples and a faith-rooted mission that serves people online and in the community.",
   alternates: { canonical: "/donate" },
+  twitter: { card: "summary_large_image", title: "Support Set Free Digital Disciples", description: "Support a faith-rooted mission that serves people online and in the community." },
   openGraph: {
+    type: "website",
+    siteName: "Set Free Digital Disciples",
     title: "Donate | Set Free Digital Disciples",
     description: "Support Set Free Digital Disciples and a faith-rooted mission that serves people online and in the community.",
     url: "/donate",

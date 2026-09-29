@@ -6,22 +6,24 @@ import ProjectShowcase from "@/components/ProjectShowcase";
 import ContactActions from "@/components/ContactActions";
 import { Button } from "@/components/ui/button";
 import MatrixRain from "@/components/MatrixRain";
-import HeroGlitchMorph from "@/components/HeroGlitchMorph";
+import HeroLogo from "@/components/HeroLogo";
+import { siteUrl, organizationId, serializeJsonLd, defaultDescription } from "@/lib/seo";
 
 export const revalidate = 86400;
 export const metadata = {
-  title: { absolute: "Set Free Digital Disciples | Bold Websites. Real Purpose." },
-  description:
-    "Distinctive, fast websites for local businesses, ministries, and online shops. Clear messaging, custom Next.js development, and technical SEO, guided by faith and built with care.",
+  title: { absolute: "Web Design & Technical SEO | Set Free Digital Disciples" },
+  description: defaultDescription,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Set Free Digital Disciples | Bold Websites. Real Purpose.",
+    type: "website",
+    siteName: "Set Free Digital Disciples",
+    title: "Web Design & Technical SEO | Set Free Digital Disciples",
     description: "Your vision, brought to life with bold design, clear messaging, and thoughtful code.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Set Free Digital Disciples | Bold Websites. Real Purpose.",
+    title: "Web Design & Technical SEO | Set Free Digital Disciples",
     description: "Your vision, brought to life with bold design, clear messaging, and thoughtful code.",
   },
 } as const;
@@ -56,10 +58,18 @@ export default function Home() {
       <MatrixRain />
       <SiteHeader />
       <main id="main-content" tabIndex={-1} className="content-layer">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd({
+          "@context": "https://schema.org", "@type": "WebPage", "@id": `${siteUrl}/#webpage`,
+          url: siteUrl, name: "Web Design & Technical SEO | Set Free Digital Disciples",
+          description: "Custom websites for businesses, ministries, and online shops. Guided by faith and built with care.",
+          isPartOf: { "@id": `${siteUrl}/#website` }, publisher: { "@id": organizationId },
+          mainEntity: { "@id": `${siteUrl}/#service` }, inLanguage: "en-US",
+        }) }} />
         <section className="hero-section site-container">
+          <HeroLogo />
           <div className="hero-copy">
             <p className="eyebrow"><span className="status-dot" /> Independent design &amp; development</p>
-            <h1 className="hero-title glow-green glitch-strong">Bold websites.<br /><span>Real purpose.</span></h1>
+            <h1 className="hero-title glow-cyan">Bold websites.<br /><span>Real purpose.</span></h1>
             <p className="hero-description">
               Fast, distinctive websites for businesses, ministries, and big ideas—built to help people find you and take the next step.
             </p>
@@ -72,22 +82,6 @@ export default function Home() {
               </Button>
             </div>
             <p className="hero-signature">Guided by faith. Built with care.</p>
-          </div>
-          <div className="hero-stage" aria-label="Set Free Digital Disciples animated logos">
-            <div className="hero-logo-glow" aria-hidden="true" />
-            <HeroGlitchMorph
-              imageA="/SetFreeDigitalDisciplesMatrix.png"
-              imageB="/SetFreeDigitalDisciplesPortal.png"
-              alt="Set Free Digital Disciples"
-              transitionMs={1400}
-              intervalMs={4000}
-              glitchDurationMs={420}
-              startOn="A"
-              objectFitClass="object-contain"
-              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 520px, 50vw"
-              priority
-            />
-            <span className="scanline-overlay" aria-hidden="true" />
           </div>
         </section>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import ProjectLink from "@/components/ProjectLink";
 import { ArrowUpRight, Expand } from "lucide-react";
 import ProjectPreview from "@/components/ProjectPreview";
 import ProjectGallery from "@/components/ProjectGallery";
@@ -37,7 +37,7 @@ export default function ProjectShowcase({ heading = "h3", priorityFirst = false 
               <Title>{project.name}</Title>
               <p>{project.plain}</p>
               <div className="project-card-links">
-                <Link href={"/work/" + project.slug} className="text-link">Inside the build <ArrowUpRight className="size-4" /></Link>
+                <ProjectLink href={"/work/" + project.slug} />
                 <a href={project.url} target="_blank" rel="noreferrer noopener" className="project-live-link">Visit site <ArrowUpRight className="size-4" /></a>
               </div>
             </div>

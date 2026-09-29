@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import { defaultDescription, defaultTitle, siteJsonLd, siteName, siteUrl } from "@/lib/seo";
+import { defaultDescription, defaultTitle, siteJsonLd, siteName, siteUrl, serializeJsonLd } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,7 +62,13 @@ export const metadata: Metadata = {
     },
   },
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [{ url: "/brand/icon-32.png", sizes: "32x32", type: "image/png" }, { url: "/brand/icon-48.png", sizes: "48x48", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
+
+export const viewport: Viewport = { themeColor: "#050b12", colorScheme: "dark" };
 
 export default function RootLayout({
   children,
@@ -78,7 +84,7 @@ export default function RootLayout({
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(siteJsonLd) }}
         />
         {children}
         {modal}

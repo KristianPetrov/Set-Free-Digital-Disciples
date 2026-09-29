@@ -2,15 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import { projects } from "@/lib/projects";
+import { siteUrl, organizationId, serializeJsonLd } from "@/lib/seo";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "The work",
+  title: "Website Projects",
   description:
     "Live websites built for churches, nonprofits, local businesses, and online shops, with clear case studies and real project screens.",
   alternates: { canonical: "/work" },
+  twitter: { card: "summary_large_image", title: "Website Projects | Set Free Digital Disciples", description: "Real website projects for churches, nonprofits, local businesses, and online shops." },
   openGraph: {
+    type: "website",
+    siteName: "Set Free Digital Disciples",
     title: "Live website projects | Set Free Digital Disciples",
     description:
       "Real website projects for churches, nonprofits, local businesses, and online shops.",
@@ -21,19 +25,28 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Websites by Set Free Digital Disciples",
-    itemListElement: projects.map((project, index) => ({
+    "@type": "CollectionPage",
+    "@id": `${siteUrl}/work#webpage`,
+    url: `${siteUrl}/work`,
+    name: "Website Projects | Set Free Digital Disciples",
+    description: "Live website projects with real screens and case studies.",
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    publisher: { "@id": organizationId },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Websites by Set Free Digital Disciples",
+      itemListElement: projects.map((project, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: project.name,
-      url: `https://setfreedigitaldisciples.com/work/${project.slug}`,
+      url: `${siteUrl}/work/${project.slug}`,
     })),
+    },
   };
 
   return (
     <main id="main-content" tabIndex={-1} className="content-layer site-container work-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <Link href="/" className="back-link">← Back to Set Free</Link>
       <header className="section-heading">
         <div><p className="eyebrow">Websites with a reason to exist</p><h1>The work.<br /><span className="text-primary">Out in the world.</span></h1></div>

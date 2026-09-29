@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 export default function SiteHeader() {
@@ -8,7 +9,7 @@ export default function SiteHeader() {
       <header className="studio-header">
         <div className="site-container header-inner">
           <Link href="/" className="brand" aria-label="Set Free Digital Disciples home">
-            <span className="brand-mark" aria-hidden="true">SF<span>↗</span></span>
+            <Image src="/brand/set-free-mark.webp" alt="" width={48} height={48} sizes="48px" className="brand-logo" />
             <span className="brand-name">SET FREE<span>DIGITAL DISCIPLES</span></span>
           </Link>
           <nav aria-label="Main navigation" className="header-nav">

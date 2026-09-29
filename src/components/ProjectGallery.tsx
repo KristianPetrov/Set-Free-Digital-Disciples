@@ -12,6 +12,7 @@ export default function ProjectGallery({ project, children, initialIndex = 0 }: 
   initialIndex?: number;
 }) {
   const [index, setIndex] = useState(initialIndex);
+  const [loadedSrc, setLoadedSrc] = useState("");
   const screens = getProjectScreens(project);
   const screen = screens[index];
   const isMobileScreen = screen.src === project.mobile;
@@ -29,11 +30,11 @@ export default function ProjectGallery({ project, children, initialIndex = 0 }: 
           <DialogTitle>{project.name}</DialogTitle>
           <DialogDescription>{isMobileScreen ? "Scroll the phone screen for a closer look. Use the arrows to keep exploring." : "Explore the real screens. Use the arrows or choose a thumbnail."}</DialogDescription>
         </div>
-        <div className={"gallery-image" + (isMobileScreen ? " gallery-phone-scroll" : "")}>
+        <div className={"gallery-image" + (isMobileScreen ? " gallery-phone-scroll" : "")} data-loaded={loadedSrc === screen.src} aria-busy={loadedSrc !== screen.src}>
           {isMobileScreen ? (
-            <Image src={screen.src} alt={screen.alt} width={390} height={844} sizes="(max-width: 767px) 90vw, 390px" className="gallery-mobile-image" />
+            <Image key={screen.src} src={screen.src} onLoad={() => setLoadedSrc(screen.src)} alt={screen.alt} width={390} height={844} sizes="(max-width: 767px) 90vw, 390px" className="gallery-mobile-image" />
           ) : (
-            <Image src={screen.src} alt={screen.alt} fill sizes="(max-width: 767px) 94vw, 1000px" className="object-contain" />
+            <Image key={screen.src} src={screen.src} onLoad={() => setLoadedSrc(screen.src)} alt={screen.alt} fill sizes="(max-width: 767px) 94vw, 1000px" className="object-contain" />
           )}
         </div>
         <div className="gallery-controls">

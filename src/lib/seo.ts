@@ -2,10 +2,18 @@ export const siteUrl = "https://setfreedigitaldisciples.com";
 
 export const siteName = "Set Free Digital Disciples";
 
-export const defaultTitle = "Bold Websites. Real Purpose.";
+export const defaultTitle = "Web Design & Technical SEO";
+
+export const siteUpdatedAt = "2026-09-29";
+export const brandLogoUrl = `${siteUrl}/brand/icon-512.png`;
+export const socialImageUrl = `${siteUrl}/opengraph-image`;
+
+export function serializeJsonLd(value: unknown) {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
 
 export const defaultDescription =
-  "Distinctive, fast websites for local businesses, ministries, and online shops. Clear messaging, custom Next.js development, and technical SEO, guided by faith and built with care.";
+  "Custom websites for businesses, ministries, and online shops. Bold design, clear messaging, fast Next.js development, and technical SEO. Guided by faith.";
 
 export const organizationId = `${siteUrl}/#organization`;
 export const websiteId = `${siteUrl}/#website`;
@@ -13,7 +21,7 @@ export const websiteId = `${siteUrl}/#website`;
 export const sameAs = [
   "https://www.facebook.com/profile.php?id=61579041676384",
   "https://www.instagram.com/kristianpetrov/",
-  "https://x.com/kristianpeetrov?s=21",
+  "https://x.com/kristianpeetrov",
 ];
 
 export const siteJsonLd = {
@@ -26,28 +34,20 @@ export const siteJsonLd = {
       url: siteUrl,
       email: "kristpetrov@setfreedigitaldisciples.com",
       telephone: "+1-949-331-4471",
-      logo: `${siteUrl}/apple-icon`,
+      logo: { "@type": "ImageObject", url: brandLogoUrl, width: 512, height: 512 },
+      image: `${siteUrl}/brand/set-free-logo-social.png`,
       sameAs,
     },
     {
-      "@type": "ProfessionalService",
+      "@type": "Service",
       "@id": `${siteUrl}/#service`,
-      name: siteName,
+      name: "Custom web design, development, and technical SEO",
+      serviceType: ["Web design", "Web development", "Technical SEO"],
       url: siteUrl,
       image: `${siteUrl}/opengraph-image`,
       description: defaultDescription,
-      telephone: "+1-949-331-4471",
-      email: "kristpetrov@setfreedigitaldisciples.com",
       areaServed: "United States",
       provider: { "@id": organizationId },
-      knowsAbout: [
-        "Next.js",
-        "Technical SEO",
-        "Core Web Vitals",
-        "Local SEO",
-        "Schema.org structured data",
-        "Web design",
-      ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Websites and technical SEO",
@@ -56,8 +56,8 @@ export const siteJsonLd = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Custom Next.js websites",
-              description: "Server-rendered sites with a look that matches the business and a first screen that tells people what to do.",
+              name: "Custom web design and Next.js development",
+              description: "Distinctive, fast websites with clear messaging and a responsive experience built around the people you serve.",
             },
           },
           {
@@ -65,7 +65,7 @@ export const siteJsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Technical SEO",
-              description: "Titles, canonicals, sitemaps, robots rules, internal links, and on-page structure built so Google is not guessing.",
+              description: "Clear metadata, canonical URLs, sitemaps, structured data, and internal links that help search engines understand each page.",
             },
           },
           {

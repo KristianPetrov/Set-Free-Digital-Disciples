@@ -78,13 +78,25 @@ export default function MatrixRain() {
       last = performance.now();
       if (!document.hidden && !motion.matches) raf = requestAnimationFrame(loop);
     };
+    // Full strength over the hero, easing to a faint texture behind the content below.
+    let fadeRaf = 0;
+    const fade = () => {
+      fadeRaf = 0;
+      const progress = Math.min(window.scrollY / (window.innerHeight * 0.9), 1);
+      canvas.style.setProperty("--rain-fade", String(1 - progress * 0.65));
+    };
+    const onScroll = () => { if (!fadeRaf) fadeRaf = requestAnimationFrame(fade); };
     resize();
     resume();
+    fade();
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", resize, { passive: true });
     document.addEventListener("visibilitychange", resume);
     motion.addEventListener("change", resume);
     return () => {
       cancelAnimationFrame(raf);
+      cancelAnimationFrame(fadeRaf);
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", resize);
       document.removeEventListener("visibilitychange", resume);
       motion.removeEventListener("change", resume);

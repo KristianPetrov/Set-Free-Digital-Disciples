@@ -16,11 +16,11 @@ export default function ProjectPreview({ project, priority = false, showMobileOv
         <ArrowUpRight className="size-3" aria-hidden="true" />
       </div>
       <div className="preview-screen">
-        <Image src={project.screenshot} alt={project.screenshotAlt} fill preload={priority} className="object-cover object-top" sizes={sizes} />
+        <Image src={project.screenshot} alt={project.screenshotAlt} fill preload={priority} loading={priority ? undefined : "eager"} fetchPriority={priority ? undefined : "low"} className="object-cover object-top" sizes={sizes} />
       </div>
       {showMobileOverlay ? (
         <div className="preview-phone" aria-hidden="true">
-          <div className="phone-screen"><Image src={project.mobile} alt="" fill className="object-cover object-top" sizes="(max-width: 767px) 27vw, 160px" /></div>
+          <div className="phone-screen"><Image src={project.mobile} alt="" fill loading="eager" fetchPriority="low" className="object-cover object-top" sizes="(max-width: 767px) 27vw, 160px" /></div>
         </div>
       ) : null}
     </div>
